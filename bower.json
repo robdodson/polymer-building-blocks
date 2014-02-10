@@ -1,0 +1,20 @@
+{
+  "name": "yahoo-polymer",
+  "version": "0.0.0",
+  "authors": [
+    "Rob Dodson <robdodson@google.com>"
+  ],
+  "private": true,
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer-elements": "Polymer/polymer-elements#~0.1.4",
+    "polymer-ui-elements": "Polymer/polymer-ui-elements#~0.1.4"
+  }
+}

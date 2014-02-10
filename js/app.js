@@ -313,60 +313,60 @@ function initDemos() {
 
 
 (function() {
-  var slide = $('#hangoutsexample');
-  var output = slide.$('.example');
-  var count = 0;
+  // var slide = $('#hangoutsexample');
+  // var output = slide.$('.example');
+  // var count = 0;
 
-  // slide.querySelector('.snippet-demo').listen('click', function(e) {
-  //   e.preventDefault();
-  // });
+  // // slide.querySelector('.snippet-demo').listen('click', function(e) {
+  // //   e.preventDefault();
+  // // });
 
-  slide.querySelector('button').addEventListener('click', function(e) {
+  // slide.querySelector('button').addEventListener('click', function(e) {
 
-    if (count) {
-      var hangout = document.createElement('hangout-module');
-      hangout.from = 'Larry Page';
-      hangout.profile = '118075919496626375791';
+  //   if (count) {
+  //     var hangout = document.createElement('hangout-module');
+  //     hangout.from = 'Larry Page';
+  //     hangout.profile = '118075919496626375791';
 
-      hangout.messages = [{
-        profile: '106189723444098348646',
-        datetime: new Date().toISOString(),
-        isother: true,
-        msg: ['Hola']
-      }];
+  //     hangout.messages = [{
+  //       profile: '106189723444098348646',
+  //       datetime: new Date().toISOString(),
+  //       isother: true,
+  //       msg: ['Hola']
+  //     }];
 
-      output.appendChild(hangout);
-    } else {
-      var hangout = document.createElement('hangout-module');
-      hangout.from = 'Paul Irish';
-      hangout.profile = '118075919496626375791';
+  //     output.appendChild(hangout);
+  //   } else {
+  //     var hangout = document.createElement('hangout-module');
+  //     hangout.from = 'Paul Irish';
+  //     hangout.profile = '118075919496626375791';
 
-      hangout.messages = [{
-        profile: '113127438179392830442',
-        datetime: '2013-06-24T12:02',
-        isother: true,
-        msg: ["Feelin' this Web Components thing.", 'Heard anything about it?']
-      }, {
-        profile: '118075919496626375791',
-        datetime: '2013-06-24T12:03',
-        msg: ['Totes amazing']
-      }, {
-        profile: '118075919496626375791',
-        datetime: '2013-06-24T12:05',
-        msg: ['Have you tried Polymer yet?']
-      }, {
-        profile: '113127438179392830442',
-        datetime: '2013-06-24T12:06',
-        isother: true,
-        msg: ['Naw Bro', "I'll give it a spin"]
-      }];
+  //     hangout.messages = [{
+  //       profile: '113127438179392830442',
+  //       datetime: '2013-06-24T12:02',
+  //       isother: true,
+  //       msg: ["Feelin' this Web Components thing.", 'Heard anything about it?']
+  //     }, {
+  //       profile: '118075919496626375791',
+  //       datetime: '2013-06-24T12:03',
+  //       msg: ['Totes amazing']
+  //     }, {
+  //       profile: '118075919496626375791',
+  //       datetime: '2013-06-24T12:05',
+  //       msg: ['Have you tried Polymer yet?']
+  //     }, {
+  //       profile: '113127438179392830442',
+  //       datetime: '2013-06-24T12:06',
+  //       isother: true,
+  //       msg: ['Naw Bro', "I'll give it a spin"]
+  //     }];
 
-      output.appendChild(hangout);
-    }
+  //     output.appendChild(hangout);
+  //   }
 
-    count++;
+  //   count++;
   
-  });
+  // });
 
 })();
 
@@ -518,63 +518,63 @@ function initDemos() {
 
 
 (function() {
-  var slide = $('#spacevideo');
-  var video = slide.$('video');
-  var audio = slide.$('audio');
+  // var slide = $('#spacevideo');
+  // var video = slide.$('video');
+  // var audio = slide.$('audio');
 
-  var PLAYBACKRATE = 2;
+  // var PLAYBACKRATE = 2;
 
-  video.listen('ended', function(e) {
-    video.load(); // video.currentTime = 0; doesn't work.
-    video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
-    video.play();
-  });
+  // video.listen('ended', function(e) {
+  //   video.load(); // video.currentTime = 0; doesn't work.
+  //   video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
+  //   video.play();
+  // });
 
-  slide.listen('slideenter', function(e) {
-    if (video.currentTime >= video.duration) {
-      video.load();
-    }
-    video.playbackRate = PLAYBACKRATE;
-    video.play();
-    audio.play();
-  });
+  // slide.listen('slideenter', function(e) {
+  //   if (video.currentTime >= video.duration) {
+  //     video.load();
+  //   }
+  //   video.playbackRate = PLAYBACKRATE;
+  //   video.play();
+  //   audio.play();
+  // });
 
-  slide.listen('slideleave', function() {
-    video.pause();
-    audio.pause();
-  });
+  // slide.listen('slideleave', function() {
+  //   video.pause();
+  //   audio.pause();
+  // });
 
-  // If this slide is current on pageload, start playing video.
-  if (slidedeck.slides[slidedeck.curSlide_] == slide) {
-    video.playbackRate = PLAYBACKRATE;
-    video.play();
-    audio.play();
-  }
+  // // If this slide is current on pageload, start playing video.
+  // if (slidedeck.slides[slidedeck.curSlide_] == slide) {
+  //   video.playbackRate = PLAYBACKRATE;
+  //   video.play();
+  //   audio.play();
+  // }
 })();
 
 (function() {
-  var slide = $('#spacevideo2');
-  var video = slide.$('video');
-  var audio = slide.$('audio');
+  // var slide = $('#spacevideo2');
+  // var video = slide.$('video');
+  // var audio = slide.$('audio');
 
-  var PLAYBACKRATE = 1;
+  // var PLAYBACKRATE = 1;
 
-  video.listen('ended', function(e) {
-    video.load(); // video.currentTime = 0; doesn't work.
-    video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
-    video.play();
-  });
+  // // video.listen('ended', function(e) {
+  // //   video.load(); // video.currentTime = 0; doesn't work.
+  // //   video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
+  // //   video.play();
+  // // });
 
-  slide.listen('click', function() {
-    video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
-    video.paused ? video.play() : video.pause();
-    audio.paused ? audio.play() : audio.pause();
-  });
+  // slide.listen('click', function() {
+  //   video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
+  //   video.paused ? video.play() : video.pause();
+  //   audio.paused ? audio.play() : audio.pause();
+  // });
 
-  slide.listen('slideleave', function() {
-    video.pause();
-    audio.pause();
-  });
+  // slide.listen('slideleave', function() {
+  //   video.pause();
+  //   audio.pause();
+  // });
 
   // // If this slide is current on pageload, start playing video.
   // if (slidedeck.slides[slidedeck.curSlide_] == slide) {

@@ -4,8 +4,8 @@ var SLIDE_CONFIG = {
     title: 'Polymer',
     subtitle: 'declarative, encapsulated, reusable components',
     eventInfo: {
-      title: 'Chrome Dev Summit',
-      date: 'Nov 20, 2013'
+      title: 'Yahoo',
+      date: 'Mar 05, 2014'
     },
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: false, // Controlled in app.js 
@@ -23,12 +23,12 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Eric Bidelman',
+    name: 'Rob Dodson',
     //company: 'Chrome Team',
-    gplus: 'http://google.com/+EricBidelman',
-    twitter: '@ebidel',
-    www: 'http://ericbidelman.com',
-    github: 'http://github.com/ebidel'
+    gplus: 'http://google.com/+RobDodson',
+    twitter: '@rob_dodson',
+    www: 'http://robdodson.me',
+    github: 'http://github.com/robdodson'
   }]
 };
 

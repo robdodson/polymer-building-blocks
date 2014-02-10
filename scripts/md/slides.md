@@ -3,133 +3,101 @@ id: who
 
 <p class="avatar rounded"></p>
 
-<p>Eric Bidelman</p>
-<p>Staff Developer Programs Engineer, <img src="images/logos/google_logo.png" style="height: 30px;margin: 0;"> <img src="images/logos/chrome_logo.png" style="height:27px;margin:0;vertical-align: top;"></p>
+<p>Rob Dodson</p>
+<p>Staff Developer Advocate, <img src="images/logos/google_logo.png" style="height: 30px;margin: 0;"> <img src="images/logos/chrome_logo.png" style="height:27px;margin:0;vertical-align: top;"></p>
 
 <p class="topmargin"></p>
 
 <i class="icon icon-google-plus"></i>
-<a rel="author" href="http://google.com/+EricBidelman">google.com/+EricBidelman</a>
+<a rel="author" href="http://google.com/+RobDodson">google.com/+RobDodson</a>
 
 <i class="icon icon-twitter"></i>
-<a rel="author" href="http://twitter.com/ebidel">@ebidel</a>
+<a rel="author" href="http://twitter.com/rob_dodson">@rob_dodson</a>
 
 <i class="icon icon-bookmark"></i> 
-<a rel="author" href="http://www.ericbidelman.com">ericbidelman.com</a>
+<a rel="author" href="http://robdodson.me">robdodson.me</a>
 
-<p class="topmargin">
-<img src="images/logos/h5rlogo.png" style="width: 50px;"><a href="http://html5rocks.com">html5rocks.com</a>
+---
+
+title: Where are we today?
+body_class: b2tf
+#subtitle: where are we today?
+class: nobackdrop nobackground highlight
+
+---
+
+hidden: true
+content_class: flexbox vcenter centered
+
+<iframe data-src="http://html5-demos.appspot.com/static/webcomponents/demos/components/my-components/blink/blink.html" style="height:160px;border:none"></iframe>
+
+<span class="source"><s>[Dead](https://www.w3.org/Bugs/Public/show_bug.cgi?id=21712)</s>?</span>
+
+---
+
+hidden: true
+content_class: flexbox vcenter centered
+
+<p class="centered">
+  <code class="prettyprint custom-element-snippet">&lt;gangnam-style>&lt;/gangnam-style></code>
 </p>
 
-"[Using the HTML5 Filesystem API](http://www.amazon.com/Using-HTML5-Filesystem-Eric-Bidelman/dp/1449309453 )" - O'Reilly 
-
----
-
-class: nobackdrop nobackground yum
-content_class: flexbox vcenter centered
-
-<h2 class="auto-fadein"><img src="images/polymer/polymer-p.png" style="height:90px;box-shadow:none;margin-right:10px;">Polymer</h2><br>
-<!-- <h3 class="auto-fadein"><a href="http://polymer-project.org">polymer-project.org</a></h3> -->
+<iframe data-src="http://html5-demos.appspot.com/gangnam" style="height:170px;border:none"></iframe>
 
 ---
 
 hidden: true
-content_class: flexbox vcenter quote
+content_class: flexbox vcenter centered
 
-<blockquote>
-  Polymer is a <span class="blue">new type of library</span> for the web, built on top of <span class="platform">Web Components</span>, and designed to leverage the <span class="core">evolving web platform</span> &#8230; on <b>modern browsers</b>.
-</blockquote>
+<p class="centered">
+  <code class="prettyprint custom-element-snippet">&lt;photo-booth>&lt;/photo-booth></code>
+</p>
 
----
-
-id: polymeroneliner
-body_class: checkers
-image: images/polymer/homepage_with_chrome.png
-title: polymer-project.org
-class: nobackdrop nobackground fill highlight
-
-<div class="build">
-  <div class="calloutbox"></div>
-</div>
+<!-- <link rel="import" href="demos/components/x-photo-booth.html"> -->
+<photo-booth class="rounded"></photo-booth>
 
 ---
 
 hidden: true
-class: nobackdrop nobackground
 content_class: flexbox vcenter centered
 
-<img src="images/polymer/architecture-diagram.png" class="auto-fadein full">
+<p class="centered">
+  <code class="prettyprint custom-element-snippet" style="font-size:35px">&lt;button is="mega-button">Mega button&lt;/button></code>
+</p>
+
+<iframe data-src="http://html5-demos.appspot.com/static/webcomponents/demos/components/my-components/mega-button/megabutton.html" style="height:380px;width:380px;border:none"></iframe>
 
 ---
 
-id: whatispolymer
-body_class: whatispolymer
-title: Soooo Polymer is...
-class: nobackdrop nobackground fullviewport
+id: tab-examples
+title: Building a tab component on the web...
 
-<div class="build">
-  <h3 class="platform">Polyfills?</h3>
-  <h3 class="core">A framework?</h3>
-  <h3 class="elements">UI widgets?</h3>
+<div class="build flexbox vcenter centered">
+<img src="images/screenshots/tabs/jquery.png">
+<img src="images/screenshots/tabs/kendo.png">
+<img src="images/screenshots/tabs/yui.png">
+<img src="images/screenshots/tabs/angular.png">
+<img src="images/screenshots/tabs/sencha.png">
+<img src=""> <!-- intentional. holder to see all images together -->
 </div>
 
 ---
 
-body_class: googlecomhistory
-class: nobackdrop nobackground fullviewport googlecomtoday
-
----
-
-body_class: googlecomhistory
-class: nobackdrop nobackground fullviewport googlecomyesterday do-transition
-
----
-
-id: netscape
-#title: Understand where we came from
+body_class: readable
 class: nobackdrop nobackground
-#image: images/bgs/netscape_blank.png
+
+---
+
+class: large
 content_class: flexbox vcenter
-body_class: netscape
 
-
-<template id="formexample" style="display: none">
-  <style>body{margin:0;padding:0;}</style>
-  <form>
-    <table class="build" border="10" cellpadding="5" cellspacing="5">
-    <tr><td><label>First name:</td><td><input type="name"></td></tr>
-    <tr><td><label>Last name</td><td><input type="name"></label></td></tr>
-    <tr><td>T-shirt size</td><td>
-      <select>
-        <option>Small</option>
-        <option selected>Medium</option>
-        <option>Large</option>
-        <option>X-large</option>
-      </select>
-    </td></tr>
-    <tr><td><label>Gender</label></td><td>Male: <input type="radio"  name="gender"> Female: <input type="radio" name="gender"></td></tr>
-    <tr><td colspan="2"><input type="submit"></td></tr>
-    </table>
-  </form>
-</template>
-
-<iframe id="formframe" style="width:300px;border:none;height:240px;"></iframe>
-
-<script>
-  var clone = document.querySelector('#formexample').content.cloneNode(true);
-  var div = document.createElement('div');
-  div.appendChild(clone);
- document.querySelector('#formframe').srcdoc = div.innerHTML;
-</script>
-
-<div class="build">
-  <div class="selecty">
-    <span>
-      <img src="images/selecty.png">
-      <q class="rectangle-speech-border"><p>It looks like you're building a web page on the internet!</p></q>
-    </span>
-  </div>
-</div>
+<pre class="nohighlight">
+&lt;tabs&gt;
+  &lt;tab&gt;Tab 1&lt;/tab&gt;
+  &lt;tab&gt;Tab 2&lt;/tab&gt;
+  &lt;tab&gt;Tab 3&lt;/tab&gt;
+&lt;/tabs&gt;
+</pre>
 
 ---
 
@@ -315,146 +283,6 @@ content_class: flexbox vcenter
 
 ---
 
-title: Where are we today?
-body_class: b2tf
-#subtitle: where are we today?
-class: nobackdrop nobackground highlight
-
----
-
-hidden: true
-content_class: flexbox vcenter centered
-
-<iframe data-src="http://html5-demos.appspot.com/static/webcomponents/demos/components/my-components/blink/blink.html" style="height:160px;border:none"></iframe>
-
-<span class="source"><s>[Dead](https://www.w3.org/Bugs/Public/show_bug.cgi?id=21712)</s>?</span>
-
----
-
-hidden: true
-content_class: flexbox vcenter centered
-
-<p class="centered">
-  <code class="prettyprint custom-element-snippet">&lt;gangnam-style>&lt;/gangnam-style></code>
-</p>
-
-<iframe data-src="http://html5-demos.appspot.com/gangnam" style="height:170px;border:none"></iframe>
-
----
-
-hidden: true
-content_class: flexbox vcenter centered
-
-<p class="centered">
-  <code class="prettyprint custom-element-snippet">&lt;photo-booth>&lt;/photo-booth></code>
-</p>
-
-<!-- <link rel="import" href="demos/components/x-photo-booth.html"> -->
-<photo-booth class="rounded"></photo-booth>
-
----
-
-hidden: true
-content_class: flexbox vcenter centered
-
-<p class="centered">
-  <code class="prettyprint custom-element-snippet" style="font-size:35px">&lt;button is="mega-button">Mega button&lt;/button></code>
-</p>
-
-<iframe data-src="http://html5-demos.appspot.com/static/webcomponents/demos/components/my-components/mega-button/megabutton.html" style="height:380px;width:380px;border:none"></iframe>
-
----
-
-id: tab-examples
-title: Gut check: building a tab component on the web...
-
-<div class="build flexbox vcenter centered">
-<img src="images/screenshots/tabs/jquery.png">
-<img src="images/screenshots/tabs/kendo.png">
-<img src="images/screenshots/tabs/yui.png">
-<img src="images/screenshots/tabs/angular.png">
-<img src="images/screenshots/tabs/sencha.png">
-<img src=""> <!-- intentional. holder to see all images together -->
-</div>
-
----
-
-title: Pile on loads of JS
-body_class: insane
-class: nobackdrop nobackground highlight
-
----
-
-title: Our markup is atrocious
-body_class: readable
-class: nobackdrop nobackground highlight
-
----
-
-title: What a nightmare!
-body_class: freddykrueger
-class: nobackdrop nobackground highlight
-
----
-
-title: This is how we build web apps!
-body_class: howwebuildapps
-class: nobackdrop nobackground highlight
-#content_class: flexbox vcenter centered
-
----
-
-class: nobackdrop nobackground fullviewport
-content_class: flexbox vcenter 
-
-<h2>We're far away from where we started</h2>
-
-<img src="images/slides/balloon_scene.png" style="margin-top:2em;width:100%;">
-
----
-
-id: hangoutsexample
-title: Markup can be meaningful again
-
-<pre class="prettyprint" data-lang="html" data-run-demo2>
-&lt;hangout-module>
-  &lt;hangout-chat from="Paul, Addy" profile="118075919496626375791">
-    &lt;hangout-discussion>
-      &lt;hangout-message from="Paul" profile="profile.png" datetime="2013-07-17T12:02">
-        &lt;p>Feelin' this Web Components thing.&lt;/p>
-        &lt;p>Heard of it?&lt;/p>
-      &lt;/hangout-message>
-      &lt;hangout-message from="Addy" datetime="2013-07-17T12:12">...&lt;/hangout-message>
-      &lt;hangout-message>...&lt;/hangout-message>
-      ...
-    &lt;/hangout-discussion>
-  &lt;/hangout-chat>
-  &lt;hangout-chat>&lt;/hangout-chat>
-&lt;/hangout-module>
-</pre>
-
-<link rel="import" href="demos/components/hangouts/elements/hangouts.html">
-
-<div>
-  <button>New chat</button>
-</div>
-
-<div class="example">
-  <!-- <hangout-module from="Paul Irish" profile="118075919496626375791"></hangout-module> -->
-</div>
-
----
-
-id: spacevideo
-body_class: black
-class: nobackdrop nobackground fullviewport do-transition
-content_class: flexbox vcenter centered
-
-<video data-src="videos/universe.webm" class="fullviewport"></video>
-<audio data-src="audio/Stellardrone-Glittering.ogg" loop></audio>
-
----
-
 class: nobackdrop nobackground yum
 content_class: flexbox vcenter centered
 
@@ -463,14 +291,28 @@ content_class: flexbox vcenter centered
 
 ---
 
-id: spoiler
-image: images/slides/standardsonbottom.png
-#body_class: platform-bg
-class: nobackdrop nobackground cubespin do-transition
-content_class: flexbox vcenter
+id: polymeroneliner
+body_class: checkers
+image: images/polymer/homepage_with_chrome.png
+title: polymer-project.org
+class: nobackdrop nobackground fill highlight
 
-<h2>Spoiler <br> alert<img src="images/icons/alarm.png"></h2>
-<!-- <h3>standards on the bottom</h3> -->
+<div class="build">
+  <div class="calloutbox"></div>
+</div>
+
+---
+
+id: whatispolymer
+body_class: whatispolymer
+title: Soooo Polymer is...
+class: nobackdrop nobackground fullviewport
+
+<div class="build">
+  <h3 class="platform">Polyfills?</h3>
+  <h3 class="core">A framework?</h3>
+  <h3 class="elements">UI widgets?</h3>
+</div>
 
 ---
 
@@ -514,7 +356,7 @@ content_class: flexbox vcenter
   <h2>Shadow DOM</h2>
   <div class="browser-support-row">
     <div><img src="images/logos/browsers/safari_logo.png"></div>
-    <div><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported partial"><img src="images/logos/browsers/ff_logo.png"></div>
     <div class="supported"><img src="images/logos/chrome_logo.png"></div>
     <div class="supported"><img src="images/logos/browsers/opera_logo.png"></div>
     <div><img src="images/logos/browsers/ie10_logo.png"></div>
@@ -555,7 +397,7 @@ class: large
 
 <div class="build topmargin">
 <div>
-<h3>Everything as an <b class="elements">element</b></h3>
+<h3>Everything is an <b class="elements">element</b></h3>
 <p>HTML is cool. DOM feels good.</p>
 <br>
 </div>
@@ -731,110 +573,64 @@ content_class: flexbox vcenter quote
 
 ---
 
-id: polymer-ajax-demo
-title: Everything is an element
-subtitle: AJAX...using DOM
+id: polymer-ui-elements
+title: Polymer UI elements
+subtitle: visual elements
 body_class: elements-bg
 
-<pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
-&lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-ajax.html</span>">
-</pre>
-
-<pre class="prettyprint" style="font-size:25px;">
-<b>&lt;polymer-ajax url="http://gdata.youtube.com/feeds/api/videos/"
-              params='{"alt":"json"}'>&lt;/polymer-ajax></b>
-</pre>
-
-<pre class="prettyprint" data-lang="JS" data-run-demo>
-var ajax = document.querySelector('polymer-ajax');
-ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
-  console.log(JSON.parse(<b>this.response</b>).feed.entry);
-});
-<b>ajax.go();</b>
-</pre>
-
-<div class="component-demo">
-<link rel="import" href="polymer-all/polymer-elements/polymer-ajax/polymer-ajax.html">
-<output><div>Hit run...</div></output>
+<div class="pull-right flexbox vcenter" style="width: 40%;margin-top:-100px;">
+  <img src="images/polymer/uielements/polymer-ui-tabs.png" style="width:100%">
+  <div class="flexbox vcenter" style="height:auto;">
+  <img src="images/polymer/uielements/sidebarmenu.png">
+  <img src="images/polymer/uielements/polymer-ui-toggle-button.png" style="margin-left:20px;">
+  </div>
+  <img src="images/polymer/uielements/toolbar.png" style="width:100%">
 </div>
 
+`<polymer-ui-accordion>`
+
+`<polymer-ui-animated-pages>`
+
+`<polymer-ui-overlay>`
+
+`<polymer-ui-card>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-card/index.html)
+
+`<polymer-ui-sidebar-menu>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-sidebar-menu/index.html)
+
+`<polymer-ui-tabs>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-tabs/index.html)
+
+`<polymer-ui-toggle-button>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-toggle-button/index.html)
+
+`<polymer-ui-theme-aware>`
+
 ---
 
-hidden: true
-title: Real-world examples of polymer-ajax
-class: nobackdrop
-content_class: flexbox vcenter centered
-body_class: elements-bg
-
-<h2 style="margin-top:-100px;"><a href="http://www.chromestatus.com/features">chromestatus.com/features</a></h2>
-
-<h2 style="margin-top:50px;"><a href="http://www.polymer-project.org/build/">polymer-project.org/build/</a></h2>
-
-
----
-
-hidden: true
-id: polymer-file-demo
+id: polymer-ui-tabs-demo
 title: Everything is an element
-subtitle: read files...using DOM
+subtitle: Tabs revisited
 body_class: elements-bg
 
 <pre class="corner prettyprint">
 &lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
-&lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-file.html</span>">
+&lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-tabs.html</span>">
 </pre>
 
-<pre class="prettyprint centered" style="font-size:25px;">
-&lt;polymer-file <b data-tooltip="'dataurl', 'arraybuffer', 'binarystring', 'text'">readas</b><b>="dataurl"</b>>&lt;/polymer-file>
+<pre class="prettyprint" style="font-size:25px;" data-lang="HTML">
+&lt;polymer-ui-tabs selected="0"&gt;
+  &lt;span&gt;Home&lt;/span&gt;
+  &lt;span&gt;About&lt;/span&gt;
+  &lt;span&gt;Contact&lt;/span&gt;
+&lt;/polymer-ui-tabs&gt;
 </pre>
-
-<pre class="prettyprint" data-lang="JS" data-run-demo>
-var pFile = document.querySelector('polymer-file');
-
-pFile.addEventListener(<b>'polymer-result'</b>, function(e) {
-  console.log(<b>this.result</b>);
-});
-
-<b>pFile.blob = new Blob(['abc'], {type: 'text/plain'});</b> // Set the file to read
-
-<b>pFile.read();</b>
-</pre>
-
-<div class="component-demo">
-<!-- <link rel="import" href="polymer-all/polymer-elements/polymer-file/polymer-file.html"> -->
-<output><div>Hit run...</div></output>
-</div>
-
----
-
-id: polymer-flex-demo
-title: Everything is an element
-subtitle: flexbox...using DOM
-body_class: elements-bg
-
-<pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
-&lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-flex-layout.html</span>">
-</pre>
-
-<pre class="prettyprint" data-lang="HTML">
-&lt;polymer-flex-layout <b data-action="vertical">vertical</b> <b>iscontainer</b>>
-  &lt;div>Header&lt;/div>
-  &lt;div <b data-action="flex">flex</b>>Body&lt;/div>
-  &lt;div>Footer&lt;/div>
-&lt;/polymer-flex-layout>
-</pre>
-
 
 <div class="component-demo" style="height:100%">
-<link rel="import" href="polymer-all/polymer-elements/polymer-flex-layout/polymer-flex-layout.html">
+<link rel="import" href="bower_components/polymer-ui-tabs/polymer-ui-tabs.html">
 <output>
-  <polymer-flex-layout vertical iscontainer title="Click me to add children">
-    <div>Header</div>
-    <div flex>Body</div>
-    <div>Footer</div>
-  </polymer-flex-layout>
+  <polymer-ui-tabs selected="0">
+    <span>Home</span>
+    <span>About</span>
+    <span>Contact</span>
+  </polymer-ui-tabs>
 </output>
 
 </div>
@@ -886,57 +682,113 @@ content_class: columns-2
 
 ---
 
-id: polymer-ui-elements
-title: Polymer UI elements
-subtitle: visual elements
+id: polymer-flex-demo
+title: Everything is an element
+subtitle: flexbox...using DOM
 body_class: elements-bg
 
-<div class="pull-right flexbox vcenter" style="width: 40%;margin-top:-100px;">
-  <img src="images/polymer/uielements/polymer-ui-tabs.png" style="width:100%">
-  <div class="flexbox vcenter" style="height:auto;">
-  <img src="images/polymer/uielements/sidebarmenu.png">
-  <img src="images/polymer/uielements/polymer-ui-toggle-button.png" style="margin-left:20px;">
-  </div>
-  <img src="images/polymer/uielements/toolbar.png" style="width:100%">
+<pre class="corner prettyprint">
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
+&lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-flex-layout.html</span>">
+</pre>
+
+<pre class="prettyprint" data-lang="HTML">
+&lt;polymer-flex-layout <b data-action="vertical">vertical</b> <b>iscontainer</b>>
+  &lt;div>Header&lt;/div>
+  &lt;div <b data-action="flex">flex</b>>Body&lt;/div>
+  &lt;div>Footer&lt;/div>
+&lt;/polymer-flex-layout>
+</pre>
+
+
+<div class="component-demo" style="height:100%">
+<link rel="import" href="bower_components/polymer-flex-layout/polymer-flex-layout.html">
+<output>
+  <polymer-flex-layout vertical iscontainer title="Click me to add children">
+    <div>Header</div>
+    <div flex>Body</div>
+    <div>Footer</div>
+  </polymer-flex-layout>
+</output>
+
 </div>
 
-`<polymer-ui-accordion>`
+---
 
-`<polymer-ui-animated-pages>`
+id: polymer-ajax-demo
+title: Everything is an element
+subtitle: AJAX...using DOM
+body_class: elements-bg
 
-`<polymer-ui-overlay>`
+<pre class="corner prettyprint">
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
+&lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-ajax.html</span>">
+</pre>
 
-`<polymer-ui-card>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-card/index.html)
+<pre class="prettyprint" style="font-size:25px;">
+<b>&lt;polymer-ajax url="http://gdata.youtube.com/feeds/api/videos/"
+              params='{"alt":"json"}'>&lt;/polymer-ajax></b>
+</pre>
 
-`<polymer-ui-sidebar-menu>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-sidebar-menu/index.html)
+<pre class="prettyprint" data-lang="JS" data-run-demo>
+var ajax = document.querySelector('polymer-ajax');
+ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
+  console.log(JSON.parse(<b>this.response</b>).feed.entry);
+});
+<b>ajax.go();</b>
+</pre>
 
-`<polymer-ui-tabs>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-tabs/index.html)
-
-`<polymer-ui-toggle-button>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-toggle-button/index.html)
-
-`<polymer-ui-theme-aware>`
-
-...
-
-<div class="build centered bold"><span><b class="green">Reusability</b>...the non-visual polymer-elements are used to implement these!</span></div>
+<div class="component-demo">
+<link rel="import" href="bower_components/polymer-ajax/polymer-ajax.html">
+<output><div>Hit run...</div></output>
+</div>
 
 ---
 
 hidden: true
-class: nobackdrop nobackground
-content_class: flexbox vcenter quote
+title: Real-world examples of polymer-ajax
+class: nobackdrop
+content_class: flexbox vcenter centered
+body_class: elements-bg
 
-<blockquote class="large">Everything is an element.</blockquote>
+<h2 style="margin-top:-100px;"><a href="http://www.chromestatus.com/features">chromestatus.com/features</a></h2>
+
+<h2 style="margin-top:50px;"><a href="http://www.polymer-project.org/build/">polymer-project.org/build/</a></h2>
+
 
 ---
 
-id: spacevideo2
-body_class: black
-class: nobackdrop nobackground fullviewport
-content_class: flexbox vcenter centered
+hidden: true
+id: polymer-file-demo
+title: Everything is an element
+subtitle: read files...using DOM
+body_class: elements-bg
 
-<video data-src="videos/universe2.webm" style="height: 100%;width:initial !important;"></video>
-<audio data-src="audio/Stellardrone-Glittering.ogg" loop></audio>
+<pre class="corner prettyprint">
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
+&lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-file.html</span>">
+</pre>
+
+<pre class="prettyprint centered" style="font-size:25px;">
+&lt;polymer-file <b data-tooltip="'dataurl', 'arraybuffer', 'binarystring', 'text'">readas</b><b>="dataurl"</b>>&lt;/polymer-file>
+</pre>
+
+<pre class="prettyprint" data-lang="JS" data-run-demo>
+var pFile = document.querySelector('polymer-file');
+
+pFile.addEventListener(<b>'polymer-result'</b>, function(e) {
+  console.log(<b>this.result</b>);
+});
+
+<b>pFile.blob = new Blob(['abc'], {type: 'text/plain'});</b> // Set the file to read
+
+<b>pFile.read();</b>
+</pre>
+
+<div class="component-demo">
+<!-- <link rel="import" href="bower_components/polymer-file/polymer-file.html"> -->
+<output><div>Hit run...</div></output>
+</div>
 
 ---
 
@@ -1374,57 +1226,3 @@ content_class: flexbox vcenter centered
 </div>
 
 ---
-
-hidden: true
-title: Why <i>you</i> should be excited
-build_lists: true
-
-- Developer <span class="red"><b>productivity</b></span>
-    - It's <b>DOM</b>. It's <b>JS</b>. It's <b>CSS</b> &rarr; no new APIs to learn!
-    - say what you mean &rarr; readability
-- <b><span class="green">Re-usability</span></b> at last
-    - don't reinvent the wheel
-    - easy interop with other frameworks
-- Foster good software engineering <span class="blue"><b>paradigms</b></span> on web (OOP)
-
----
-
-class: do-transition large
-content_class: flexbox vcenter quote
-
-<blockquote>
-  A Polymer is a large molecule composed of many repeated subunits, known as monomers.
-</blockquote>
-
-<span class="source"><a href="http://en.wikipedia.org/wiki/Polymer">wikipedia.org/wiki/Polymer</a></span>
-
----
-
-class: do-transition large
-content_class: flexbox vcenter quote
-
-<blockquote>
-  A <b>Polymer</b> is a large <b>molecule</b> composed of many <b>repeated subunits</b>, known as <b>monomers</b>.
-</blockquote>
-
-<span class="source"><a href="http://en.wikipedia.org/wiki/Polymer">wikipedia.org/wiki/Polymer</a></span>
-
----
-
-content_class: flexbox vcenter quote
-
-<blockquote>
-  A <b class="blue">web app</b> is a large <b class="blue">collection of web components</b> composed of many <b class="blue">subelements</b>, known as <b class="blue">custom elements</b>.
-</blockquote>
-
-<span class="source">-me</span>
-
----
-
-id: thumbsup
-class: large
-content_class: flexbox vcenter centered
-
-<div class="build">
-  <h2><i class="icon icon-thumbs-up"></i></h2>
-</div>
