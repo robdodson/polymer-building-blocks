@@ -5,7 +5,7 @@ Building a tabs components
 Loads of JS
 Markup is atrocious
 
-select
+<select>
   - default UI
   - configurable attributes
   - changing appearance/behavior with attributes
@@ -48,3 +48,13 @@ polymer-project.org animation
 weird empty slide***
 Thank You!
 
+---
+
+Polymer — Building blocks for the Web
+Author Intro
+
+Everything is an element
+
+Using elements
+Creating elements
+Platform

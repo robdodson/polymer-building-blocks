@@ -19,56 +19,6 @@ id: who
 
 ---
 
-title: Where are we today?
-body_class: b2tf
-#subtitle: where are we today?
-class: nobackdrop nobackground highlight
-
----
-
-hidden: true
-content_class: flexbox vcenter centered
-
-<iframe data-src="http://html5-demos.appspot.com/static/webcomponents/demos/components/my-components/blink/blink.html" style="height:160px;border:none"></iframe>
-
-<span class="source"><s>[Dead](https://www.w3.org/Bugs/Public/show_bug.cgi?id=21712)</s>?</span>
-
----
-
-hidden: true
-content_class: flexbox vcenter centered
-
-<p class="centered">
-  <code class="prettyprint custom-element-snippet">&lt;gangnam-style>&lt;/gangnam-style></code>
-</p>
-
-<iframe data-src="http://html5-demos.appspot.com/gangnam" style="height:170px;border:none"></iframe>
-
----
-
-hidden: true
-content_class: flexbox vcenter centered
-
-<p class="centered">
-  <code class="prettyprint custom-element-snippet">&lt;photo-booth>&lt;/photo-booth></code>
-</p>
-
-<!-- <link rel="import" href="demos/components/x-photo-booth.html"> -->
-<photo-booth class="rounded"></photo-booth>
-
----
-
-hidden: true
-content_class: flexbox vcenter centered
-
-<p class="centered">
-  <code class="prettyprint custom-element-snippet" style="font-size:35px">&lt;button is="mega-button">Mega button&lt;/button></code>
-</p>
-
-<iframe data-src="http://html5-demos.appspot.com/static/webcomponents/demos/components/my-components/mega-button/megabutton.html" style="height:380px;width:380px;border:none"></iframe>
-
----
-
 id: tab-examples
 title: Building a tab component on the web...
 
@@ -118,13 +68,6 @@ content_class: flexbox vcenter
   <option>Large</option>
 </select>
 
-<div class="selecty auto-fadein">
-  <span>
-    <img src="images/selecty.png">
-    <q class="rectangle-speech-border"><p>I give my children a default UI!</p></q>
-  </span>
-</div>
-
 ---
 
 class: large
@@ -145,13 +88,6 @@ content_class: flexbox vcenter
   <option disabled>Large</option>
   <option selected>XX-large</option>
 </select>
-
-<div class="selecty auto-fadein">
-  <span>
-    <img src="images/selecty.png">
-    <q class="rectangle-speech-border"><p>Elements are configured using attributes, not script.</p></q>
-  </span>
-</div>
 
 ---
 
@@ -177,13 +113,6 @@ content_class: flexbox vcenter
   <option>Ti</option>
   <option>Do</option>
 </select>
-
-<div class="selecty auto-fadein">
-  <span>
-    <img src="images/selecty.png">
-    <q class="rectangle-speech-border"><p>Attributes even change how users interact with me</p></q>
-  </span>
-</div>
 
 ---
 
@@ -211,13 +140,6 @@ content_class: flexbox vcenter
   </optgroup>
 </select>
 
-<div class="selecty auto-fadein">
-  <span>
-    <img src="images/selecty.png">
-    <q class="rectangle-speech-border"><p>Attributes can effect my UI.</p></q>
-  </span>
-</div>
-
 ---
 
 class: large
@@ -238,13 +160,6 @@ content_class: flexbox vcenter
   <option>Large</option>
 </select>
 
-<div class="selecty auto-fadein">
-  <span>
-    <img src="images/selecty.png">
-    <q class="rectangle-speech-border"><p> I'm picky! I only <s>allow</s> accept certain elements as children.</p></q>
-  </span>
-</div>
-
 ---
 
 class: large
@@ -259,27 +174,6 @@ content_class: flexbox vcenter
   &lt;/select>
 <b>&lt;/form></b>
 </pre>
-
-<div class="selecty auto-fadein">
-  <span>
-    <img src="images/selecty.png">
-    <q class="rectangle-speech-border"><p>In other contexts, I take on additional responsibilities.</p></q>
-  </span>
-</div>
-
----
-
-class: large
-content_class: flexbox vcenter
-
-<img src="images/screenshots/HTMLSelectElement.png" class="full">
-
-<div class="selecty auto-fadein">
-  <span>
-    <img src="images/selecty.png">
-    <q class="rectangle-speech-border"><p>My DOM exposes <b>properties/methods</b> to JS that don't make sense as markup. I also fire <b>events</b> when interesting things happen.</p></q>
-  </span>
-</div>
 
 ---
 
@@ -346,7 +240,7 @@ content_class: flexbox vcenter
   <div class="browser-support-row">
     <div><img src="images/logos/browsers/safari_logo.png"></div>
     <div class="supported partial"><img src="images/logos/browsers/ff_logo.png"></div>
-    <div class="supported partial"><img src="images/logos/chrome_logo.png"></div>
+    <div class="supported"><img src="images/logos/chrome_logo.png"></div>
     <div><img src="images/logos/browsers/opera_logo.png"></div>
     <div><img src="images/logos/browsers/ie10_logo.png"></div>
   </div>
@@ -386,42 +280,6 @@ title: What is it?
     <p>comprehensive set (in progress)</p>
   </div>
 </div>
-
----
-
-id: philosophy
-title: Philosophy &amp; Goals
-build_lists: true
-class: large
-#content_class: flexbox vcenter
-
-<div class="build topmargin">
-<div>
-<h3>Everything is an <b class="elements">element</b></h3>
-<p>HTML is cool. DOM feels good.</p>
-<br>
-</div>
-<div>
-<h3><b class="core">Eliminate boilerplate</b></h3>
-<p>Remove tediousness of building web component-based apps</p>
-</div>
-<div>
-  <h3>Utilize the modern web <b class="platform">platform</b></h3>
-  <p>Support modern browsers</p>
-  <br>
-</div>
-</div>
-
----
-
-hidden: true
-title: Polymer <label class="platform">platform <i class="icon-cogs platform"></i></label>
-class: nobackdrop nobackground segue platform
-#content_class: flexbox vcenter
-keep_content: true
-
-<div class="overlay top"></div>
-<div class="overlay bottom"></div>
 
 ---
 
@@ -555,7 +413,14 @@ Reuse others' components:
 
 ---
 
-title: Polymer <label class="elements">elements <i class="icon-puzzle-piece elements"></i></label>
+class: nobackdrop nobackground
+content_class: flexbox vcenter quote
+
+<blockquote class="large">Everything is an element.</blockquote>
+
+---
+
+title: Using <label class="elements">elements <i class="icon-puzzle-piece elements"></i></label>
 subtitle: <a href="http://www.polymer-project.org/docs/elements/" class="nounderline">polymer-project.org/docs/elements/</a>
 class: nobackdrop nobackground segue elements
 #content_class: flexbox vcenter
@@ -563,13 +428,6 @@ keep_content: true
 
 <div class="overlay top"></div>
 <div class="overlay bottom"></div>
-
----
-
-class: nobackdrop nobackground
-content_class: flexbox vcenter quote
-
-<blockquote class="large">Everything is an element.</blockquote>
 
 ---
 
@@ -792,7 +650,7 @@ pFile.addEventListener(<b>'polymer-result'</b>, function(e) {
 
 ---
 
-title: Polymer <label class="core">core <i class="icon-beaker core"></i></label>
+title: Creating <label class="core">elements <i class="icon-beaker core"></i></label>
 subtitle: <a href="http://www.polymer-project.org/polymer.html" class="nounderline">polymer-project.org/polymer.html</a>
 class: nobackdrop nobackground segue core
 #content_class: flexbox vcenter
@@ -800,13 +658,6 @@ keep_content: true
 
 <div class="overlay top"></div>
 <div class="overlay bottom"></div>
-
----
-
-class: nobackdrop nobackground
-content_class: flexbox vcenter quote
-
-<blockquote class="large">Eliminate boilerplate.</blockquote>
 
 ---
 
@@ -827,57 +678,6 @@ build_lists: true
 <div class="build centered bold topmargin blue">
 <span style="font-size:50px;">Be declarative. Write less code.</span>
 </div>
-
----
-
-title: Custom elements without Polymer :(
-body_class: platform-bg
-
-    <template id="template">
-      <style>input { color: orange; }</style>
-      <input type="text">
-    </template>
-
-    <script>
-    var proto = Object.create(HTMLElement.prototype, {
-      createdCallback: {
-        value: function() {
-          var t = document.querySelector('#template');
-          this.createShadowRoot().appendChild(document.importNode(t.content, true));
-        }
-      }
-    });
-
-    var MyInput = document.register('my-input', {prototype: proto});
-    </script>
-
----
-
-title: Custom elements with Polymer :)
-subtitle: declarative custom elements
-body_class: core-bg
-
-<pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
-</pre>
-
-1. Create an element definition
-
-    <pre class="prettyprint" data-lang="HTML">
-    &lt;polymer-element <b>name="my-input"</b> <b>constructor="MyInput"</b> <b data-tooltip="Simple elements that don't call Polymer()">noscript</b>>
-      &lt;!-- Note: Polymer creates Shadow DOM from the first &lt;template>. -->
-      <b>&lt;template>
-        &lt;style>input { color: orange; }&lt;/style>
-        &lt;input type="text">
-      &lt;/template></b>
-    &lt;/polymer-element>
-    </pre>
-
-- Instantiate - **declare** it, **create DOM**, or **use `new`** in JS
-
-        <my-input></my-input>
-        // var myInput = document.createElement('my-input');
-        // var myInput = new MyInput();
 
 ---
 
@@ -1209,11 +1009,13 @@ Initially hide elements using `polymer-veiled` class or manage a list in JS:
 
 ---
 
-title: Polymer is many things!
-class: nobackdrop nobackground
-content_class: flexbox vcenter centered
+title: Polymer <label class="platform">platform <i class="icon-cogs platform"></i></label>
+class: nobackdrop nobackground segue platform
+#content_class: flexbox vcenter
+keep_content: true
 
-<img src="images/polymer/architecture-diagram.png" class="auto-fadein full">
+<div class="overlay top"></div>
+<div class="overlay bottom"></div>
 
 ---
 
