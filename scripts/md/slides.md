@@ -19,6 +19,19 @@ id: who
 
 ---
 
+class: large
+content_class: flexbox vcenter
+
+<pre class="nohighlight">
+&lt;tabs&gt;
+  &lt;tab&gt;Tab 1&lt;/tab&gt;
+  &lt;tab&gt;Tab 2&lt;/tab&gt;
+  &lt;tab&gt;Tab 3&lt;/tab&gt;
+&lt;/tabs&gt;
+</pre>
+
+---
+
 id: tab-examples
 title: Building a tab component on the web...
 
@@ -35,19 +48,6 @@ title: Building a tab component on the web...
 
 body_class: readable
 class: nobackdrop nobackground
-
----
-
-class: large
-content_class: flexbox vcenter
-
-<pre class="nohighlight">
-&lt;tabs&gt;
-  &lt;tab&gt;Tab 1&lt;/tab&gt;
-  &lt;tab&gt;Tab 2&lt;/tab&gt;
-  &lt;tab&gt;Tab 3&lt;/tab&gt;
-&lt;/tabs&gt;
-</pre>
 
 ---
 
@@ -177,6 +177,30 @@ content_class: flexbox vcenter
 
 ---
 
+content_class: flexbox vleft
+
+<h2 style="margin-top: -100px; margin-bottom: 50px;">
+  When I work with elements...
+</h2>
+<h3>Use components which are fast by default</h3>
+<h3>Lower the barrier of entry for new developers</h3>
+<h3>Reduce the amount of code I have to write</h3>
+
+---
+
+class: large
+content_class: flexbox vcenter
+
+<pre class="nohighlight">
+&lt;tabs&gt;
+  &lt;tab&gt;Tab 1&lt;/tab&gt;
+  &lt;tab&gt;Tab 2&lt;/tab&gt;
+  &lt;tab&gt;Tab 3&lt;/tab&gt;
+&lt;/tabs&gt;
+</pre>
+
+---
+
 class: nobackdrop nobackground yum
 content_class: flexbox vcenter centered
 
@@ -185,6 +209,7 @@ content_class: flexbox vcenter centered
 
 ---
 
+hidden: true
 id: polymeroneliner
 body_class: checkers
 image: images/polymer/homepage_with_chrome.png

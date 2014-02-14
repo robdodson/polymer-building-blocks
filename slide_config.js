@@ -2,7 +2,7 @@ var SLIDE_CONFIG = {
   // Slide settings
   settings: {
     title: 'Polymer',
-    subtitle: 'declarative, encapsulated, reusable components',
+    subtitle: 'Building blocks for the Web',
     eventInfo: {
       title: 'Yahoo',
       date: 'Mar 05, 2014'
