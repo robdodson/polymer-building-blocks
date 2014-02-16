@@ -441,7 +441,7 @@ SlideDeck.prototype.addFonts_ = function(fonts) {
  */
 SlideDeck.prototype.buildNextItem_ = function() {
   var slide = this.slides[this.curSlide_];
-  var toBuild = slide.querySelector('.to-build');
+  var toBuild = slide.querySelectorAll('.to-build');
   var built = slide.querySelector('.build-current');
 
   if (built) {
@@ -451,7 +451,7 @@ SlideDeck.prototype.buildNextItem_ = function() {
     }
   }
 
-  if (!toBuild) {
+  if (!toBuild.length) {
     var items = slide.querySelectorAll('.build-fade');
     for (var j = 0, item; item = items[j]; j++) {
       item.classList.remove('build-fade');
@@ -459,8 +459,25 @@ SlideDeck.prototype.buildNextItem_ = function() {
     return false;
   }
 
-  toBuild.classList.remove('to-build');
-  toBuild.classList.add('build-current');
+  toBuild = Array.prototype.slice.call(toBuild);
+  var segments = toBuild.sort(function(a, b) {
+    var indexA = a.getAttribute('data-build-index');
+    var indexB = b.getAttribute('data-build-index');
+
+    if (!indexA) {
+      return 0;
+    }
+
+    if(indexA > indexB) {
+      return 1;
+    } else {
+      return -1;
+    }
+
+  });
+
+  segments[0].classList.remove('to-build');
+  segments[0].classList.add('build-current');
 
   return true;
 };
