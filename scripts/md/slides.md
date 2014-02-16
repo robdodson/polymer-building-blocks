@@ -180,11 +180,11 @@ content_class: flexbox vcenter
 content_class: flexbox vleft
 
 <h2 style="margin-top: -100px; margin-bottom: 50px;">
-  When I work with elements...
+  Benefits of working with elements...
 </h2>
-<h3>Use components which are fast by default</h3>
-<h3>Lower the barrier of entry for new developers</h3>
-<h3>Reduce the amount of code I have to write</h3>
+<h3>Lowers the barrier of entry for new developers</h3>
+<h3>Reduces the amount of code in my app</h3>
+<h3>Elements are fast by default</h3>
 
 ---
 
@@ -204,8 +204,7 @@ content_class: flexbox vcenter
 class: nobackdrop nobackground yum
 content_class: flexbox vcenter centered
 
-<h2><img src="images/polymer/polymer-p.png" style="height:90px;box-shadow:none;margin-right:10px;">Polymer</h2><br>
-<!-- <h3 class="auto-fadein"><a href="http://polymer-project.org">polymer-project.org</a></h3> -->
+<img src="images/logos/lockup.svg" style="height:180px;">
 
 ---
 
@@ -222,16 +221,11 @@ class: nobackdrop nobackground fill highlight
 
 ---
 
-id: whatispolymer
-body_class: whatispolymer
-title: Soooo Polymer is...
-class: nobackdrop nobackground fullviewport
+content_class: flexbox vleft
 
-<div class="build">
-  <h3 class="platform">Polyfills?</h3>
-  <h3 class="core">A framework?</h3>
-  <h3 class="elements">UI widgets?</h3>
-</div>
+<h2 style="font-size: 60px; line-height: 1.25;">Polymer is a library that uses the latest <strong>web technologies</strong> to let you create <strong>custom HTML elements</strong>.</h2>
+
+<!-- font-size: 42px; width: 52%; line-height: 1.3; -->
 
 ---
 
@@ -286,20 +280,22 @@ content_class: flexbox vcenter
 
 title: What is it?
 
-<span class="pull-right auto-fadein"><img src="images/polymer/architecture-diagram.png" style="height:450px"></span>
+<span class="pull-right auto-fadein">
+  <img src="images/polymer/architecture-3d-1.png" style="height:450px">
+</span>
 
 <div class="build">
-  <div>
+  <div data-build-index="3">
     <div class="platform bold">Polyfill libraries</div>
     <br>
     <p>Shadow DOM, Custom Elements, HTML Imports, Pointer Events...</p>
   </div>
-  <div class="topmargin">
+  <div class="topmargin" data-build-index="2">
     <div class="core bold">Sugaring layer</div>
     <br>
     <p>expresses opinionated way to use web component concepts together</p>
   </div>
-  <div class="topmargin">
+  <div class="topmargin" data-build-index="1">
     <div class="elements bold">UI Components</div>
     <br>
     <p>comprehensive set (in progress)</p>
