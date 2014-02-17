@@ -9,4 +9,4 @@ How to reason about it:
 
 Using elements
 Creating your own elements
-Working with the platform
+Working with the platform -- is this one of our goals? should it be demphasized?

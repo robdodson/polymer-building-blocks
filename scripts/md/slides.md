@@ -208,19 +208,6 @@ content_class: flexbox vcenter centered
 
 ---
 
-hidden: true
-id: polymeroneliner
-body_class: checkers
-image: images/polymer/homepage_with_chrome.png
-title: polymer-project.org
-class: nobackdrop nobackground fill highlight
-
-<div class="build">
-  <div class="calloutbox"></div>
-</div>
-
----
-
 content_class: flexbox vleft
 
 <h2 style="font-size: 60px; line-height: 1.25;">Polymer is a library that uses the latest <strong>web technologies</strong> to let you create <strong>custom HTML elements</strong>.</h2>
@@ -304,140 +291,35 @@ title: How does it work?
 
 ---
 
-hidden: true
-class: platform nobackdrop nobackground
-content_class: flexbox vcenter quote
-
-<blockquote>Utilize the <b>modern</b> web platform.</blockquote>
-
----
-
-hidden: true
-class: large
-content_class: flexbox vcenter centered
-
-<h2 class="auto-fadein">1st-class support for spec features...</h2>
-
----
-
-hidden: true
-title: Lifecycle callbacks <label class="spec">Custom Elements</label>
-body_class: platform-bg
-polymer_link: http://www.polymer-project.org/polymer.html#lifecyclemethods
-
-Support for the [lifecycle methods](http://www.polymer-project.org/polymer.html#lifecyclemethods)...but shorter names!
-
-<pre class="prettyprint" data-lang="HTML">
-Polymer('my-input', {
-  ready: function() { ... }, // Polymer addition for when element is fully initialized.
-  <b>created: function() { ... },</b>
-  <b>enteredView: function() { ... },</b>
-  <b>leftView: function() { ... },</b>
-  <b>attributeChanged: function(attrName, oldVal, newVal) { ... }</b>
-});
-</pre>
-
-Use cases:
-
-- perform setup/teardown work
-- notification when element is inserted/removed from page
-
----
-
-hidden: true
-id: insertion-point-api
-title: Insertion points <label class="spec">Shadow DOM</label>
-subtitle: define an internal structure
-body_class: platform-bg
-
-<pre class="prettyprint" data-lang="my-tabs.html">
-&lt;polymer-element name="my-tabs" noscript>
-  &lt;template>
-    &lt;style>...&lt;/style>
-    &lt;header>
-      <b>&lt;content select="h2">&lt;/content></b>
-    &lt;/header>
-    <b>&lt;content select="section">&lt;/content></b>
-  &lt;/template>
-&lt;/polymer-element>
-</pre>
-
-<pre class="prettyprint" data-lang="html" data-run-demo="http://ebidel.github.io/polymer-experiments/polymer-and-angular/together/">
-&lt;link rel="import" href="my-tabs.html">
-<b>&lt;my-tabs></b>
-  &lt;h2>Title&lt;/h2>
-  &lt;section>content&lt;/section>
-  &lt;h2>Title 2&lt;/h2>
-  ...
-<b>&lt;/my-tabs></b>
-</pre>
-
-<div class="build" style="position: absolute;bottom:20px;right:160px;">
-<img src="images/screenshots/tabs.png" style="height: 300px;
-width: auto;
-box-shadow: 0 0 5px #999;">
-</div>
-
----
-
-hidden: true
-title: Scoped styling <label class="spec">Shadow DOM</label>
-body_class: platform-bg
-polymer_link: http://www.polymer-project.org/articles/styling-elements.html
-
-Support for styling features (scoped styles, `applyAuthorStyles`, etc.)
-
-<pre class="prettyprint" data-lang="HTML">
-&lt;polymer-element name="my-element">
-  &lt;template>
-    &lt;style>...&lt;/style> &lt;!-- Styles are scoped to the element -->
-  &lt;/template>
-  &lt;script>
-    Polymer('my-element', {
-      <b>applyAuthorStyles: true,</b>
-      <b>resetStyleInheritance: false</b>
-    });
-  &lt;/script>
-&lt;/polymer-element>
-</pre>
-
-- Polymer attempts to polyfill most Shadow DOM style features
-
----
-
-hidden: true
-title: Bundle &amp; deliver CSS/HTML/JS <label class="spec">HTML Imports</label>
-body_class: platform-bg
-
-Reuse others' components:
-
-<pre class="prettyprint" data-lang="awesome-menu.html">
-<b>&lt;link rel="import" href="x-toolbar.html">
-&lt;link rel="import" href="menu-item.html"></b>
-
-&lt;polymer-element name="awesome-menu">
-  &lt;template>
-    <b>&lt;x-toolbar responsive>
-      &lt;menu-item src="images/do.png" selected>Do&lt;/menu-item>
-      &lt;menu-item src="images/re.png">Re&lt;/menu-item>
-      &lt;menu-item src="images/mi.png">Mi&lt;/menu-item>
-    &lt;x-toolbar></b>
-  &lt;/template>
-  ...
-&lt;/polymer-element>
-</pre>
-
-<pre class="prettyprint" data-lang="User's page">
-&lt;link rel="import" href="awesome-menu.html">
-&lt;awesome-menu>&lt;/awesome-menu>
-</pre>
-
----
-
 class: nobackdrop nobackground
 content_class: flexbox vcenter quote
 
 <blockquote class="large">Everything is an element.</blockquote>
+
+---
+
+id: philosophy
+title: Philosophy &amp; Goals
+build_lists: true
+class: large
+#content_class: flexbox vcenter
+
+<div class="build topmargin">
+<div>
+<h3>Using <b class="elements">elements</b></h3>
+<p>HTML is cool. DOM feels good.</p>
+<br>
+</div>
+<div>
+<h3><b class="core">Creating elements</b></h3>
+<p>Remove tediousness of building web component-based apps</p>
+</div>
+<div>
+  <h3>Utilize the modern web <b class="platform">platform</b></h3>
+  <p>Support modern browsers</p>
+  <br>
+</div>
+</div>
 
 ---
 
@@ -624,53 +506,6 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 ---
 
-hidden: true
-title: Real-world examples of polymer-ajax
-class: nobackdrop
-content_class: flexbox vcenter centered
-body_class: elements-bg
-
-<h2 style="margin-top:-100px;"><a href="http://www.chromestatus.com/features">chromestatus.com/features</a></h2>
-
-<h2 style="margin-top:50px;"><a href="http://www.polymer-project.org/build/">polymer-project.org/build/</a></h2>
-
-
----
-
-hidden: true
-id: polymer-file-demo
-title: Everything is an element
-subtitle: read files...using DOM
-body_class: elements-bg
-
-<pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
-&lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-file.html</span>">
-</pre>
-
-<pre class="prettyprint centered" style="font-size:25px;">
-&lt;polymer-file <b data-tooltip="'dataurl', 'arraybuffer', 'binarystring', 'text'">readas</b><b>="dataurl"</b>>&lt;/polymer-file>
-</pre>
-
-<pre class="prettyprint" data-lang="JS" data-run-demo>
-var pFile = document.querySelector('polymer-file');
-
-pFile.addEventListener(<b>'polymer-result'</b>, function(e) {
-  console.log(<b>this.result</b>);
-});
-
-<b>pFile.blob = new Blob(['abc'], {type: 'text/plain'});</b> // Set the file to read
-
-<b>pFile.read();</b>
-</pre>
-
-<div class="component-demo">
-<!-- <link rel="import" href="bower_components/polymer-file/polymer-file.html"> -->
-<output><div>Hit run...</div></output>
-</div>
-
----
-
 title: Creating <label class="core">elements <i class="icon-beaker core"></i></label>
 subtitle: <a href="http://www.polymer-project.org/polymer.html" class="nounderline">polymer-project.org/polymer.html</a>
 class: nobackdrop nobackground segue core
@@ -699,29 +534,6 @@ build_lists: true
 <div class="build centered bold topmargin blue">
 <span style="font-size:50px;">Be declarative. Write less code.</span>
 </div>
-
----
-
-hidden: true
-title: Default attributes
-body_class: core-bg
-polymer_link: http://www.polymer-project.org/polymer.html#defaultattrs
-
-User-defined attributes are included on each instance of the element:
-
-<pre class="prettyprint" data-lang="HTML">
-&lt;polymer-element name="my-input" <b>customattr</b> <b>class="active"</b>>
-  &lt;template>...&lt;/template>
-&lt;/polymer-element>
-
-&lt;my-input>&lt;/my-input>
-</pre>
-
-Instances include your attributes: 
-
-<pre class="prettyprint centered" style="font-size:25px">
-  &lt;my-input customattr class="active">&lt;/my-input>
-</pre>
 
 ---
 
@@ -861,87 +673,6 @@ polymer_link: http://www.polymer-project.org/polymer.html#published-properties
 
 ---
 
-hidden: true
-title: Expressions
-body_class: core-bg
-polymer_link: http://www.polymer-project.org/docs/polymer/expressions.html
-
-Expressions can go anywhere `{{}}` live:
-
-    <div>Jill has {{ daughter.children.length + son.children.length }} grandchildren</div>
-
-Conditional attributes:
-
-    <input type="checkbox" checked?="{{activate}}">
-
-Dynamic classes:
-
-    <div class="{{ {active: user.selected, big: user.type == 'super'} | tokenList }}"> 
-    <!-- <div class="active big"> -->
-
----
-
-hidden: true
-title: Dynamic markup
-subtitle: additional magic for HTML <code>&lt;template></code>
-body_class: core-bg
-polymer_link: http://www.polymer-project.org/platform/template.html
-
-Conditionals:
-
-    <template if="{{ isActive }}">
-      <!-- shown if isActive property is true -->
-    </template>
-
-    <template if="{{ showDefault || users.length < 10 }}">
-      ...
-    </template>
-
-Iteration:
-
-    <template repeat="{{ user in users }}">
-      <template repeat="{{ file in user.files }}">
-        {{ user.name }} owners {{ file.name }}
-      </template>
-    </template>
-
----
-
-hidden: true
-title: Features in action 
-subtitle: data-binding / published properties
-body_class: core-bg
-
-<pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
-&lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-ajax.html</span>">
-</pre>
-
-<pre class="prettyprint" data-lang="html">
-&lt;polymer-element name="youtube-videos" attributes="query">
-  &lt;template>
-    &lt;polymer-ajax url="http://gdata.youtube.com/feeds/api/videos/" params="<b>{{params}}</b>"
-                  <b>handleAs="json"</b> <b>response="{{response}}"</b> <b>auto</b>>&lt;/polymer-ajax>
-    &lt;ul>
-      <b>&lt;template repeat="{{entry in response.feed.entry}}">
-        &lt;li>{{entry.title.$t}}&lt;/li>
-     &lt;/template></b>
-    &lt;/ul>
-  &lt;/template>
-  &lt;script>
-    Polymer('youtube-videos', {
-      ready: function() { <b>this.params = {alt: 'json', q: this.query};</b> }
-    });
-  &lt;/script>
-&lt;/polymer-element>
-</pre>
-
-<pre>
-&lt;youtube-videos query="cats">&lt;/youtube-videos>
-</pre>
-
----
-
 title: Features in action
 subtitle: responsive design...using DOM
 body_class: core-bg
@@ -972,61 +703,6 @@ body_class: core-bg
   &lt;div>...&lt;/div>
 &lt;/responsive-layout>
 </pre>
-
----
-
-hidden: true
-title: Features in action
-subtitle: $ referencing / changed watchers / declarative events
-body_class: core-bg
-
-<pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
-&lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-file.html</span>">
-</pre>
-
-<pre class="prettyprint" data-lang="html">
-&lt;polymer-element name="read-me" <b>on-click="{{onClick}}"</b>>
-  &lt;template>
-    &lt;polymer-file <b>id="file"</b> readas="arraybuffer" <b>result="{{result}}"</b>>&lt;/polymer-file>
-  &lt;/template>
-  &lt;script>
-    Polymer('read-me', {
-      <b>resultChanged: function() {</b>
-       console.log(this.result);
-      <b>},</b>
-      <b>onClick: function(e, detail, sender) {
-       this.$.file.read();
-     }</b>
-    });
-  &lt;/script>
-&lt;/polymer-element>
-</pre>
-
-<pre class="prettyprint" data-lang="User's JS">
-var el = document.createElement('read-me');
-<b>el.blob = new Blob(['abc'], {type: 'text/plain'});</b>
-</pre>
-
----
-
-hidden: true
-title: FOUC prevention
-body_class: core-bg
-
-Initially hide elements using `polymer-veiled` class or manage a list in JS:
-
-1. Add `polymer-veiled` class:
-
-        <x-foo class="polymer-veiled">If you see me, elements are upgraded!</x-foo>
-        <div class="polymer-veiled"></div>
-
-2. `Polymer.veiledElements = ['x-foo', 'div'];`
-
-- - - -
-
-- `polymer-unveiled` swapped in at `WebComponentsReady` event &rarr; elements fade-in.
-- **Note:** `polymer-veiled` is added to `<body>` by default.
 
 ---
 

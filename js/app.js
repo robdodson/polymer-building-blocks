@@ -300,15 +300,15 @@ function initDemos() {
   }
 
 (function() {
-  var slide = $('#polymeroneliner');
+  // var slide = $('#polymeroneliner');
   
-  slide.listen('click', function(e) {
-    this.classList.toggle('active');
-  });
+  // slide.listen('click', function(e) {
+  //   this.classList.toggle('active');
+  // });
 
-  slide.listen('slideleave', function(e) {
-    this.classList.remove('active');
-  });
+  // slide.listen('slideleave', function(e) {
+  //   this.classList.remove('active');
+  // });
 })();
 
 
@@ -397,22 +397,22 @@ function initDemos() {
 })();
 
 (function() {
-  var demo = $('#polymer-file-demo');
-  var output = demo.querySelector('output');
+  // var demo = $('#polymer-file-demo');
+  // var output = demo.querySelector('output');
 
-  demo.querySelector('.snippet-demo').listen('click', function(e) {
-    e.preventDefault();
+  // demo.querySelector('.snippet-demo').listen('click', function(e) {
+  //   e.preventDefault();
 
-    output.innerHTML = '';
+  //   output.innerHTML = '';
 
-    var file = document.createElement('polymer-file');
-    file.auto = true;
-    file.readas = 'dataurl';
-    file.blob = new Blob(['abc'], {type: 'text/plain'});
-    file.addEventListener('polymer-result', function(e) {
-      output.innerHTML = this.result.link(this.result);
-    });
-  });
+  //   var file = document.createElement('polymer-file');
+  //   file.auto = true;
+  //   file.readas = 'dataurl';
+  //   file.blob = new Blob(['abc'], {type: 'text/plain'});
+  //   file.addEventListener('polymer-result', function(e) {
+  //     output.innerHTML = this.result.link(this.result);
+  //   });
+  // });
 })();
 
 (function() {
