@@ -278,27 +278,27 @@ content_class: flexbox vcenter
 
 ---
 
-title: What is it?
+title: How does it work?
 
 <span class="pull-right auto-fadein">
-  <img src="images/polymer/architecture-3d-1.png" style="height:450px">
+  <img src="images/polymer/architecture-3d-1.png" style="height:575px; margin-left: 20px; margin-top: -50px;">
 </span>
 
 <div class="build">
   <div data-build-index="3">
-    <div class="platform bold">Polyfill libraries</div>
+    <div class="elements bold">Elements</div>
     <br>
-    <p>Shadow DOM, Custom Elements, HTML Imports, Pointer Events...</p>
+    <p>Reusable custom elements (in progress)</p>
   </div>
   <div class="topmargin" data-build-index="2">
-    <div class="core bold">Sugaring layer</div>
+    <div class="core bold">Polymer.js</div>
     <br>
-    <p>expresses opinionated way to use web component concepts together</p>
+    <p>An opinionated way to work with web components</p>
   </div>
   <div class="topmargin" data-build-index="1">
-    <div class="elements bold">UI Components</div>
+    <div class="platform bold">Platform.js</div>
     <br>
-    <p>comprehensive set (in progress)</p>
+    <p>Web Components polyfills for all <br>modern browsers</p>
   </div>
 </div>
 
@@ -1030,7 +1030,7 @@ Initially hide elements using `polymer-veiled` class or manage a list in JS:
 
 ---
 
-title: Polymer <label class="platform">platform <i class="icon-cogs platform"></i></label>
+title: The <label class="platform">platform <i class="icon-cogs platform"></i></label>
 class: nobackdrop nobackground segue platform
 #content_class: flexbox vcenter
 keep_content: true
