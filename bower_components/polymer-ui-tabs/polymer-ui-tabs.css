@@ -9,9 +9,9 @@ license that can be found in the LICENSE file.
   white-space: nowrap;
 }
 
-/*@polyfill :host > * */
+/*@polyfill :host > span */
 ::content > :not(template) {
-	display: inline-block;
+  display: inline-block;
   min-width: 60px;
   height: 60px;
   line-height: 60px;

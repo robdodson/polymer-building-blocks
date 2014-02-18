@@ -95,6 +95,45 @@ https://code.google.com/p/io-2012-slides
  
 </slide>
 
+<slide     >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Let's talk about tabs...</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p><img src="/images/screenshots/tabs2.jpg"></p></article>
+ 
+</slide>
+
+<slide id="tab-examples"    >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Building a tab component on the web</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><div class="build flexbox vcenter centered">
+<img src="images/screenshots/tabs/jquery.png">
+<img src="images/screenshots/tabs/kendo.png">
+<img src="images/screenshots/tabs/yui.png">
+<img src="images/screenshots/tabs/angular.png">
+<img src="images/screenshots/tabs/sencha.png">
+<img src=""> <!-- intentional. holder to see all images together -->
+</div></article>
+ 
+</slide>
+
 <slide  class="large"   >
   
     <hgroup>
@@ -114,29 +153,6 @@ https://code.google.com/p/io-2012-slides
   &lt;tab&gt;Tab 3&lt;/tab&gt;
 &lt;/tabs&gt;
 </pre></article>
- 
-</slide>
-
-<slide id="tab-examples"    >
-  
-    <hgroup>
-      <span>
-        
-        
-        
-        
-      </span>
-      <h2>Building a tab component on the web...</h2>
-      <h3></h3>
-    </hgroup>
-    <article ><div class="build flexbox vcenter centered">
-<img src="images/screenshots/tabs/jquery.png">
-<img src="images/screenshots/tabs/kendo.png">
-<img src="images/screenshots/tabs/yui.png">
-<img src="images/screenshots/tabs/angular.png">
-<img src="images/screenshots/tabs/sencha.png">
-<img src=""> <!-- intentional. holder to see all images together -->
-</div></article>
  
 </slide>
 
@@ -353,9 +369,9 @@ https://code.google.com/p/io-2012-slides
 
 <h3>Lowers the barrier of entry for new developers</h3>
 
-<h3>Reduces the amount of code in my app</h3>
+<h3>Reduces the amount of code you have to write</h3>
 
-<h3>Elements are fast by default</h3></article>
+<h3>Play well with others</h3></article>
  
 </slide>
 
@@ -594,10 +610,10 @@ https://code.google.com/p/io-2012-slides
 <p><code>&lt;polymer-ui-accordion&gt;</code></p>
 <p><code>&lt;polymer-ui-animated-pages&gt;</code></p>
 <p><code>&lt;polymer-ui-overlay&gt;</code></p>
-<p><code>&lt;polymer-ui-card&gt;</code> <a href="http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-card/index.html">demo</a></p>
-<p><code>&lt;polymer-ui-sidebar-menu&gt;</code> <a href="http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-sidebar-menu/index.html">demo</a></p>
-<p><code>&lt;polymer-ui-tabs&gt;</code> <a href="http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-tabs/index.html">demo</a></p>
-<p><code>&lt;polymer-ui-toggle-button&gt;</code> <a href="http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-toggle-button/index.html">demo</a></p>
+<p><code>&lt;polymer-ui-card&gt;</code> <a href="http://www.polymer-project.org/components/polymer-ui-card/smoke.html">demo</a></p>
+<p><code>&lt;polymer-ui-sidebar-menu&gt;</code> <a href="http://www.polymer-project.org/components/polymer-ui-sidebar-menu/smoke.html">demo</a></p>
+<p><code>&lt;polymer-ui-tabs&gt;</code> <a href="http://www.polymer-project.org/components/polymer-ui-tabs/smoke.html">demo</a></p>
+<p><code>&lt;polymer-ui-toggle-button&gt;</code> <a href="http://www.polymer-project.org/components/polymer-ui-toggle-button/smoke.html">demo</a></p>
 <p><code>&lt;polymer-ui-theme-aware&gt;</code></p></article>
  
 </slide>
@@ -635,6 +651,50 @@ https://code.google.com/p/io-2012-slides
     <span>About</span>
     <span>Contact</span>
   </polymer-ui-tabs>
+</output>
+
+</div></article>
+ 
+</slide>
+
+<slide id="polymer-ui-toggle-demo"   data-body-class="elements-bg" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Everything is an element</h2>
+      <h3>Collapsible elements</h3>
+    </hgroup>
+    <article ><pre class="corner prettyprint">
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
+&lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-collapsible.html</span>">
+</pre>
+
+<pre class="prettyprint" style="font-size:25px;" data-lang="HTML">
+&lt;polymer-ui-collapsible&gt;
+  &lt;h3 class="polymer-ui-collapsible-header"&gt;Click Me!&lt;/h3&gt;
+  &lt;div&gt;
+    some content...
+  &lt;/div&gt;
+&lt;/polymer-ui-collapsible&gt;
+</pre>
+
+<div class="component-demo" style="height:100%">
+<link rel="import" href="bower_components/polymer-ui-collapsible/polymer-ui-collapsible.html">
+<output>
+  <polymer-ui-collapsible>
+    <h3 class="polymer-ui-collapsible-header" style="font-weight: bold;">Click Me!</h3>
+    <p style="font-size: 18px; line-height: 1.4;">
+      Realm of the galaxies at the edge of forever, made in the interiors of collapsing stars dispassionate extraterrestrial observer, rings of Uranus extraplanetary rich in heavy atoms shores of the cosmic ocean, white dwarf finite but unbounded!
+    </p>
+    <p style="font-size: 18px; line-height: 1.4;">
+      Realm of the galaxies at the edge of forever, made in the interiors of collapsing stars dispassionate extraterrestrial observer, rings of Uranus extraplanetary rich in heavy atoms shores of the cosmic ocean, white dwarf finite but unbounded!
+    </p>
+  </polymer-ui-collapsible>
 </output>
 
 </div></article>

@@ -19,6 +19,26 @@ id: who
 
 ---
 
+title: Let's talk about tabs...
+
+<img src="/images/screenshots/tabs2.jpg">
+
+---
+
+id: tab-examples
+title: Building a tab component on the web
+
+<div class="build flexbox vcenter centered">
+<img src="images/screenshots/tabs/jquery.png">
+<img src="images/screenshots/tabs/kendo.png">
+<img src="images/screenshots/tabs/yui.png">
+<img src="images/screenshots/tabs/angular.png">
+<img src="images/screenshots/tabs/sencha.png">
+<img src=""> <!-- intentional. holder to see all images together -->
+</div>
+
+---
+
 class: large
 content_class: flexbox vcenter
 
@@ -29,20 +49,6 @@ content_class: flexbox vcenter
   &lt;tab&gt;Tab 3&lt;/tab&gt;
 &lt;/tabs&gt;
 </pre>
-
----
-
-id: tab-examples
-title: Building a tab component on the web...
-
-<div class="build flexbox vcenter centered">
-<img src="images/screenshots/tabs/jquery.png">
-<img src="images/screenshots/tabs/kendo.png">
-<img src="images/screenshots/tabs/yui.png">
-<img src="images/screenshots/tabs/angular.png">
-<img src="images/screenshots/tabs/sencha.png">
-<img src=""> <!-- intentional. holder to see all images together -->
-</div>
 
 ---
 
@@ -183,8 +189,8 @@ content_class: flexbox vleft
   Benefits of working with elements...
 </h2>
 <h3>Lowers the barrier of entry for new developers</h3>
-<h3>Reduces the amount of code in my app</h3>
-<h3>Elements are fast by default</h3>
+<h3>Reduces the amount of code you have to write</h3>
+<h3>Play well with others</h3>
 
 ---
 
@@ -354,13 +360,13 @@ body_class: elements-bg
 
 `<polymer-ui-overlay>`
 
-`<polymer-ui-card>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-card/index.html)
+`<polymer-ui-card>` [demo](http://www.polymer-project.org/components/polymer-ui-card/smoke.html)
 
-`<polymer-ui-sidebar-menu>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-sidebar-menu/index.html)
+`<polymer-ui-sidebar-menu>` [demo](http://www.polymer-project.org/components/polymer-ui-sidebar-menu/smoke.html)
 
-`<polymer-ui-tabs>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-tabs/index.html)
+`<polymer-ui-tabs>` [demo](http://www.polymer-project.org/components/polymer-ui-tabs/smoke.html)
 
-`<polymer-ui-toggle-button>` [demo](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-toggle-button/index.html)
+`<polymer-ui-toggle-button>` [demo](http://www.polymer-project.org/components/polymer-ui-toggle-button/smoke.html)
 
 `<polymer-ui-theme-aware>`
 
@@ -392,6 +398,43 @@ body_class: elements-bg
     <span>About</span>
     <span>Contact</span>
   </polymer-ui-tabs>
+</output>
+
+</div>
+
+---
+
+id: polymer-ui-toggle-demo
+title: Everything is an element
+subtitle: Collapsible elements
+body_class: elements-bg
+
+<pre class="corner prettyprint">
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
+&lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-collapsible.html</span>">
+</pre>
+
+<pre class="prettyprint" style="font-size:25px;" data-lang="HTML">
+&lt;polymer-ui-collapsible&gt;
+  &lt;h3 class="polymer-ui-collapsible-header"&gt;Click Me!&lt;/h3&gt;
+  &lt;div&gt;
+    some content...
+  &lt;/div&gt;
+&lt;/polymer-ui-collapsible&gt;
+</pre>
+
+<div class="component-demo" style="height:100%">
+<link rel="import" href="bower_components/polymer-ui-collapsible/polymer-ui-collapsible.html">
+<output>
+  <polymer-ui-collapsible>
+    <h3 class="polymer-ui-collapsible-header" style="font-weight: bold;">Click Me!</h3>
+    <p style="font-size: 18px; line-height: 1.4;">
+      Realm of the galaxies at the edge of forever, made in the interiors of collapsing stars dispassionate extraterrestrial observer, rings of Uranus extraplanetary rich in heavy atoms shores of the cosmic ocean, white dwarf finite but unbounded!
+    </p>
+    <p style="font-size: 18px; line-height: 1.4;">
+      Realm of the galaxies at the edge of forever, made in the interiors of collapsing stars dispassionate extraterrestrial observer, rings of Uranus extraplanetary rich in heavy atoms shores of the cosmic ocean, white dwarf finite but unbounded!
+    </p>
+  </polymer-ui-collapsible>
 </output>
 
 </div>
