@@ -963,6 +963,50 @@ slide#polymerurl {
   // }
 }
 
+slide.current::before,
+slide.current::after {
+  display: none;
+}
+
+// 3D Animation
+
+#blocks-3d {
+  position: absolute;
+  width: 500px;
+  top: 150px;
+  right: 100px;
+}
+
+.block-3d {
+  position: absolute;
+  opacity: 0;
+  // @include transition-property(all);
+  // @include transition-duration(1000ms);
+  // @include transition-timing-function(cubic-bezier(0.645, 0.045, 0.355, 1.000));
+}
+
+#elements-3d {
+  width: 48%;
+  top: -5px;
+  // @include transform(translate3d(0, -600px, 0));
+}
+
+#polymer-3d {
+  width: 75%;
+  // @include transform(translate3d(0, -600px, 0));
+}
+
+#platform-3d {
+  width: 92.5%;
+  top: -25px;
+  // @include transform(translate3d(0, -600px, 0));
+}
+
+#native-3d {
+  width: 100%;
+  top: 90px;
+  // @include transform(translate3d(0, -600px, 0));
+}
 
 slide.thank-you-slide {
   line-height: 1.3;
