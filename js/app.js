@@ -172,11 +172,15 @@ function initContent(e) {
     var slide = e.target;
     if (slide.classList.contains('nobackdrop')) {
       document.body.classList.add('nobackdrop');
-    } 
+    }
+
+    if (slide.classList.contains('polymer-diagram')) {
+      enableDiagramAnimations();
+    }
+
     if (slide.dataset.bodyClass) {
       document.body.classList.add(slide.dataset.bodyClass);
     }
-
   });
 
   slidedeck.container.listen('slideleave', function(e) {
@@ -393,153 +397,186 @@ function initDemos() {
     }
   })();
 
-  (function() {
-    var slide = $('#polymer-diagram');
-
-    var blocks3d = slide.$('#blocks-3d');
-    var native3d = slide.$('#native-3d');
-    var platform3d = slide.$('#platform-3d');
-    var polymer3d = slide.$('#polymer-3d');
-    var elements3d = slide.$('#elements-3d');
-
-    var blocks = [native3d, platform3d, polymer3d, elements3d];
-
-    slidedeck.addEventListener('slidebuild', function(e) {
-      var segment = e.detail.segment;
-
-      switch (segment.id) {
-        case 'diagram-animate-in':
-          animateIn();
-          break;
-
-        case 'diagram-explode':
-          explode();
-          break;
-
-        case 'diagram-native':
-          focusOn('native-3d');
-          break;
-
-        case 'diagram-platform':
-          focusOn('platform-3d');
-          break;
-
-        case 'diagram-polymer':
-          focusOn('polymer-3d');
-          break;
-
-        case 'diagram-elements':
-          focusOn('elements-3d');
-          break;
-
-        case 'diagram-contract':
-          contract();
-          break;
-      }
-    });
-
-    function animateIn() {
-      var animations = new ParGroup();
-      blocks.forEach(function(block, index) {
-        animations.append(new Animation(block, [
-          { opacity: 0, transform: 'translate3d(0, -600px, 0)' },
-          { opacity: 1, transform: 'translate3d(0, 0, 0)' }
-        ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
-      });
-      var player = document.timeline.play(animations);
-      // setTimeout(idle, 1);
-    }
-
-    function idle() {
-      var animations = new ParGroup();
-      blocks.forEach(function(block, index) {
-        animations.append(new Animation(block, [
-          { transform: 'translate3d(0, -15px, 0)' }
-        ], { direction: 'alternate', duration: 1, delay: 0.3 * index, iterations: Infinity, easing: 'ease-in-out' }));
-      });
-      var player = document.timeline.play(animations);
-    }
-
-    function explode() {
-      var animations = new ParGroup();
-      blocks.forEach(function(block, index) {
-        var posY1 = 5 + (index * 10);
-        var posY2 = 70 - (index * 70);
-        animations.append(new Animation(block, [
-          { offset: 0.4, transform: 'translate3d(0, ' + posY1 + 'px' + ', 0)' },
-          { offset: 1, transform: 'translate3d(0, ' + posY2 + 'px' + ', 0)' }
-        ], { duration: 0.5, easing: 'ease-in-out' }));
-      });
-      var player = document.timeline.play(animations);
-      setTimeout(idle2, 400);
-    }
-
-    function idle2() {
-      var animations = new ParGroup();
-      blocks.forEach(function(block, index) {
-        var posY = (70 - (index * 70)) - 20;
-        animations.append(new Animation(block, [
-          { transform: 'translate3d(0, ' + posY + 'px' + ', 0)' }
-        ], {
-            direction: 'alternate', duration: 1,
-            delay: index == 3 ? 0 : 0.3 * index,
-            iterations: Infinity, easing: 'ease-in-out'
-        }));
-      });
-      var player = document.timeline.play(animations);
-    }
-
-    function contract() {
-      var animations = new ParGroup();
-      blocks.forEach(function(block, index) {
-        animations.append(new Animation(block, [
-          { opacity: 1, transform: 'translate3d(0, 0, 0)' }
-        ], { duration: 0.5, easing: 'ease-in-out' }));
-      });
-      var player = document.timeline.play(animations);
-    }
-
-    function animateOut() {
-      var animations = new ParGroup();
-      blocks.reverse().forEach(function(block, index) {
-        animations.append(new Animation(block, [
-          { opacity: 0, transform: 'translate3d(0, -600px, 0)' }
-        ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
-      });
-      var player = document.timeline.play(animations);
-      blocks.reverse();
-    }
-
-    function focusOn(name) {
-      blocks.forEach(function(block) {
-        if (block.id == name) {
-          document.timeline.play(block.fadeIn);
-          block.faded = false;
-          return;
-        }
-
-        if (!block.faded) {
-          document.timeline.play(block.fadeOut);
-          block.faded = true;
-        }
-      });
-    }
-
-    (function() {
-      blocks.forEach(function(block, index) {
-        block.fadeOut = new Animation(block, [
-          { opacity: 0.3 }
-        ], { duration: 0.3 });
-        
-        block.fadeIn = new Animation(block, [
-          { opacity: 1 }
-        ], { duration: 0.3 });
-      });
-    })();
-
-  })();
 }
 
 function encodeHTMLEntities(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') ;
+}
+
+function enableDiagramAnimations() {
+  var slide = slidedeck.slides[slidedeck.curSlide_];
+
+  var blocks3d = slide.$('#blocks-3d');
+  var native3d = slide.$('#native-3d');
+  var platform3d = slide.$('#platform-3d');
+  var polymer3d = slide.$('#polymer-3d');
+  var elements3d = slide.$('#elements-3d');
+
+  var blocks = [native3d, platform3d, polymer3d, elements3d];
+
+  slidedeck.addEventListener('slidebuild', function(e) {
+    var segment = e.detail.segment;
+
+    switch (segment.id) {
+      case 'diagram-animate-in':
+        animateIn();
+        break;
+
+      case 'diagram-explode':
+        explode();
+        break;
+
+      case 'diagram-native':
+        focusOn('native-3d');
+        break;
+
+      case 'diagram-platform':
+        focusOn('platform-3d');
+        break;
+
+      case 'diagram-polymer':
+        focusOn('polymer-3d');
+        break;
+
+      case 'diagram-elements':
+        focusOn('elements-3d');
+        break;
+
+      case 'diagram-contract':
+        contract();
+        break;
+    }
+  });
+
+  slidedeck.addEventListener('slideenter', function(e) {
+    var slide = e.target;
+
+    switch (slide.id) {
+      case 'using-elements':
+        setTimeout(function() {
+          focusOnSeq('elements-3d');
+        }, 1500);
+        break;
+    }
+  });
+
+  function animateIn() {
+    var animations = new ParGroup();
+    blocks.forEach(function(block, index) {
+      animations.append(new Animation(block, [
+        { opacity: 0, transform: 'translate3d(0, -600px, 0)' },
+        { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
+    });
+    var player = document.timeline.play(animations);
+    // setTimeout(idle, 1);
+  }
+
+  function idle() {
+    var animations = new ParGroup();
+    blocks.forEach(function(block, index) {
+      animations.append(new Animation(block, [
+        { transform: 'translate3d(0, -15px, 0)' }
+      ], { direction: 'alternate', duration: 1, delay: 0.3 * index, iterations: Infinity, easing: 'ease-in-out' }));
+    });
+    var player = document.timeline.play(animations);
+  }
+
+  function explode() {
+    var animations = new ParGroup();
+    blocks.forEach(function(block, index) {
+      var posY1 = 5 + (index * 10);
+      var posY2 = 70 - (index * 70);
+      animations.append(new Animation(block, [
+        { offset: 0.4, transform: 'translate3d(0, ' + posY1 + 'px' + ', 0)' },
+        { offset: 1, transform: 'translate3d(0, ' + posY2 + 'px' + ', 0)' }
+      ], { duration: 0.5, easing: 'ease-in-out' }));
+    });
+    var player = document.timeline.play(animations);
+    setTimeout(idle2, 400);
+  }
+
+  function idle2() {
+    var animations = new ParGroup();
+    blocks.forEach(function(block, index) {
+      var posY = (70 - (index * 70)) - 20;
+      animations.append(new Animation(block, [
+        { transform: 'translate3d(0, ' + posY + 'px' + ', 0)' }
+      ], {
+          direction: 'alternate', duration: 1,
+          delay: index == 3 ? 0 : 0.3 * index,
+          iterations: Infinity, easing: 'ease-in-out'
+      }));
+    });
+    var player = document.timeline.play(animations);
+  }
+
+  function contract() {
+    var animations = new ParGroup();
+    blocks.forEach(function(block, index) {
+      animations.append(new Animation(block, [
+        { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      ], { duration: 0.5, easing: 'ease-in-out' }));
+    });
+    var player = document.timeline.play(animations);
+  }
+
+  function animateOut() {
+    var animations = new ParGroup();
+    blocks.reverse().forEach(function(block, index) {
+      animations.append(new Animation(block, [
+        { opacity: 0, transform: 'translate3d(0, -600px, 0)' }
+      ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
+    });
+    var player = document.timeline.play(animations);
+    blocks.reverse();
+  }
+
+  function focusOn(name) {
+    blocks.forEach(function(block) {
+      if (block.id == name) {
+        document.timeline.play(block.fadeIn);
+        block.faded = false;
+        return;
+      }
+
+      if (!block.faded) {
+        document.timeline.play(block.fadeOut);
+        block.faded = true;
+      }
+    });
+  }
+
+  function focusOnSeq(name) {
+    var animations = [];
+
+    blocks.forEach(function(block) {
+      if (block.id == name) {
+        document.timeline.play(block.fadeIn);
+        block.faded = false;
+        return;
+      }
+
+      if (!block.faded) {
+        animations.push(block.fadeOut.clone());
+        block.faded = true;
+      }
+    });
+
+    if (animations.length) {
+      document.timeline.play(new SeqGroup(animations));
+    }
+  }
+
+  (function() {
+    blocks.forEach(function(block, index) {
+      block.fadeOut = new Animation(block, [
+        { opacity: 0.3 }
+      ], { duration: 0.3, ease: 'ease-in-out' });
+      
+      block.fadeIn = new Animation(block, [
+        { opacity: 1 }
+      ], { duration: 0.3, ease: 'ease-in-out' });
+    });
+  })();
 }

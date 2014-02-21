@@ -312,7 +312,6 @@ slides > slide {
 
   &.segue {
     &.elements, &.core, &.platform {
-      @extend .architecture-diagram;
       padding-left: 40px;
       padding-right: 40px;
 
@@ -968,18 +967,40 @@ slide.current::after {
   display: none;
 }
 
+// Explanation
+.explanation {
+  h2 {
+    font-size: 76px;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 30px;
+  }
+}
+
 // 3D Animation
 
 #blocks-3d {
   position: absolute;
   width: 500px;
   top: 165px;
-  right: 0;
+  right: 0px;
+}
+
+#blocks-3d.in {
+  top: 0;
 }
 
 .block-3d {
   position: absolute;
   opacity: 0;
+}
+
+#blocks-3d.in .block-3d {
+  opacity: 1;
 }
 
 #elements-3d {
@@ -988,6 +1009,7 @@ slide.current::after {
 }
 
 #polymer-3d {
+  top: -3px;
   width: 75%;
 }
 
@@ -1007,7 +1029,11 @@ slide.current::after {
 }
 
 .diagram-explanation {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+
+  h3 {
+    font-size: 40px;
+  }
 }
 
 slide.thank-you-slide {

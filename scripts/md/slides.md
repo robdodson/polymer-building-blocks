@@ -42,7 +42,7 @@ title: Building a tab component on the web
 class: large
 content_class: flexbox vcenter
 
-<pre class="nohighlight">
+<pre class="nohighlight" style="margin-top: -50px;">
 &lt;tabs&gt;
   &lt;tab&gt;Tab 1&lt;/tab&gt;
   &lt;tab&gt;Tab 2&lt;/tab&gt;
@@ -183,21 +183,24 @@ content_class: flexbox vcenter
 
 ---
 
-content_class: flexbox vleft
+content_class: flexbox vleft explanation
 
 <h2 style="margin-top: -100px; margin-bottom: 50px;">
-  Benefits of working with elements...
+  Working with elements...
 </h2>
-<h3>Lowers the barrier of entry for new developers</h3>
-<h3>Reduces the amount of code you have to write</h3>
-<h3>Play well with others</h3>
+
+<div class="build">
+  <h3>Reduces the amount of code you have to write</h3>
+  <h3>Lowers the barrier of entry for new developers</h3>
+  <h3>Makes sharing easy</h3>
+</div>
 
 ---
 
 class: large
 content_class: flexbox vcenter
 
-<pre class="nohighlight">
+<pre class="nohighlight" style="margin-top: -50px;">
 &lt;tabs&gt;
   &lt;tab&gt;Tab 1&lt;/tab&gt;
   &lt;tab&gt;Tab 2&lt;/tab&gt;
@@ -271,10 +274,10 @@ content_class: flexbox vcenter
 
 ---
 
-id: polymer-diagram
+class: polymer-diagram
 title: Layers of Polymer
 
-<div id="blocks-3d" class="out">
+<div id="blocks-3d">
   <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
   <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
   <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
@@ -343,14 +346,26 @@ class: large
 
 ---
 
+id: using-elements
 title: Using <label class="elements">elements <i class="icon-puzzle-piece elements"></i></label>
 subtitle: <a href="http://www.polymer-project.org/docs/elements/" class="nounderline">polymer-project.org/docs/elements/</a>
-class: nobackdrop nobackground segue elements
+class: nobackdrop nobackground segue elements polymer-diagram
 #content_class: flexbox vcenter
 keep_content: true
 
-<div class="overlay top"></div>
-<div class="overlay bottom"></div>
+<div id="blocks-3d" class="in" style="top: 10%;">
+  <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
+  <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
+  <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
+  <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
+</div>
+
+---
+
+content_class: flexbox vcenter
+
+<h2>You don't have to know about their internals</h2>
+
 
 ---
 
