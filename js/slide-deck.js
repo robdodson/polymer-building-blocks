@@ -451,6 +451,8 @@ SlideDeck.prototype.buildNextItem_ = function() {
     }
   }
 
+  toBuild = Array.prototype.slice.call(toBuild);
+
   if (!toBuild.length) {
     var items = slide.querySelectorAll('.build-fade');
     for (var j = 0, item; item = items[j]; j++) {
@@ -459,7 +461,6 @@ SlideDeck.prototype.buildNextItem_ = function() {
     return false;
   }
 
-  toBuild = Array.prototype.slice.call(toBuild);
   var segments = toBuild.sort(function(a, b) {
     var indexA = a.getAttribute('data-build-index');
     var indexB = b.getAttribute('data-build-index');
@@ -476,8 +477,10 @@ SlideDeck.prototype.buildNextItem_ = function() {
 
   });
 
-  segments[0].classList.remove('to-build');
-  segments[0].classList.add('build-current');
+  var segment = segments[0];
+  segment.classList.remove('to-build');
+  segment.classList.add('build-current');
+  this.dispatchEvent('slidebuild', { segment: segment });
 
   return true;
 };
@@ -558,6 +561,28 @@ SlideDeck.prototype.triggerSlideEvent = function(type, slideNo) {
   evt.slide = el;
 
   el.dispatchEvent(evt);
+};
+
+/**
+ * Dispatches an event of the specified type from the
+ * SlideDeck DOM element.
+ */
+SlideDeck.prototype.dispatchEvent = function(type, properties) {
+  var event = new CustomEvent(type, { detail: properties });
+  this.container.dispatchEvent(event);
+}
+
+// Forward event binding to the SlideDeck DOM element
+SlideDeck.prototype.addEventListener = function(type, listener, useCapture) {
+  if ('addEventListener' in window) {
+    (this.container || document.querySelector('slides')).addEventListener(type, listener, useCapture);
+  }
+};
+
+SlideDeck.prototype.removeEventListener = function(type, listener, useCapture) {
+  if('addEventListener' in window) {
+    (this.container || document.querySelector('slides')).removeEventListener(type, listener, useCapture);
+  }
 };
 
 /**

@@ -271,6 +271,9 @@ content_class: flexbox vcenter
 
 ---
 
+id: polymer-diagram
+title: Layers of Polymer
+
 <div id="blocks-3d" class="out">
   <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
   <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
@@ -278,103 +281,32 @@ content_class: flexbox vcenter
   <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
 </div>
 
-<div style="width: 400px;">
-  <button onclick="animateIn();">Animate In</button>
-  <button onclick="explode();">Explode</button>
-  <button onclick="animateOut();">Animate Out</button>
-</div>
+<div class="build diagram-explanations">
+  <div id="diagram-animate-in" data-build-index="1"></div>
+  <div id="diagram-explode" data-build-index="2"></div>
 
-<script src="bower_components/web-animations-js/web-animations.js"></script>
-
-<script>
-var blocks3d = document.querySelector('#blocks-3d');
-var native3d = document.querySelector('#native-3d');
-var platform3d = document.querySelector('#platform-3d');
-var polymer3d = document.querySelector('#polymer-3d');
-var elements3d = document.querySelector('#elements-3d');
-
-var blocks = [native3d, platform3d, polymer3d, elements3d];
-
-function animateIn() {
-  var animations = new ParGroup();
-  blocks.forEach(function(block, index) {
-    animations.append(new Animation(block, [
-      { opacity: 0, transform: 'translate3d(0, -600px, 0)' },
-      { opacity: 1, transform: 'translate3d(0, 0, 0)' }
-    ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
-  });
-  var player = document.timeline.play(animations);
-  setTimeout(idle, 1);
-}
-
-function idle() {
-  var animations = new ParGroup();
-  blocks.forEach(function(block, index) {
-    animations.append(new Animation(block, [
-      { transform: 'translate3d(0, -15px, 0)' }
-    ], { direction: 'alternate', duration: 1, delay: 0.3 * index, iterations: Infinity, easing: 'ease-in-out' }));
-  });
-  var player = document.timeline.play(animations);
-}
-
-function explode() {
-  var animations = new ParGroup();
-  blocks.forEach(function(block, index) {
-    var posY1 = 5 + (index * 10);
-    var posY2 = 70 - (index * 70);
-    animations.append(new Animation(block, [
-      { offset: 0.4, transform: 'translate3d(0, ' + posY1 + 'px' + ', 0)' },
-      { offset: 1, transform: 'translate3d(0, ' + posY2 + 'px' + ', 0)' }
-    ], { duration: 0.5, easing: 'ease-in-out' }));
-  });
-  var player = document.timeline.play(animations);
-  setTimeout(idle2, 400);
-}
-
-function idle2() {
-  var animations = new ParGroup();
-  blocks.forEach(function(block, index) {
-    var posY = (70 - (index * 70)) - 20;
-    animations.append(new Animation(block, [
-      { transform: 'translate3d(0, ' + posY + 'px' + ', 0)' }
-    ], {
-        direction: 'alternate', duration: 1,
-        delay: index == 3 ? 0 : 0.3 * index,
-        iterations: Infinity, easing: 'ease-in-out'
-    }));
-  });
-  var player = document.timeline.play(animations);
-}
-
-function animateOut() {
-  var animations = new ParGroup();
-  blocks.reverse().forEach(function(block, index) {
-    animations.append(new Animation(block, [
-      { opacity: 0, transform: 'translate3d(0, -600px, 0)' }
-    ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
-  });
-  var player = document.timeline.play(animations);
-  blocks.reverse();
-}
-</script>
-
-<!-- <div class="build">
-  <div data-build-index="3">
-    <div class="elements bold">Elements</div>
-    <br>
+  <div id="diagram-elements" class="diagram-explanation" data-build-index="6">
+    <h3 class="elements bold">Elements</h3>
     <p>Reusable custom elements (in progress)</p>
   </div>
-  <div class="topmargin" data-build-index="2">
-    <div class="core bold">Polymer.js</div>
-    <br>
+
+  <div id="diagram-polymer" class="diagram-explanation" data-build-index="5">
+    <h3 class="core bold">Polymer.js</h3>
     <p>An opinionated way to work with web components</p>
   </div>
-  <div class="topmargin" data-build-index="1">
-    <div class="platform bold">Platform.js</div>
-    <br>
+
+  <div id="diagram-platform" class="diagram-explanation" data-build-index="4">
+    <h3 class="platform bold">Platform.js</h3>
     <p>Web Components polyfills for all <br>modern browsers</p>
   </div>
-</div> -->
+
+  <div id="diagram-native" class="diagram-explanation" data-build-index="3">
+    <h3 class="bold">Native</h3>
+    <p>The current browser landscape</p>
+  </div>
+
+  <div id="diagram-contract" data-build-index="7">
+</div>
 
 ---
 
@@ -392,20 +324,21 @@ class: large
 #content_class: flexbox vcenter
 
 <div class="build topmargin">
-<div>
-<h3>Using <b class="elements">elements</b></h3>
-<p>HTML is cool. DOM feels good.</p>
-<br>
-</div>
-<div>
-<h3><b class="core">Creating elements</b></h3>
-<p>Remove tediousness of building web component-based apps</p>
-</div>
-<div>
-  <h3>Utilize the modern web <b class="platform">platform</b></h3>
-  <p>Support modern browsers</p>
-  <br>
-</div>
+  <div>
+    <h3>Using <b class="elements">elements</b></h3>
+    <p>HTML is cool. DOM feels good.</p>
+    <br>
+  </div>
+  <div>
+    <h3><b class="core">Creating elements</b></h3>
+    <p>Remove tediousness of building web component-based apps</p>
+    <br>
+  </div>
+  <div>
+    <h3>Utilize the modern web <b class="platform">platform</b></h3>
+    <p>Support modern browsers</p>
+    <br>
+  </div>
 </div>
 
 ---

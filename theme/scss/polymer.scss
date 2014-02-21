@@ -9,9 +9,9 @@
 @import "mixins";
 @import "animations";
 
-$polymer-elements-color: rgb(13, 168, 97);
-$polymer-platform-color: rgb(205, 55, 45);
-$polymer-core-color: rgb(255, 209, 77);
+$polymer-elements-color: rgb(90, 115, 190);
+$polymer-platform-color: rgb(146, 88, 155);
+$polymer-core-color: rgb(195, 67, 131);
 $polymer-applications-color: rgb(35, 100, 215);
 
 /* Architecture stack */
@@ -19,19 +19,19 @@ $polymer-applications-color: rgb(35, 100, 215);
   color: $polymer-core-color;
 }
 .core-bg {
-  background-color: rgba(255, 209, 77, 1);
+  background-color: $polymer-core-color;
 }
 .platform {
   color: $polymer-platform-color;
 }
 .platform-bg {
-  background-color: rgba(244, 74, 63, 1);
+  background-color: $polymer-platform-color;
 }
 .elements {
   color: $polymer-elements-color;
 }
 .elements-bg {
-  background-color: rgba(13, 168, 97, 1);
+  background-color: $polymer-elements-color;
 }
 .applications {
   color: $polymer-applications-color;
@@ -973,39 +973,41 @@ slide.current::after {
 #blocks-3d {
   position: absolute;
   width: 500px;
-  top: 150px;
-  right: 100px;
+  top: 165px;
+  right: 0;
 }
 
 .block-3d {
   position: absolute;
   opacity: 0;
-  // @include transition-property(all);
-  // @include transition-duration(1000ms);
-  // @include transition-timing-function(cubic-bezier(0.645, 0.045, 0.355, 1.000));
 }
 
 #elements-3d {
   width: 48%;
   top: -5px;
-  // @include transform(translate3d(0, -600px, 0));
 }
 
 #polymer-3d {
   width: 75%;
-  // @include transform(translate3d(0, -600px, 0));
 }
 
 #platform-3d {
   width: 92.5%;
   top: -25px;
-  // @include transform(translate3d(0, -600px, 0));
 }
 
 #native-3d {
   width: 100%;
   top: 90px;
-  // @include transform(translate3d(0, -600px, 0));
+}
+
+.diagram-explanations {
+  width: 50%;
+  margin-top: 50px;
+}
+
+.diagram-explanation {
+  margin-bottom: 50px;
 }
 
 slide.thank-you-slide {

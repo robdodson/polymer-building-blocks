@@ -188,31 +188,7 @@ function initContent(e) {
       document.body.classList.remove(slide.dataset.bodyClass);
     }
 
-    // // Reset polyfill support on browser support slides.
-    // if (slide.classList.contains('browser-support')) {
-    //   slide.$('h3').innerHTML = 'browser support';
-    //   slide.$('.browser-support-row').classList.remove('polyfill-status');
-    // }
   });
-
-  // // When browser support slide is clicked, show polyfill information.
-  // slidedeck.container.listen('click', function(e) {
-  //   // Ignore clicks on links.
-  //   if (e.target.tagName == 'A') {
-  //     return;
-  //   }
-  //   var currentSlide = slidedeck.slides[slidedeck.curSlide_];
-  //   if (currentSlide.classList.contains('browser-support')) {
-  //     var browsSupportRow = currentSlide.$('.browser-support-row');
-  //     if (browsSupportRow.classList.contains('polyfill-status')) {
-  //       currentSlide.$('h3').innerHTML = 'browser support';
-  //       browsSupportRow.classList.remove('polyfill-status');
-  //     } else {
-  //       currentSlide.$('h3').innerHTML = '<a href="https://github.com/polymer/platform">polyfill</a> support';
-  //       browsSupportRow.classList.add('polyfill-status');
-  //     }
-  //   }
-  // });
 
   document.listen('keydown', function(e) {
     switch (e.keyCode) {
@@ -247,15 +223,6 @@ function initContent(e) {
 // Inline slide examples -------------------------------------------------------
 
 function initDemos() {
-
-  // var pres = $$('pre[data-code-cycle]');
-
-  // pres.forEach(function(pre, i) {
-  //   var a = document.createElement('a');
-  //   a.href = '';
-  //   a.classList.add('code-cycler');
-  //   pre.appendChild(a);
-  // });
 
   function initCodeSnippetCycler(slide) {
     var pre = slide.querySelector('[data-code-cycle]');
@@ -299,315 +266,280 @@ function initDemos() {
     prettyPrint();
   }
 
-(function() {
-  // var slide = $('#polymeroneliner');
-  
-  // slide.listen('click', function(e) {
-  //   this.classList.toggle('active');
-  // });
+  (function() {
+    var demo = $('#polymer-ajax-demo');
+    var output = demo.querySelector('output');
 
-  // slide.listen('slideleave', function(e) {
-  //   this.classList.remove('active');
-  // });
-})();
+    demo.querySelector('.snippet-demo').listen('click', function(e) {
+      e.preventDefault();
 
+      output.innerHTML = '';
 
-(function() {
-  // var slide = $('#hangoutsexample');
-  // var output = slide.$('.example');
-  // var count = 0;
-
-  // // slide.querySelector('.snippet-demo').listen('click', function(e) {
-  // //   e.preventDefault();
-  // // });
-
-  // slide.querySelector('button').addEventListener('click', function(e) {
-
-  //   if (count) {
-  //     var hangout = document.createElement('hangout-module');
-  //     hangout.from = 'Larry Page';
-  //     hangout.profile = '118075919496626375791';
-
-  //     hangout.messages = [{
-  //       profile: '106189723444098348646',
-  //       datetime: new Date().toISOString(),
-  //       isother: true,
-  //       msg: ['Hola']
-  //     }];
-
-  //     output.appendChild(hangout);
-  //   } else {
-  //     var hangout = document.createElement('hangout-module');
-  //     hangout.from = 'Paul Irish';
-  //     hangout.profile = '118075919496626375791';
-
-  //     hangout.messages = [{
-  //       profile: '113127438179392830442',
-  //       datetime: '2013-06-24T12:02',
-  //       isother: true,
-  //       msg: ["Feelin' this Web Components thing.", 'Heard anything about it?']
-  //     }, {
-  //       profile: '118075919496626375791',
-  //       datetime: '2013-06-24T12:03',
-  //       msg: ['Totes amazing']
-  //     }, {
-  //       profile: '118075919496626375791',
-  //       datetime: '2013-06-24T12:05',
-  //       msg: ['Have you tried Polymer yet?']
-  //     }, {
-  //       profile: '113127438179392830442',
-  //       datetime: '2013-06-24T12:06',
-  //       isother: true,
-  //       msg: ['Naw Bro', "I'll give it a spin"]
-  //     }];
-
-  //     output.appendChild(hangout);
-  //   }
-
-  //   count++;
-  
-  // });
-
-})();
-
-(function() {
-  var demo = $('#polymer-ajax-demo');
-  var output = demo.querySelector('output');
-
-  demo.querySelector('.snippet-demo').listen('click', function(e) {
-    e.preventDefault();
-
-    output.innerHTML = '';
-
-    var ajax = document.createElement('polymer-ajax');
-    ajax.url = 'http://gdata.youtube.com/feeds/api/videos/';
-    ajax.params = {
-      alt: 'json',
-      q: 'chrome'
-    };
-    ajax.handleAs = 'json';
-    ajax.addEventListener('polymer-response', function(e) {
-      var entries = e.target.response.feed.entry;
-      entries.forEach(function(entry) {
-        output.innerHTML += '<li>' + entry.title.$t + '</li>';
+      var ajax = document.createElement('polymer-ajax');
+      ajax.url = 'http://gdata.youtube.com/feeds/api/videos/';
+      ajax.params = {
+        alt: 'json',
+        q: 'chrome'
+      };
+      ajax.handleAs = 'json';
+      ajax.addEventListener('polymer-response', function(e) {
+        var entries = e.target.response.feed.entry;
+        entries.forEach(function(entry) {
+          output.innerHTML += '<li>' + entry.title.$t + '</li>';
+        });
       });
+      ajax.go();
     });
-    ajax.go();
-  });
-})();
+  })();
 
-(function() {
-  // var demo = $('#polymer-file-demo');
-  // var output = demo.querySelector('output');
+  (function() {
+    var demo = $('#polymer-flex-demo');
+    var output = demo.querySelector('output');
 
-  // demo.querySelector('.snippet-demo').listen('click', function(e) {
-  //   e.preventDefault();
+    var flexLayout = output.querySelector('polymer-flex-layout');
+    var flexDiv = flexLayout.querySelector('div[flex]');
 
-  //   output.innerHTML = '';
-
-  //   var file = document.createElement('polymer-file');
-  //   file.auto = true;
-  //   file.readas = 'dataurl';
-  //   file.blob = new Blob(['abc'], {type: 'text/plain'});
-  //   file.addEventListener('polymer-result', function(e) {
-  //     output.innerHTML = this.result.link(this.result);
-  //   });
-  // });
-})();
-
-(function() {
-  var demo = $('#polymer-flex-demo');
-  var output = demo.querySelector('output');
-
-  var flexLayout = output.querySelector('polymer-flex-layout');
-  var flexDiv = flexLayout.querySelector('div[flex]');
-
-  flexLayout.listen('click', function(e) {
-    var div = document.createElement('div');
-    div.textContent = 'new div!';
-    this.appendChild(div);
-  });
-
-  demo.querySelector('[data-action="vertical"]').listen('click', function(e) {
-    flexLayout.vertical = !flexLayout.vertical;
-    e.target.classList.toggle('inactive');
-  });
-
-  demo.querySelector('[data-action="flex"]').listen('click', function(e) {
-    var flexing = flexDiv.getAttribute('flex') != undefined;
-    if (flexing) {
-      flexDiv.removeAttribute('flex');
-    } else {
-      flexDiv.setAttribute('flex');
-    }
-    e.target.classList.toggle('inactive');
-  });
-
-})();
-
-(function() {
-  var slide = $('#more-complex-elements');
-  initCodeSnippetCycler(slide);
-})();
-
-(function() {
-  var slide = $('#published-properties');
-  initCodeSnippetCycler(slide);
-})();
-
-(function() {
-  var slides = $$('slide.googlecomtoday');
-
-  var onTransEnd_ = function(e) {
-    if (!this.classList.contains('current')) {
-      return;
-    }
-    if (e.propertyName == '-webkit-transform' ||
-        e.propertyName == '-moz-transform' ||
-        e.propertyName == '-ms-transform' ||
-        e.propertyName == 'transform') {
-      slidedeck.nextSlide();
-      this.classList.remove('active');
-    }
-  };
-
-  slides.forEach(function(slide, i) {
-    slide.listen('click', function() {
-      this.classList.add('active');
+    flexLayout.listen('click', function(e) {
+      var div = document.createElement('div');
+      div.textContent = 'new div!';
+      this.appendChild(div);
     });
 
-    slide.listen(transEndEventName, onTransEnd_.bind(slide));
-  });
+    demo.querySelector('[data-action="vertical"]').listen('click', function(e) {
+      flexLayout.vertical = !flexLayout.vertical;
+      e.target.classList.toggle('inactive');
+    });
 
-})();
+    demo.querySelector('[data-action="flex"]').listen('click', function(e) {
+      var flexing = flexDiv.getAttribute('flex') != undefined;
+      if (flexing) {
+        flexDiv.removeAttribute('flex');
+      } else {
+        flexDiv.setAttribute('flex');
+      }
+      e.target.classList.toggle('inactive');
+    });
 
-(function() {
-  var slide = $('#title-slide');
-  var video = slide.$('video');
-  var audio = slide.$('audio');
+  })();
 
-  var PLAYBACKRATE = 2;
+  (function() {
+    var slide = $('#more-complex-elements');
+    initCodeSnippetCycler(slide);
+  })();
 
-  video.listen('ended', function(e) {
-    video.load(); // video.currentTime = 0; doesn't work.
-    video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
-    video.play();
-  });
+  (function() {
+    var slide = $('#published-properties');
+    initCodeSnippetCycler(slide);
+  })();
 
-  slide.listen('slideenter', function(e) {
-    if (video.currentTime >= video.duration) {
-      video.load();
+  (function() {
+    var slides = $$('slide.googlecomtoday');
+
+    var onTransEnd_ = function(e) {
+      if (!this.classList.contains('current')) {
+        return;
+      }
+      if (e.propertyName == '-webkit-transform' ||
+          e.propertyName == '-moz-transform' ||
+          e.propertyName == '-ms-transform' ||
+          e.propertyName == 'transform') {
+        slidedeck.nextSlide();
+        this.classList.remove('active');
+      }
+    };
+
+    slides.forEach(function(slide, i) {
+      slide.listen('click', function() {
+        this.classList.add('active');
+      });
+
+      slide.listen(transEndEventName, onTransEnd_.bind(slide));
+    });
+
+  })();
+
+  (function() {
+    var slide = $('#title-slide');
+    var video = slide.$('video');
+    var audio = slide.$('audio');
+
+    var PLAYBACKRATE = 2;
+
+    video.listen('ended', function(e) {
+      video.load(); // video.currentTime = 0; doesn't work.
+      video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
+      video.play();
+    });
+
+    slide.listen('slideenter', function(e) {
+      if (video.currentTime >= video.duration) {
+        video.load();
+      }
+      video.playbackRate = PLAYBACKRATE;
+      video.play();
+      audio.play();
+    });
+
+    slide.listen('slideleave', function() {
+      video.pause();
+      audio.pause();
+    });
+
+    // If this slide is current on pageload, start playing video.
+    if (slidedeck.slides[slidedeck.curSlide_] == slide) {
+      video.playbackRate = PLAYBACKRATE;
+      video.play();
+      audio.play();
     }
-    video.playbackRate = PLAYBACKRATE;
-    video.play();
-    audio.play();
-  });
+  })();
 
-  slide.listen('slideleave', function() {
-    video.pause();
-    audio.pause();
-  });
+  (function() {
+    var slide = $('#polymer-diagram');
 
-  // If this slide is current on pageload, start playing video.
-  if (slidedeck.slides[slidedeck.curSlide_] == slide) {
-    video.playbackRate = PLAYBACKRATE;
-    video.play();
-    audio.play();
-  }
-})();
+    var blocks3d = slide.$('#blocks-3d');
+    var native3d = slide.$('#native-3d');
+    var platform3d = slide.$('#platform-3d');
+    var polymer3d = slide.$('#polymer-3d');
+    var elements3d = slide.$('#elements-3d');
 
+    var blocks = [native3d, platform3d, polymer3d, elements3d];
 
-(function() {
-  // var slide = $('#spacevideo');
-  // var video = slide.$('video');
-  // var audio = slide.$('audio');
+    slidedeck.addEventListener('slidebuild', function(e) {
+      var segment = e.detail.segment;
 
-  // var PLAYBACKRATE = 2;
+      switch (segment.id) {
+        case 'diagram-animate-in':
+          animateIn();
+          break;
 
-  // video.listen('ended', function(e) {
-  //   video.load(); // video.currentTime = 0; doesn't work.
-  //   video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
-  //   video.play();
-  // });
+        case 'diagram-explode':
+          explode();
+          break;
 
-  // slide.listen('slideenter', function(e) {
-  //   if (video.currentTime >= video.duration) {
-  //     video.load();
-  //   }
-  //   video.playbackRate = PLAYBACKRATE;
-  //   video.play();
-  //   audio.play();
-  // });
+        case 'diagram-native':
+          focusOn('native-3d');
+          break;
 
-  // slide.listen('slideleave', function() {
-  //   video.pause();
-  //   audio.pause();
-  // });
+        case 'diagram-platform':
+          focusOn('platform-3d');
+          break;
 
-  // // If this slide is current on pageload, start playing video.
-  // if (slidedeck.slides[slidedeck.curSlide_] == slide) {
-  //   video.playbackRate = PLAYBACKRATE;
-  //   video.play();
-  //   audio.play();
-  // }
-})();
+        case 'diagram-polymer':
+          focusOn('polymer-3d');
+          break;
 
-(function() {
-  // var slide = $('#spacevideo2');
-  // var video = slide.$('video');
-  // var audio = slide.$('audio');
+        case 'diagram-elements':
+          focusOn('elements-3d');
+          break;
 
-  // var PLAYBACKRATE = 1;
+        case 'diagram-contract':
+          contract();
+          break;
+      }
+    });
 
-  // // video.listen('ended', function(e) {
-  // //   video.load(); // video.currentTime = 0; doesn't work.
-  // //   video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
-  // //   video.play();
-  // // });
+    function animateIn() {
+      var animations = new ParGroup();
+      blocks.forEach(function(block, index) {
+        animations.append(new Animation(block, [
+          { opacity: 0, transform: 'translate3d(0, -600px, 0)' },
+          { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+        ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
+      });
+      var player = document.timeline.play(animations);
+      // setTimeout(idle, 1);
+    }
 
-  // slide.listen('click', function() {
-  //   video.playbackRate = PLAYBACKRATE; // screenflow captured at 30fps. get us to 60.
-  //   video.paused ? video.play() : video.pause();
-  //   audio.paused ? audio.play() : audio.pause();
-  // });
+    function idle() {
+      var animations = new ParGroup();
+      blocks.forEach(function(block, index) {
+        animations.append(new Animation(block, [
+          { transform: 'translate3d(0, -15px, 0)' }
+        ], { direction: 'alternate', duration: 1, delay: 0.3 * index, iterations: Infinity, easing: 'ease-in-out' }));
+      });
+      var player = document.timeline.play(animations);
+    }
 
-  // slide.listen('slideleave', function() {
-  //   video.pause();
-  //   audio.pause();
-  // });
+    function explode() {
+      var animations = new ParGroup();
+      blocks.forEach(function(block, index) {
+        var posY1 = 5 + (index * 10);
+        var posY2 = 70 - (index * 70);
+        animations.append(new Animation(block, [
+          { offset: 0.4, transform: 'translate3d(0, ' + posY1 + 'px' + ', 0)' },
+          { offset: 1, transform: 'translate3d(0, ' + posY2 + 'px' + ', 0)' }
+        ], { duration: 0.5, easing: 'ease-in-out' }));
+      });
+      var player = document.timeline.play(animations);
+      setTimeout(idle2, 400);
+    }
 
-  // // If this slide is current on pageload, start playing video.
-  // if (slidedeck.slides[slidedeck.curSlide_] == slide) {
-  //   video.playbackRate = PLAYBACKRATE;
-  //   video.play();
-  //   audio.play();
-  // }
-})();
+    function idle2() {
+      var animations = new ParGroup();
+      blocks.forEach(function(block, index) {
+        var posY = (70 - (index * 70)) - 20;
+        animations.append(new Animation(block, [
+          { transform: 'translate3d(0, ' + posY + 'px' + ', 0)' }
+        ], {
+            direction: 'alternate', duration: 1,
+            delay: index == 3 ? 0 : 0.3 * index,
+            iterations: Infinity, easing: 'ease-in-out'
+        }));
+      });
+      var player = document.timeline.play(animations);
+    }
 
+    function contract() {
+      var animations = new ParGroup();
+      blocks.forEach(function(block, index) {
+        animations.append(new Animation(block, [
+          { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+        ], { duration: 0.5, easing: 'ease-in-out' }));
+      });
+      var player = document.timeline.play(animations);
+    }
+
+    function animateOut() {
+      var animations = new ParGroup();
+      blocks.reverse().forEach(function(block, index) {
+        animations.append(new Animation(block, [
+          { opacity: 0, transform: 'translate3d(0, -600px, 0)' }
+        ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
+      });
+      var player = document.timeline.play(animations);
+      blocks.reverse();
+    }
+
+    function focusOn(name) {
+      blocks.forEach(function(block) {
+        if (block.id == name) {
+          document.timeline.play(block.fadeIn);
+          block.faded = false;
+          return;
+        }
+
+        if (!block.faded) {
+          document.timeline.play(block.fadeOut);
+          block.faded = true;
+        }
+      });
+    }
+
+    (function() {
+      blocks.forEach(function(block, index) {
+        block.fadeOut = new Animation(block, [
+          { opacity: 0.3 }
+        ], { duration: 0.3 });
+        
+        block.fadeIn = new Animation(block, [
+          { opacity: 1 }
+        ], { duration: 0.3 });
+      });
+    })();
+
+  })();
 }
-
-
-// function toggleElementProperty(el) {
-//   var prop = el.textContent;
-//   var currentSlide = slidedeck.slides[slidedeck.curSlide_];
-//   //currentSlide.querySelector('.component-demo output')
-// }
 
 function encodeHTMLEntities(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') ;
 }
-
-// function toggleReplacementMarkup(el) {
-
-//   if (el.dataset.using && el.dataset.using == 'replacement') {
-//     var markup = el.dataset.original;
-//     el.dataset.using = 'original';
-//   } else {
-//     var markup = encodeHTMLEntities(el.dataset.replacement);
-//     el.dataset.using = 'replacement';
-//   }
-
-//   el.innerHTML = markup;
-//   prettyPrint();
-// }
-
