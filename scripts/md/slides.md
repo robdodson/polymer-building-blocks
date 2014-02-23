@@ -19,6 +19,34 @@ id: who
 
 ---
 
+id: agenda
+title: Today's agenda
+class: large
+
+<div class="topmargin">
+  <div>
+    <h3>What is Polymer?</h3>
+    <br>
+  </div>
+  <div>
+    <h3>Working with Polymer</h3>
+    <br>
+  </div>
+  <div>
+    <h3>Example time</h3>
+    <br>
+  </div>
+</div>
+
+---
+
+class: flexbox vleft
+body_class: core-fill
+
+<h2>Let's go back in time...</h2>
+
+---
+
 title: Let's talk about tabs...
 
 <img src="/images/screenshots/tabs2.jpg">
@@ -52,9 +80,9 @@ content_class: flexbox vcenter
 
 ---
 
-hidden: true
-body_class: readable
-class: nobackdrop nobackground
+content_class: flexbox vcenter
+
+<h2>Elements are encapsulated</h2>
 
 ---
 
@@ -74,6 +102,12 @@ content_class: flexbox vcenter
   <option>Medium</option>
   <option>Large</option>
 </select>
+
+---
+
+content_class: flexbox vcenter
+
+<h2>Elements are configurable</h2>
 
 ---
 
@@ -123,6 +157,7 @@ content_class: flexbox vcenter
 
 ---
 
+hidden: true
 class: large
 content_class: flexbox vcenter
 
@@ -140,6 +175,12 @@ content_class: flexbox vcenter
   <li>Medium</li>
   <option>Large</option>
 </select>
+
+---
+
+content_class: flexbox vcenter
+
+<h2>Elements are composable</h2>
 
 ---
 
@@ -184,6 +225,21 @@ content_class: flexbox vcenter
 
 ---
 
+content_class: flexbox vcenter
+
+<h2>Elements are programmable</h2>
+
+---
+
+class: large
+content_class: flexbox vcenter
+
+<pre class="nohighlight">
+var foo = mySelect.selectedIndex;
+</pre>
+
+---
+
 content_class: flexbox vleft explanation
 
 <h2 style="margin-top: -100px; margin-bottom: 50px;">
@@ -191,23 +247,10 @@ content_class: flexbox vleft explanation
 </h2>
 
 <div class="build">
-  <h3>Reduces the amount of code you have to write</h3>
-  <h3>Lowers the barrier of entry for new developers</h3>
+  <h3>Reduces boilerplate</h3>
+  <h3>Lowers the barrier of entry</h3>
   <h3>Makes sharing easy</h3>
 </div>
-
----
-
-class: large
-content_class: flexbox vcenter
-
-<pre class="nohighlight" style="margin-top: -50px;">
-&lt;tabs&gt;
-  &lt;tab&gt;Tab 1&lt;/tab&gt;
-  &lt;tab&gt;Tab 2&lt;/tab&gt;
-  &lt;tab&gt;Tab 3&lt;/tab&gt;
-&lt;/tabs&gt;
-</pre>
 
 ---
 

@@ -21,6 +21,13 @@ $polymer-applications-color: rgb(35, 100, 215);
 .core-bg {
   background-color: $polymer-core-color;
 }
+.core-fill {
+  background: $polymer-core-color;
+
+  h2 {
+    color: white;
+  }
+}
 .platform {
   color: $polymer-platform-color;
 }
@@ -717,6 +724,7 @@ slide#whatispolymer {
   }
 }
 
+slide#agenda,
 slide#philosophy {
   h2 {
     font-size: 45px !important;
