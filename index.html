@@ -158,7 +158,7 @@ https://code.google.com/p/io-2012-slides
  
 </slide>
 
-<slide  class="nobackdrop nobackground"  data-body-class="readable" >
+<slide  class="nobackdrop nobackground"  data-body-class="readable" hidden>
   
     <hgroup>
       <span>
@@ -280,23 +280,16 @@ https://code.google.com/p/io-2012-slides
     </hgroup>
     <article class="flexbox vcenter"><pre class="nohighlight">
 &lt;select>
-  &lt;optgroup label="German Cars">
-    &lt;option>Mercedes&lt;/option>
-    &lt;option>Audi&lt;/option>
-  &lt;/optgroup>
-  ...
+  &lt;option>Small&lt;/option>
+  <s>&lt;li>Medium&lt;/li></s>
+  &lt;option>Large&lt;/option>
 &lt;/select>
 </pre>
 
 <p><select class="corner top right">
-  <optgroup label="German Cars">
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
-  </optgroup>
-  <optgroup label="American cars">
-    <option value="ford">Ford</option>
-    <option value="gm">GM</option>
-  </optgroup>
+  <option>Small</option>
+  <li>Medium</li>
+  <option>Large</option>
 </select></p></article>
  
 </slide>
@@ -315,16 +308,23 @@ https://code.google.com/p/io-2012-slides
     </hgroup>
     <article class="flexbox vcenter"><pre class="nohighlight">
 &lt;select>
-  &lt;option>Small&lt;/option>
-  <s>&lt;li>Medium&lt;/li></s>
-  &lt;option>Large&lt;/option>
+  &lt;optgroup label="German Cars">
+    &lt;option>Mercedes&lt;/option>
+    &lt;option>Audi&lt;/option>
+  &lt;/optgroup>
+  ...
 &lt;/select>
 </pre>
 
 <p><select class="corner top right">
-  <option>Small</option>
-  <li>Medium</li>
-  <option>Large</option>
+  <optgroup label="German Cars">
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </optgroup>
+  <optgroup label="American cars">
+    <option value="ford">Ford</option>
+    <option value="gm">GM</option>
+  </optgroup>
 </select></p></article>
  
 </slide>
@@ -521,7 +521,7 @@ https://code.google.com/p/io-2012-slides
 
   <div id="diagram-polymer" class="diagram-explanation" data-build-index="5">
     <h3 class="core bold">Polymer.js</h3>
-    <p>An opinionated way to work with web components</p>
+    <p>An opinionated way to work with Web Components</p>
   </div>
 
   <div id="diagram-platform" class="diagram-explanation" data-build-index="4">
@@ -533,8 +533,35 @@ https://code.google.com/p/io-2012-slides
     <h3 class="bold">Native</h3>
     <p>The current browser landscape</p>
   </div>
+</div></article>
+ 
+</slide>
 
-  <div id="diagram-contract" data-build-index="7">
+<slide id="philosophy" class="large"   >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Three ways to work with Polymer</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><div class="build topmargin">
+  <div>
+    <h3>Using <b class="elements">elements</b></h3>
+    <br>
+  </div>
+  <div>
+    <h3><b class="core">Creating elements</b></h3>
+    <br>
+  </div>
+  <div>
+    <h3>Utilizing the modern web <b class="platform">platform</b></h3>
+    <br>
+  </div>
 </div></article>
  
 </slide>
@@ -555,38 +582,6 @@ https://code.google.com/p/io-2012-slides
  
 </slide>
 
-<slide id="philosophy" class="large"   >
-  
-    <hgroup>
-      <span>
-        
-        
-        
-        
-      </span>
-      <h2>Philosophy &amp; Goals</h2>
-      <h3></h3>
-    </hgroup>
-    <article ><div class="build topmargin">
-  <div>
-    <h3>Using <b class="elements">elements</b></h3>
-    <p>HTML is cool. DOM feels good.</p>
-    <br>
-  </div>
-  <div>
-    <h3><b class="core">Creating elements</b></h3>
-    <p>Remove tediousness of building web component-based apps</p>
-    <br>
-  </div>
-  <div>
-    <h3>Utilize the modern web <b class="platform">platform</b></h3>
-    <p>Support modern browsers</p>
-    <br>
-  </div>
-</div></article>
- 
-</slide>
-
 <slide id="using-elements" class="nobackdrop nobackground segue elements polymer-diagram"   >
   
     <aside class="gdbar"><img src="images/logos/chrome_logo.png"></aside>
@@ -603,22 +598,6 @@ https://code.google.com/p/io-2012-slides
 </div></article>
     
   
-</slide>
-
-<slide     >
-  
-    <hgroup>
-      <span>
-        
-        
-        
-        
-      </span>
-      <h2></h2>
-      <h3></h3>
-    </hgroup>
-    <article class="flexbox vcenter"><h2>You don't have to know about their internals</h2></article>
- 
 </slide>
 
 <slide id="polymer-ui-elements"   data-body-class="elements-bg" >
@@ -666,11 +645,11 @@ https://code.google.com/p/io-2012-slides
       <h3>Tabs revisited</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-tabs.html</span>">
 </pre>
 
-<pre class="prettyprint" style="font-size:25px;" data-lang="HTML">
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
 &lt;polymer-ui-tabs selected="0"&gt;
   &lt;span&gt;Home&lt;/span&gt;
   &lt;span&gt;About&lt;/span&gt;
@@ -678,7 +657,7 @@ https://code.google.com/p/io-2012-slides
 &lt;/polymer-ui-tabs&gt;
 </pre>
 
-<div class="component-demo" style="height:100%">
+<div class="component-demo">
 <link rel="import" href="bower_components/polymer-ui-tabs/polymer-ui-tabs.html">
 <output>
   <polymer-ui-tabs selected="0">
@@ -692,7 +671,7 @@ https://code.google.com/p/io-2012-slides
  
 </slide>
 
-<slide id="polymer-ui-toggle-demo"   data-body-class="elements-bg" >
+<slide id="polymer-ui-collapsible-demo"   data-body-class="elements-bg" >
   
     <hgroup>
       <span>
@@ -705,7 +684,7 @@ https://code.google.com/p/io-2012-slides
       <h3>Collapsible elements</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-collapsible.html</span>">
 </pre>
 
@@ -733,6 +712,56 @@ https://code.google.com/p/io-2012-slides
 </output>
 
 </div></article>
+ 
+</slide>
+
+<slide id="polymer-ui-toggle-button-demo"   data-body-class="elements-bg" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Everything is an element</h2>
+      <h3>Toggle Button Element</h3>
+    </hgroup>
+    <article ><pre class="corner prettyprint">
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-toggle-button.html</span>">
+</pre>
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;polymer-ui-toggle-button offcaption="Nope"&gt;
+&lt;/polymer-ui-toggle-button&gt;
+</pre>
+
+<div class="component-demo">
+<link rel="import"
+  href="bower_components/polymer-ui-toggle-button/polymer-ui-toggle-button.html">
+
+<output style="zoom: 2.5;">
+  <polymer-ui-toggle-button offcaption="Nope"></polymer-ui-toggle-button>
+</output>
+
+</div></article>
+ 
+</slide>
+
+<slide     >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter"><h2>You don't have to know about their internals</h2></article>
  
 </slide>
 
@@ -783,11 +812,11 @@ https://code.google.com/p/io-2012-slides
       <h3>flexbox...using DOM</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-flex-layout.html</span>">
 </pre>
 
-<pre class="prettyprint" data-lang="HTML">
+<pre class="prettyprint" style="font-size: 30px; line-height: 1.2;" data-lang="HTML">
 &lt;polymer-flex-layout <b data-action="vertical">vertical</b> <b>iscontainer</b>>
   &lt;div>Header&lt;/div>
   &lt;div <b data-action="flex">flex</b>>Body&lt;/div>
@@ -822,7 +851,7 @@ https://code.google.com/p/io-2012-slides
       <h3>AJAX...using DOM</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-ajax.html</span>">
 </pre>
 
@@ -846,7 +875,23 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide  class="nobackdrop nobackground segue core"   >
+<slide     >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter"><h2>They're easy to add to your project</h2></article>
+ 
+</slide>
+
+<slide id="creating-elements" class="nobackdrop nobackground segue core polymer-diagram"   >
   
     <aside class="gdbar"><img src="images/logos/chrome_logo.png"></aside>
     <hgroup class="auto-fadein">
@@ -854,9 +899,12 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h3><a href="http://www.polymer-project.org/polymer.html" class="nounderline">polymer-project.org/polymer.html</a></h3>
     </hgroup>
     
-    <article ><div class="overlay top"></div>
-
-<div class="overlay bottom"></div></article>
+    <article ><div id="blocks-3d" class="in" style="top: 10%;">
+  <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
+  <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
+  <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
+  <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
+</div></article>
     
   
 </slide>
@@ -1054,7 +1102,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h3>responsive design...using DOM</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-media-query.html</span>">
 </pre>
 
@@ -1081,7 +1129,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide  class="nobackdrop nobackground segue platform"   >
+<slide id="the-platform" class="nobackdrop nobackground segue platform polymer-diagram"   >
   
     <aside class="gdbar"><img src="images/logos/chrome_logo.png"></aside>
     <hgroup class="auto-fadein">
@@ -1089,11 +1137,30 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h3></h3>
     </hgroup>
     
-    <article ><div class="overlay top"></div>
-
-<div class="overlay bottom"></div></article>
+    <article ><div id="blocks-3d" class="in" style="top: 10%;">
+  <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
+  <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
+  <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
+  <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
+</div></article>
     
   
+</slide>
+
+<slide    data-body-class="platform-bg" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Platform polyfills</h2>
+      <h3>declarative web components</h3>
+    </hgroup>
+    <article ></article>
+ 
 </slide>
 
 <slide id="polymerurl" class="nobackdrop nobackground yum do-transition"   >

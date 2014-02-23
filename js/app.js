@@ -174,10 +174,6 @@ function initContent(e) {
       document.body.classList.add('nobackdrop');
     }
 
-    if (slide.classList.contains('polymer-diagram')) {
-      enableDiagramAnimations();
-    }
-
     if (slide.dataset.bodyClass) {
       document.body.classList.add(slide.dataset.bodyClass);
     }
@@ -217,6 +213,8 @@ function initContent(e) {
   setupSnippetDemos();
 
   prettyPrint();
+
+  enableDiagramAnimations();
 
   initDemos();
 }
@@ -404,179 +402,172 @@ function encodeHTMLEntities(str) {
 }
 
 function enableDiagramAnimations() {
-  var slide = slidedeck.slides[slidedeck.curSlide_];
-
-  var blocks3d = slide.$('#blocks-3d');
-  var native3d = slide.$('#native-3d');
-  var platform3d = slide.$('#platform-3d');
-  var polymer3d = slide.$('#polymer-3d');
-  var elements3d = slide.$('#elements-3d');
-
-  var blocks = [native3d, platform3d, polymer3d, elements3d];
-
-  slidedeck.addEventListener('slidebuild', function(e) {
-    var segment = e.detail.segment;
-
-    switch (segment.id) {
-      case 'diagram-animate-in':
-        animateIn();
-        break;
-
-      case 'diagram-explode':
-        explode();
-        break;
-
-      case 'diagram-native':
-        focusOn('native-3d');
-        break;
-
-      case 'diagram-platform':
-        focusOn('platform-3d');
-        break;
-
-      case 'diagram-polymer':
-        focusOn('polymer-3d');
-        break;
-
-      case 'diagram-elements':
-        focusOn('elements-3d');
-        break;
-
-      case 'diagram-contract':
-        contract();
-        break;
-    }
-  });
 
   slidedeck.addEventListener('slideenter', function(e) {
     var slide = e.target;
 
-    switch (slide.id) {
-      case 'using-elements':
-        setTimeout(function() {
-          focusOnSeq('elements-3d');
-        }, 1500);
-        break;
+    if (slide.classList.contains('polymer-diagram')) {
+      animations.captureElements();
+      animations.setupFades();
+
+      switch (slide.id) {
+        case 'using-elements':
+          setTimeout(function() {
+            animations.focusOnSeq('elements-3d');
+          }, 1500);
+          break;
+
+        case 'creating-elements':
+          setTimeout(function() {
+            animations.focusOnSeq('polymer-3d');
+          }, 1500);
+          break;
+
+        case 'the-platform':
+          setTimeout(function() {
+            animations.focusOnSeq('platform-3d');
+          }, 1500);
+          break;
+      }
+
+      slidedeck.addEventListener('slidebuild', function(e) {
+        var segment = e.detail.segment;
+
+        switch (segment.id) {
+          case 'diagram-animate-in':
+            animations.animateIn();
+            break;
+
+          case 'diagram-explode':
+            animations.explode();
+            break;
+
+          case 'diagram-native':
+            animations.focusOn('native-3d');
+            break;
+
+          case 'diagram-platform':
+            animations.focusOn('platform-3d');
+            break;
+
+          case 'diagram-polymer':
+            animations.focusOn('polymer-3d');
+            break;
+
+          case 'diagram-elements':
+            animations.focusOn('elements-3d');
+            break;
+
+          case 'diagram-contract':
+            animations.contract();
+            break;
+        }
+      });
     }
   });
 
-  function animateIn() {
-    var animations = new ParGroup();
-    blocks.forEach(function(block, index) {
-      animations.append(new Animation(block, [
-        { opacity: 0, transform: 'translate3d(0, -600px, 0)' },
-        { opacity: 1, transform: 'translate3d(0, 0, 0)' }
-      ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
-    });
-    var player = document.timeline.play(animations);
-    // setTimeout(idle, 1);
-  }
+  var animations = {
+    captureElements: function() {
+      this.slide = slidedeck.slides[slidedeck.curSlide_];
 
-  function idle() {
-    var animations = new ParGroup();
-    blocks.forEach(function(block, index) {
-      animations.append(new Animation(block, [
-        { transform: 'translate3d(0, -15px, 0)' }
-      ], { direction: 'alternate', duration: 1, delay: 0.3 * index, iterations: Infinity, easing: 'ease-in-out' }));
-    });
-    var player = document.timeline.play(animations);
-  }
+      this.blocks3d = this.slide.$('#blocks-3d');
+      this.native3d = this.slide.$('#native-3d');
+      this.platform3d = this.slide.$('#platform-3d');
+      this.polymer3d = this.slide.$('#polymer-3d');
+      this.elements3d = this.slide.$('#elements-3d');
 
-  function explode() {
-    var animations = new ParGroup();
-    blocks.forEach(function(block, index) {
-      var posY1 = 5 + (index * 10);
-      var posY2 = 70 - (index * 70);
-      animations.append(new Animation(block, [
-        { offset: 0.4, transform: 'translate3d(0, ' + posY1 + 'px' + ', 0)' },
-        { offset: 1, transform: 'translate3d(0, ' + posY2 + 'px' + ', 0)' }
-      ], { duration: 0.5, easing: 'ease-in-out' }));
-    });
-    var player = document.timeline.play(animations);
-    setTimeout(idle2, 400);
-  }
+      this.blocks = [this.native3d, this.platform3d, this.polymer3d, this.elements3d];
+    },
+    setupFades: function() {
+      this.blocks.forEach(function(block, index) {
+        block.fadeOut = new Animation(block, [
+          { opacity: 0.3 }
+        ], { duration: 0.3, ease: 'ease-in-out' });
+        
+        block.fadeIn = new Animation(block, [
+          { opacity: 1 }
+        ], { duration: 0.3, ease: 'ease-in-out' });
+      });
+    },
+    animateIn: function() {
+      var group = new ParGroup();
+      this.blocks.forEach(function(block, index) {
+        group.append(new Animation(block, [
+          { opacity: 0, transform: 'translate3d(0, -600px, 0)' },
+          { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+        ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
+      });
+      document.timeline.play(group);
+    },
+    explode: function() {
+      var group = new ParGroup();
+      this.blocks.forEach(function(block, index) {
+        var posY1 = 5 + (index * 10);
+        var posY2 = 70 - (index * 70);
+        group.append(new Animation(block, [
+          { offset: 0.4, transform: 'translate3d(0, ' + posY1 + 'px' + ', 0)' },
+          { offset: 1, transform: 'translate3d(0, ' + posY2 + 'px' + ', 0)' }
+        ], { duration: 0.5, easing: 'ease-in-out' }));
+      });
+      document.timeline.play(group);
+      setTimeout(this.idle.bind(this), 400);
+    },
+    idle: function() {
+      var group = new ParGroup();
+      this.blocks.forEach(function(block, index) {
+        var posY = (70 - (index * 70)) - 20;
+        group.append(new Animation(block, [
+          { transform: 'translate3d(0, ' + posY + 'px' + ', 0)' }
+        ], {
+            direction: 'alternate', duration: 1,
+            delay: index == 3 ? 0 : 0.3 * index,
+            iterations: Infinity, easing: 'ease-in-out'
+        }));
+      });
+      document.timeline.play(group);
+    },
+    contract: function() {
+      var group = new ParGroup();
+      this.blocks.forEach(function(block, index) {
+        group.append(new Animation(block, [
+          { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+        ], { duration: 0.5, easing: 'ease-in-out' }));
+      });
+      document.timeline.play(group);
+    },
+    focusOn: function(name) {
+      this.blocks.forEach(function(block) {
+        if (block.id == name) {
+          document.timeline.play(block.fadeIn);
+          block.faded = false;
+          return;
+        }
 
-  function idle2() {
-    var animations = new ParGroup();
-    blocks.forEach(function(block, index) {
-      var posY = (70 - (index * 70)) - 20;
-      animations.append(new Animation(block, [
-        { transform: 'translate3d(0, ' + posY + 'px' + ', 0)' }
-      ], {
-          direction: 'alternate', duration: 1,
-          delay: index == 3 ? 0 : 0.3 * index,
-          iterations: Infinity, easing: 'ease-in-out'
-      }));
-    });
-    var player = document.timeline.play(animations);
-  }
+        if (!block.faded) {
+          document.timeline.play(block.fadeOut);
+          block.faded = true;
+        }
+      });
+    },
+    focusOnSeq: function(name) {
+      var fades = [];
 
-  function contract() {
-    var animations = new ParGroup();
-    blocks.forEach(function(block, index) {
-      animations.append(new Animation(block, [
-        { opacity: 1, transform: 'translate3d(0, 0, 0)' }
-      ], { duration: 0.5, easing: 'ease-in-out' }));
-    });
-    var player = document.timeline.play(animations);
-  }
+      this.blocks.forEach(function(block) {
+        if (block.id == name) {
+          document.timeline.play(block.fadeIn);
+          block.faded = false;
+          return;
+        }
 
-  function animateOut() {
-    var animations = new ParGroup();
-    blocks.reverse().forEach(function(block, index) {
-      animations.append(new Animation(block, [
-        { opacity: 0, transform: 'translate3d(0, -600px, 0)' }
-      ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
-    });
-    var player = document.timeline.play(animations);
-    blocks.reverse();
-  }
+        if (!block.faded) {
+          fades.push(block.fadeOut.clone());
+          block.faded = true;
+        }
+      });
 
-  function focusOn(name) {
-    blocks.forEach(function(block) {
-      if (block.id == name) {
-        document.timeline.play(block.fadeIn);
-        block.faded = false;
-        return;
+      if (fades.length) {
+        document.timeline.play(new SeqGroup(fades));
       }
-
-      if (!block.faded) {
-        document.timeline.play(block.fadeOut);
-        block.faded = true;
-      }
-    });
-  }
-
-  function focusOnSeq(name) {
-    var animations = [];
-
-    blocks.forEach(function(block) {
-      if (block.id == name) {
-        document.timeline.play(block.fadeIn);
-        block.faded = false;
-        return;
-      }
-
-      if (!block.faded) {
-        animations.push(block.fadeOut.clone());
-        block.faded = true;
-      }
-    });
-
-    if (animations.length) {
-      document.timeline.play(new SeqGroup(animations));
     }
-  }
-
-  (function() {
-    blocks.forEach(function(block, index) {
-      block.fadeOut = new Animation(block, [
-        { opacity: 0.3 }
-      ], { duration: 0.3, ease: 'ease-in-out' });
-      
-      block.fadeIn = new Animation(block, [
-        { opacity: 1 }
-      ], { duration: 0.3, ease: 'ease-in-out' });
-    });
-  })();
+  };
 }

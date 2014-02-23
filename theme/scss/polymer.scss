@@ -67,6 +67,12 @@ $polymer-applications-color: rgb(35, 100, 215);
   }
 }
 
+#creating-elements {
+  h2 {
+    font-size: 55px;
+  }
+}
+
 .sidebar {
   overflow: hidden;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -822,7 +828,6 @@ slide#spoiler {
 
 .component-demo {
   overflow: auto;
-  height: 125px;
   //@include experimental-value(height, fill-available);
   output {
     font-size: 16px;
@@ -850,6 +855,17 @@ slide#spoiler {
     }
     &.build-current {
       @include transform(none);
+    }
+  }
+}
+
+#polymer-ui-tabs-demo {
+  polymer-ui-tabs {
+    height: auto;
+
+    > * {
+      font-size: 25px;
+      padding: 20px 25px;
     }
   }
 }
