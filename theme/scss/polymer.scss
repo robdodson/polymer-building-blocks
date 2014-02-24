@@ -22,11 +22,8 @@ $polymer-applications-color: rgb(35, 100, 215);
   background-color: $polymer-core-color;
 }
 .core-fill {
+  @extend .fill;
   background: $polymer-core-color;
-
-  h2 {
-    color: white;
-  }
 }
 .platform {
   color: $polymer-platform-color;
@@ -35,11 +32,8 @@ $polymer-applications-color: rgb(35, 100, 215);
   background-color: $polymer-platform-color;
 }
 .platform-fill {
+  @extend .fill;
   background: $polymer-platform-color;
-
-  h2 {
-    color: white;
-  }
 }
 .elements {
   color: $polymer-elements-color;
@@ -48,17 +42,30 @@ $polymer-applications-color: rgb(35, 100, 215);
   background-color: $polymer-elements-color;
 }
 .elements-fill {
+  @extend .fill;
   background: $polymer-elements-color;
-
-  h2 {
-    color: white;
-  }
 }
 .applications {
   color: $polymer-applications-color;
 }
 .applications-bg {
   background-color: rgba(67, 135, 253, 1);
+}
+
+.fill {
+  h2 {
+    color: rgba(255, 255, 255, 1);
+    line-height: 1.25;
+    
+    &.faded {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    em {
+      font-style: normal;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
 }
 // -----
 

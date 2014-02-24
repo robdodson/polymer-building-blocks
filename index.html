@@ -15,7 +15,6 @@ https://code.google.com/p/io-2012-slides
   <!--This one seems to work all the time, but really small on ipad-->
   <!--<meta name="viewport" content="initial-scale=0.4">-->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" media="all" href="theme/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" media="all" href="theme/css/default.css">
   <link rel="stylesheet" media="all" href="theme/css/app.css">
@@ -180,7 +179,18 @@ https://code.google.com/p/io-2012-slides
   var div = document.createElement('div');
   div.appendChild(clone);
  document.querySelector('#formframe').srcdoc = div.innerHTML;
-</script></article>
+</script>
+
+<aside class="note">
+  <section>
+    <p>
+      Not the fanciest thing ever, but it set the stage for what was to come
+    </p>
+    <p>
+      Working with elements might seem old hat, but stop and think about it
+    </p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -214,7 +224,7 @@ https://code.google.com/p/io-2012-slides
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2>Elements are encapsulated</h2></article>
+    <article class="flexbox vcenter"><h2 class="faded">Elements are <em>encapsulated</em></h2></article>
  
 </slide>
 
@@ -258,7 +268,7 @@ https://code.google.com/p/io-2012-slides
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2>Elements are configurable</h2></article>
+    <article class="flexbox vcenter"><h2 class="faded">Elements are <em>configurable</em></h2></article>
  
 </slide>
 
@@ -366,7 +376,7 @@ https://code.google.com/p/io-2012-slides
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2>Elements are composable</h2></article>
+    <article class="flexbox vcenter"><h2 class="faded">Elements are <em>composable</em></h2></article>
  
 </slide>
 
@@ -441,7 +451,7 @@ https://code.google.com/p/io-2012-slides
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2>Elements are programmable</h2></article>
+    <article class="flexbox vcenter"><h2 class="faded">Elements are <em>programmable</em></h2></article>
  
 </slide>
 
@@ -560,23 +570,13 @@ var foo = mySelect.selectedIndex;
   &lt;tab&gt;Tab 2&lt;/tab&gt;
   &lt;tab&gt;Tab 3&lt;/tab&gt;
 &lt;/tabs&gt;
-</pre></article>
- 
-</slide>
+</pre>
 
-<slide  class="nobackdrop nobackground yum"   >
-  
-    <hgroup>
-      <span>
-        
-        
-        
-        
-      </span>
-      <h2></h2>
-      <h3></h3>
-    </hgroup>
-    <article class="flexbox vcenter centered"><p><img src="images/logos/lockup.svg" style="height:180px;"></p></article>
+<aside class="note">
+  <section>
+    <p><b>Not possible, until Web Components!</b></p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -592,9 +592,7 @@ var foo = mySelect.selectedIndex;
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vleft"><h2 style="font-size: 60px; line-height: 1.25;">Polymer is a library that uses the latest <strong>web technologies</strong> to let you create <strong>custom HTML elements</strong>.</h2>
-
-<!-- font-size: 42px; width: 52%; line-height: 1.3; --></article>
+    <article class="flexbox vleft"><h2 style="font-size: 60px; line-height: 1.25;">Web Components are a set of <strong>emerging standards</strong> that allow developers to <strong>extend the browser</strong>.</h2></article>
  
 </slide>
 
@@ -652,7 +650,47 @@ var foo = mySelect.selectedIndex;
     <div class="supported"><img src="images/logos/browsers/opera_logo.png"></div>
     <div><img src="images/logos/browsers/ie10_logo.png"></div>
   </div>
-</div></article>
+</div>
+
+<aside class="note">
+  <section>
+    <p><b>Not enough cross-browser support</b></p>
+  </section>
+</aside></article>
+ 
+</slide>
+
+<slide  class="nobackdrop nobackground yum"   >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter centered"><p><img src="images/logos/lockup.svg" style="height:180px;"></p></article>
+ 
+</slide>
+
+<slide     >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vleft"><h2 style="font-size: 60px; line-height: 1.25;">Polymer is a library that uses the latest <strong>web technologies</strong> to let you create <strong>custom HTML elements</strong>.</h2>
+
+<!-- font-size: 42px; width: 52%; line-height: 1.3; --></article>
  
 </slide>
 
@@ -698,7 +736,13 @@ var foo = mySelect.selectedIndex;
     <h3 class="bold">Native</h3>
     <p>The current browser landscape</p>
   </div>
-</div></article>
+</div>
+
+<aside class="note">
+  <section>
+    <p><b>So, how do we do that?</b></p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -731,7 +775,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide  class="nobackdrop nobackground"   >
+<slide  class="nobackdrop nobackground"   hidden>
   
     <hgroup>
       <span>
@@ -763,6 +807,28 @@ var foo = mySelect.selectedIndex;
 </div></article>
     
   
+</slide>
+
+<slide    data-body-class="elements-fill" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter"><h2 style="font-size: 55px; letter-spacing: 1.2;">Everything is an element</h3>
+
+<aside class="note">
+  <section>
+    <p><b>We want you to reach for the element</b></p>
+  </section>
+</aside></article>
+ 
 </slide>
 
 <slide id="polymer-ui-elements"   data-body-class="elements-bg" >
@@ -797,7 +863,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide id="polymer-ui-tabs-demo"   data-body-class="elements-bg" >
+<slide id="polymer-ui-tabs-demo"   data-body-class="elements-bg" hidden>
   
     <hgroup>
       <span>
@@ -1312,6 +1378,22 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
   
 </slide>
 
+<slide    data-body-class="platform-fill" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vleft"><h2 class="faded" style="font-size: 54px;">The platform is a <em>layer of polyfills</em> that adds support for emerging standards, like <em>Web Components</em>, to all <em>modern browsers</em>.</h2></article>
+ 
+</slide>
+
 <slide id="platform-polyfills" class="nobackdrop nobackground browser-support"  data-body-class="platform-bg" >
   
     <hgroup>
@@ -1371,6 +1453,22 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 <div class="build">
   <span id="polyfill-support-all"></span>
 </div></article>
+ 
+</slide>
+
+<slide    data-body-class="platform-fill" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vleft"><h2 class="faded" style="font-size: 52px;">Additional features include <em>Mutation Observers</em>, <em>Pointer Events</em>, <em>Web Animations</em>, and much more.</h2></article>
  
 </slide>
 

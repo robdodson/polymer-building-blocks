@@ -8,6 +8,16 @@ I'm a developer advocate on the Google Chrome team and specifically I work on a 
 So our agenda today is we're going to first figure out what is Polymer and what are Web Components, and then we're going to show off some cool stuff that actually uses all of these new tools.
 
 
+Let's go back in time...
+---
+
+
+First web page
+---
+
+
+
+
 Let's talk about tabs
 ---
 

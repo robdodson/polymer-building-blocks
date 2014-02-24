@@ -84,6 +84,17 @@ body_class: netscape
  document.querySelector('#formframe').srcdoc = div.innerHTML;
 </script>
 
+<aside class="note">
+  <section>
+    <p>
+      Not the fanciest thing ever, but it set the stage for what was to come
+    </p>
+    <p>
+      Working with elements might seem old hat, but stop and think about it
+    </p>
+  </section>
+</aside>
+
 ---
 
 content_class: flexbox vcenter
@@ -96,7 +107,7 @@ content_class: flexbox vcenter
 body_class: elements-fill
 content_class: flexbox vcenter
 
-<h2>Elements are encapsulated</h2>
+<h2 class="faded">Elements are <em>encapsulated</em></h2>
 
 ---
 
@@ -122,7 +133,7 @@ content_class: flexbox vcenter
 body_class: elements-fill
 content_class: flexbox vcenter
 
-<h2>Elements are configurable</h2>
+<h2 class="faded">Elements are <em>configurable</em></h2>
 
 ---
 
@@ -196,7 +207,7 @@ content_class: flexbox vcenter
 body_class: elements-fill
 content_class: flexbox vcenter
 
-<h2>Elements are composable</h2>
+<h2 class="faded">Elements are <em>composable</em></h2>
 
 ---
 
@@ -244,7 +255,7 @@ content_class: flexbox vcenter
 body_class: elements-fill
 content_class: flexbox vcenter
 
-<h2>Elements are programmable</h2>
+<h2 class="faded">Elements are <em>programmable</em></h2>
 
 ---
 
@@ -310,20 +321,17 @@ content_class: flexbox vcenter
 &lt;/tabs&gt;
 </pre>
 
----
-
-class: nobackdrop nobackground yum
-content_class: flexbox vcenter centered
-
-<img src="images/logos/lockup.svg" style="height:180px;">
+<aside class="note">
+  <section>
+    <p><b>Not possible, until Web Components!</b></p>
+  </section>
+</aside>
 
 ---
 
 content_class: flexbox vleft
 
-<h2 style="font-size: 60px; line-height: 1.25;">Polymer is a library that uses the latest <strong>web technologies</strong> to let you create <strong>custom HTML elements</strong>.</h2>
-
-<!-- font-size: 42px; width: 52%; line-height: 1.3; -->
+<h2 style="font-size: 60px; line-height: 1.25;">Web Components are a set of <strong>emerging standards</strong> that allow developers to <strong>extend the browser</strong>.</h2>
 
 ---
 
@@ -374,6 +382,27 @@ content_class: flexbox vcenter
   </div>
 </div>
 
+<aside class="note">
+  <section>
+    <p><b>Not enough cross-browser support</b></p>
+  </section>
+</aside>
+
+---
+
+class: nobackdrop nobackground yum
+content_class: flexbox vcenter centered
+
+<img src="images/logos/lockup.svg" style="height:180px;">
+
+---
+
+content_class: flexbox vleft
+
+<h2 style="font-size: 60px; line-height: 1.25;">Polymer is a library that uses the latest <strong>web technologies</strong> to let you create <strong>custom HTML elements</strong>.</h2>
+
+<!-- font-size: 42px; width: 52%; line-height: 1.3; -->
+
 ---
 
 class: polymer-diagram
@@ -411,6 +440,12 @@ title: Layers of Polymer
   </div>
 </div>
 
+<aside class="note">
+  <section>
+    <p><b>So, how do we do that?</b></p>
+  </section>
+</aside>
+
 ---
 
 id: philosophy
@@ -436,6 +471,7 @@ class: large
 
 ---
 
+hidden: true
 class: nobackdrop nobackground
 content_class: flexbox vcenter quote
 
@@ -455,6 +491,19 @@ keep_content: true
   <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
   <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
 </div>
+
+---
+
+body_class: elements-fill
+content_class: flexbox vcenter
+
+<h2 style="font-size: 55px; letter-spacing: 1.2;">Everything is an element</h3>
+
+<aside class="note">
+  <section>
+    <p><b>We want you to reach for the element</b></p>
+  </section>
+</aside>
 
 ---
 
@@ -490,6 +539,7 @@ body_class: elements-bg
 
 ---
 
+hidden: true
 id: polymer-ui-tabs-demo
 title: Everything is an element
 subtitle: Tabs revisited
@@ -930,6 +980,13 @@ keep_content: true
 
 ---
 
+body_class: platform-fill
+content_class: flexbox vleft
+
+<h2 class="faded" style="font-size: 54px;">The platform is a <em>layer of polyfills</em> that adds support for emerging standards, like <em>Web Components</em>, to all <em>modern browsers</em>.</h2>
+
+---
+
 id: platform-polyfills
 title: Platform polyfills
 subtitle: supporting new web technologies today
@@ -983,6 +1040,13 @@ class: nobackdrop nobackground browser-support
 <div class="build">
   <span id="polyfill-support-all"></span>
 </div>
+
+---
+
+body_class: platform-fill
+content_class: flexbox vleft
+
+<h2 class="faded" style="font-size: 52px;">Additional features include <em>Mutation Observers</em>, <em>Pointer Events</em>, <em>Web Animations</em>, and much more.</h2>
 
 ---
 
