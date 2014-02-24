@@ -40,46 +40,60 @@ class: large
 
 ---
 
-class: flexbox vleft
 body_class: core-fill
+content_class: flexbox vleft
 
-<h2>Let's go back in time...</h2>
-
----
-
-title: Let's talk about tabs...
-
-<img src="/images/screenshots/tabs2.jpg">
+<h2 style="margin-top: 33%">Let's go back in time...</h2>
 
 ---
 
-id: tab-examples
-title: Building a tab component on the web
+id: netscape
+#title: Understand where we came from
+class: nobackdrop nobackground
+#image: images/bgs/netscape_blank.png
+content_class: flexbox vcenter
+body_class: netscape
 
-<div class="build flexbox vcenter centered">
-<img src="images/screenshots/tabs/jquery.png">
-<img src="images/screenshots/tabs/kendo.png">
-<img src="images/screenshots/tabs/yui.png">
-<img src="images/screenshots/tabs/angular.png">
-<img src="images/screenshots/tabs/sencha.png">
-<img src=""> <!-- intentional. holder to see all images together -->
-</div>
+
+<template id="formexample" style="display: none">
+  <style>body{margin:0;padding:0;}</style>
+  <form>
+    <table class="build" border="10" cellpadding="5" cellspacing="5">
+    <tr><td><label>First name:</td><td><input type="name"></td></tr>
+    <tr><td><label>Last name</td><td><input type="name"></label></td></tr>
+    <tr><td>T-shirt size</td><td>
+      <select>
+        <option>Small</option>
+        <option selected>Medium</option>
+        <option>Large</option>
+        <option>X-large</option>
+      </select>
+    </td></tr>
+    <tr><td><label>Gender</label></td><td>Male: <input type="radio"  name="gender"> Female: <input type="radio" name="gender"></td></tr>
+    <tr><td colspan="2"><input type="submit"></td></tr>
+    </table>
+  </form>
+</template>
+
+<iframe id="formframe" style="width:300px;border:none;height:240px;"></iframe>
+
+<script>
+  var clone = document.querySelector('#formexample').content.cloneNode(true);
+  var div = document.createElement('div');
+  div.appendChild(clone);
+ document.querySelector('#formframe').srcdoc = div.innerHTML;
+</script>
 
 ---
 
-class: large
 content_class: flexbox vcenter
 
-<pre class="nohighlight" style="margin-top: -50px;">
-&lt;tabs&gt;
-  &lt;tab&gt;Tab 1&lt;/tab&gt;
-  &lt;tab&gt;Tab 2&lt;/tab&gt;
-  &lt;tab&gt;Tab 3&lt;/tab&gt;
-&lt;/tabs&gt;
-</pre>
+<h2>Elements are the building blocks of the web</h2>
+<img src="/images/screenshots/legos.png" style="position: absolute; bottom: -530px; right: -350px;">
 
 ---
 
+body_class: elements-fill
 content_class: flexbox vcenter
 
 <h2>Elements are encapsulated</h2>
@@ -105,6 +119,7 @@ content_class: flexbox vcenter
 
 ---
 
+body_class: elements-fill
 content_class: flexbox vcenter
 
 <h2>Elements are configurable</h2>
@@ -178,6 +193,7 @@ content_class: flexbox vcenter
 
 ---
 
+body_class: elements-fill
 content_class: flexbox vcenter
 
 <h2>Elements are composable</h2>
@@ -225,6 +241,7 @@ content_class: flexbox vcenter
 
 ---
 
+body_class: elements-fill
 content_class: flexbox vcenter
 
 <h2>Elements are programmable</h2>
@@ -251,6 +268,47 @@ content_class: flexbox vleft explanation
   <h3>Lowers the barrier of entry</h3>
   <h3>Makes sharing easy</h3>
 </div>
+
+---
+
+body_class: core-fill
+content_class: flexbox vleft
+
+<h2 style="margin-top: 33%">So what happened?</h2>
+
+---
+
+hidden: true
+title: Where we are today
+
+<img src="/images/screenshots/tabs2.jpg">
+
+---
+
+id: tab-examples
+title: Building a tab component today
+
+<div class="build flexbox vcenter centered">
+<img src="images/screenshots/tabs/jquery.png">
+<img src="images/screenshots/tabs/kendo.png">
+<img src="images/screenshots/tabs/yui.png">
+<img src="images/screenshots/tabs/angular.png">
+<img src="images/screenshots/tabs/sencha.png">
+<img src=""> <!-- intentional. holder to see all images together -->
+</div>
+
+---
+
+class: large
+content_class: flexbox vcenter
+
+<pre class="nohighlight" style="margin-top: -50px;">
+&lt;tabs&gt;
+  &lt;tab&gt;Tab 1&lt;/tab&gt;
+  &lt;tab&gt;Tab 2&lt;/tab&gt;
+  &lt;tab&gt;Tab 3&lt;/tab&gt;
+&lt;/tabs&gt;
+</pre>
 
 ---
 
@@ -389,7 +447,6 @@ id: using-elements
 title: Using <label class="elements">elements <i class="icon-puzzle-piece elements"></i></label>
 subtitle: <a href="http://www.polymer-project.org/docs/elements/" class="nounderline">polymer-project.org/docs/elements/</a>
 class: nobackdrop nobackground segue elements polymer-diagram
-#content_class: flexbox vcenter
 keep_content: true
 
 <div id="blocks-3d" class="in" style="top: 10%;">
@@ -502,6 +559,7 @@ body_class: elements-bg
 
 ---
 
+hidden: true
 id: polymer-ui-toggle-button-demo
 title: Everything is an element
 subtitle: Toggle Button Element
@@ -529,6 +587,8 @@ body_class: elements-bg
 
 ---
 
+hidden: true
+body_class: elements-fill
 content_class: flexbox vcenter
 
 <h2>You don't have to know about their internals</h2>
@@ -643,6 +703,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 ---
 
+hidden: true
 content_class: flexbox vcenter
 
 <h2>They're easy to add to your project</h2>
@@ -869,9 +930,59 @@ keep_content: true
 
 ---
 
+id: platform-polyfills
 title: Platform polyfills
-subtitle: declarative web components
+subtitle: supporting new web technologies today
 body_class: platform-bg
+class: nobackdrop nobackground browser-support
+
+<div class="flexbox">
+  <h2>Templates</h2>
+  <div class="browser-support-row">
+    <div class="supported"><img src="images/logos/browsers/safari_logo.png"></div>
+    <div class="supported"><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported"><img src="images/logos/chrome_logo.png"></div>
+    <div class="supported"><img src="images/logos/browsers/opera_logo.png"></div>
+    <div><img src="images/logos/browsers/ie10_logo.png"></div>
+  </div>
+</div>
+
+<div class="flexbox">
+  <h2>HTML Imports</h2>
+  <div class="browser-support-row">
+    <div><img src="images/logos/browsers/safari_logo.png"></div>
+    <div><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported partial"><img src="images/logos/chrome_logo.png"></div>
+    <div><img src="images/logos/browsers/opera_logo.png"></div>
+    <div><img src="images/logos/browsers/ie10_logo.png"></div>
+  </div>
+</div>
+
+<div class="flexbox">
+  <h2>Custom Elements</h2>
+  <div class="browser-support-row">
+    <div><img src="images/logos/browsers/safari_logo.png"></div>
+    <div class="supported partial"><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported"><img src="images/logos/chrome_logo.png"></div>
+    <div><img src="images/logos/browsers/opera_logo.png"></div>
+    <div><img src="images/logos/browsers/ie10_logo.png"></div>
+  </div>
+</div>
+
+<div class="flexbox">
+  <h2>Shadow DOM</h2>
+  <div class="browser-support-row">
+    <div><img src="images/logos/browsers/safari_logo.png"></div>
+    <div class="supported partial"><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported"><img src="images/logos/chrome_logo.png"></div>
+    <div class="supported"><img src="images/logos/browsers/opera_logo.png"></div>
+    <div><img src="images/logos/browsers/ie10_logo.png"></div>
+  </div>
+</div>
+
+<div class="build">
+  <span id="polyfill-support-all"></span>
+</div>
 
 ---
 

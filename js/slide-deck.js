@@ -481,6 +481,9 @@ SlideDeck.prototype.buildNextItem_ = function() {
   segment.classList.remove('to-build');
   segment.classList.add('build-current');
   this.dispatchEvent('slidebuild', { segment: segment });
+  this.triggerSlideEvent('slidebuild', this.curSlide_);
+
+  // TODO: It would be nice if the slide also passed along the segment
 
   return true;
 };

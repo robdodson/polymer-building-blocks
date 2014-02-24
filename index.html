@@ -126,7 +126,7 @@ https://code.google.com/p/io-2012-slides
  
 </slide>
 
-<slide  class="flexbox vleft"  data-body-class="core-fill" >
+<slide    data-body-class="core-fill" >
   
     <hgroup>
       <span>
@@ -138,7 +138,49 @@ https://code.google.com/p/io-2012-slides
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article ><h2>Let's go back in time...</h2></article>
+    <article class="flexbox vleft"><h2 style="margin-top: 33%">Let's go back in time...</h2></article>
+ 
+</slide>
+
+<slide id="netscape" class="nobackdrop nobackground"  data-body-class="netscape" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter"><p><template id="formexample" style="display: none">
+  <style>body{margin:0;padding:0;}</style>
+  <form>
+    <table class="build" border="10" cellpadding="5" cellspacing="5">
+    <tr><td><label>First name:</td><td><input type="name"></td></tr>
+    <tr><td><label>Last name</td><td><input type="name"></label></td></tr>
+    <tr><td>T-shirt size</td><td>
+      <select>
+        <option>Small</option>
+        <option selected>Medium</option>
+        <option>Large</option>
+        <option>X-large</option>
+      </select>
+    </td></tr>
+    <tr><td><label>Gender</label></td><td>Male: <input type="radio"  name="gender"> Female: <input type="radio" name="gender"></td></tr>
+    <tr><td colspan="2"><input type="submit"></td></tr>
+    </table>
+  </form>
+</template></p>
+<iframe id="formframe" style="width:300px;border:none;height:240px;"></iframe>
+
+<script>
+  var clone = document.querySelector('#formexample').content.cloneNode(true);
+  var div = document.createElement('div');
+  div.appendChild(clone);
+ document.querySelector('#formframe').srcdoc = div.innerHTML;
+</script></article>
  
 </slide>
 
@@ -151,59 +193,16 @@ https://code.google.com/p/io-2012-slides
         
         
       </span>
-      <h2>Let's talk about tabs...</h2>
-      <h3></h3>
-    </hgroup>
-    <article ><p><img src="/images/screenshots/tabs2.jpg"></p></article>
- 
-</slide>
-
-<slide id="tab-examples"    >
-  
-    <hgroup>
-      <span>
-        
-        
-        
-        
-      </span>
-      <h2>Building a tab component on the web</h2>
-      <h3></h3>
-    </hgroup>
-    <article ><div class="build flexbox vcenter centered">
-<img src="images/screenshots/tabs/jquery.png">
-<img src="images/screenshots/tabs/kendo.png">
-<img src="images/screenshots/tabs/yui.png">
-<img src="images/screenshots/tabs/angular.png">
-<img src="images/screenshots/tabs/sencha.png">
-<img src=""> <!-- intentional. holder to see all images together -->
-</div></article>
- 
-</slide>
-
-<slide  class="large"   >
-  
-    <hgroup>
-      <span>
-        
-        
-        
-        
-      </span>
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><pre class="nohighlight" style="margin-top: -50px;">
-&lt;tabs&gt;
-  &lt;tab&gt;Tab 1&lt;/tab&gt;
-  &lt;tab&gt;Tab 2&lt;/tab&gt;
-  &lt;tab&gt;Tab 3&lt;/tab&gt;
-&lt;/tabs&gt;
-</pre></article>
+    <article class="flexbox vcenter"><h2>Elements are the building blocks of the web</h2>
+
+<p><img src="/images/screenshots/legos.png" style="position: absolute; bottom: -530px; right: -350px;"></p></article>
  
 </slide>
 
-<slide     >
+<slide    data-body-class="elements-fill" >
   
     <hgroup>
       <span>
@@ -247,7 +246,7 @@ https://code.google.com/p/io-2012-slides
  
 </slide>
 
-<slide     >
+<slide    data-body-class="elements-fill" >
   
     <hgroup>
       <span>
@@ -355,7 +354,7 @@ https://code.google.com/p/io-2012-slides
  
 </slide>
 
-<slide     >
+<slide    data-body-class="elements-fill" >
   
     <hgroup>
       <span>
@@ -430,7 +429,7 @@ https://code.google.com/p/io-2012-slides
  
 </slide>
 
-<slide     >
+<slide    data-body-class="elements-fill" >
   
     <hgroup>
       <span>
@@ -485,6 +484,83 @@ var foo = mySelect.selectedIndex;
   <h3>Lowers the barrier of entry</h3>
   <h3>Makes sharing easy</h3>
 </div></article>
+ 
+</slide>
+
+<slide    data-body-class="core-fill" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vleft"><h2 style="margin-top: 33%">So what happened?</h2></article>
+ 
+</slide>
+
+<slide     hidden>
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Where we are today</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p><img src="/images/screenshots/tabs2.jpg"></p></article>
+ 
+</slide>
+
+<slide id="tab-examples"    >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Building a tab component today</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><div class="build flexbox vcenter centered">
+<img src="images/screenshots/tabs/jquery.png">
+<img src="images/screenshots/tabs/kendo.png">
+<img src="images/screenshots/tabs/yui.png">
+<img src="images/screenshots/tabs/angular.png">
+<img src="images/screenshots/tabs/sencha.png">
+<img src=""> <!-- intentional. holder to see all images together -->
+</div></article>
+ 
+</slide>
+
+<slide  class="large"   >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter"><pre class="nohighlight" style="margin-top: -50px;">
+&lt;tabs&gt;
+  &lt;tab&gt;Tab 1&lt;/tab&gt;
+  &lt;tab&gt;Tab 2&lt;/tab&gt;
+  &lt;tab&gt;Tab 3&lt;/tab&gt;
+&lt;/tabs&gt;
+</pre></article>
  
 </slide>
 
@@ -804,7 +880,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide id="polymer-ui-toggle-button-demo"   data-body-class="elements-bg" >
+<slide id="polymer-ui-toggle-button-demo"   data-body-class="elements-bg" hidden>
   
     <hgroup>
       <span>
@@ -838,7 +914,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide     >
+<slide    data-body-class="elements-fill" hidden>
   
     <hgroup>
       <span>
@@ -964,7 +1040,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide     >
+<slide     hidden>
   
     <hgroup>
       <span>
@@ -1236,7 +1312,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
   
 </slide>
 
-<slide    data-body-class="platform-bg" >
+<slide id="platform-polyfills" class="nobackdrop nobackground browser-support"  data-body-class="platform-bg" >
   
     <hgroup>
       <span>
@@ -1246,9 +1322,55 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
         
       </span>
       <h2>Platform polyfills</h2>
-      <h3>declarative web components</h3>
+      <h3>supporting new web technologies today</h3>
     </hgroup>
-    <article ></article>
+    <article ><div class="flexbox">
+  <h2>Templates</h2>
+  <div class="browser-support-row">
+    <div class="supported"><img src="images/logos/browsers/safari_logo.png"></div>
+    <div class="supported"><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported"><img src="images/logos/chrome_logo.png"></div>
+    <div class="supported"><img src="images/logos/browsers/opera_logo.png"></div>
+    <div><img src="images/logos/browsers/ie10_logo.png"></div>
+  </div>
+</div>
+
+<div class="flexbox">
+  <h2>HTML Imports</h2>
+  <div class="browser-support-row">
+    <div><img src="images/logos/browsers/safari_logo.png"></div>
+    <div><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported partial"><img src="images/logos/chrome_logo.png"></div>
+    <div><img src="images/logos/browsers/opera_logo.png"></div>
+    <div><img src="images/logos/browsers/ie10_logo.png"></div>
+  </div>
+</div>
+
+<div class="flexbox">
+  <h2>Custom Elements</h2>
+  <div class="browser-support-row">
+    <div><img src="images/logos/browsers/safari_logo.png"></div>
+    <div class="supported partial"><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported"><img src="images/logos/chrome_logo.png"></div>
+    <div><img src="images/logos/browsers/opera_logo.png"></div>
+    <div><img src="images/logos/browsers/ie10_logo.png"></div>
+  </div>
+</div>
+
+<div class="flexbox">
+  <h2>Shadow DOM</h2>
+  <div class="browser-support-row">
+    <div><img src="images/logos/browsers/safari_logo.png"></div>
+    <div class="supported partial"><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported"><img src="images/logos/chrome_logo.png"></div>
+    <div class="supported"><img src="images/logos/browsers/opera_logo.png"></div>
+    <div><img src="images/logos/browsers/ie10_logo.png"></div>
+  </div>
+</div>
+
+<div class="build">
+  <span id="polyfill-support-all"></span>
+</div></article>
  
 </slide>
 

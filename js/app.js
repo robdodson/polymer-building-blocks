@@ -395,6 +395,16 @@ function initDemos() {
     }
   })();
 
+  (function() {
+    var slide = $('#platform-polyfills');
+    slide.listen('slidebuild', function(e) {
+      var rows = $$('.browser-support-row div', slide);
+      rows.forEach(function(row) {
+        row.classList.add('supported');
+        row.classList.remove('partial');
+      });
+    });
+  })();
 }
 
 function encodeHTMLEntities(str) {

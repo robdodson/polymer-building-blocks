@@ -34,11 +34,25 @@ $polymer-applications-color: rgb(35, 100, 215);
 .platform-bg {
   background-color: $polymer-platform-color;
 }
+.platform-fill {
+  background: $polymer-platform-color;
+
+  h2 {
+    color: white;
+  }
+}
 .elements {
   color: $polymer-elements-color;
 }
 .elements-bg {
   background-color: $polymer-elements-color;
+}
+.elements-fill {
+  background: $polymer-elements-color;
+
+  h2 {
+    color: white;
+  }
 }
 .applications {
   color: $polymer-applications-color;
