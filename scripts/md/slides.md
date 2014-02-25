@@ -17,6 +17,14 @@ id: who
 <i class="icon icon-bookmark"></i> 
 <a rel="author" href="http://robdodson.me">robdodson.me</a>
 
+<aside class="note">
+  <section>
+    <p>
+      Quick show of hands, who here has heard of Polymer or Web Components?
+    </p>
+  </section>
+</aside>
+
 ---
 
 id: agenda
@@ -37,6 +45,16 @@ class: large
     <br>
   </div>
 </div>
+
+<aside class="note">
+  <section>
+    <ul>
+      <li>What is Polymer? What are Web Components?</li>
+      <li>Start working with Polymer so you can use Web Components in modern browsers</li>
+      <li>We're just gonna write some code and mess around</li>
+    </ul>
+  </section>
+</aside>
 
 ---
 
@@ -100,7 +118,7 @@ body_class: netscape
 content_class: flexbox vcenter
 
 <h2>Elements are the building blocks of the web</h2>
-<img src="/images/screenshots/legos.png" style="position: absolute; bottom: -530px; right: -350px;">
+<img src="/images/screenshots/legos.png" style="position: absolute; bottom: -460px; right: -350px;">
 
 ---
 
@@ -403,8 +421,15 @@ content_class: flexbox vleft
 
 <!-- font-size: 42px; width: 52%; line-height: 1.3; -->
 
+<aside class="note">
+  <section>
+    <p><b>It gives you the power of web components today</b></p>
+  </section>
+</aside>
+
 ---
 
+id: layers-of-polymer
 class: polymer-diagram
 title: Layers of Polymer
 
@@ -443,6 +468,8 @@ title: Layers of Polymer
 <aside class="note">
   <section>
     <p><b>So, how do we do that?</b></p>
+    <p><b>Here's our layer cake of awesome</b></p>
+    <p><b>Platform: Jump everyone into the future so they can start creating their own elements</b></p>
   </section>
 </aside>
 
@@ -539,7 +566,6 @@ body_class: elements-bg
 
 ---
 
-hidden: true
 id: polymer-ui-tabs-demo
 title: Everything is an element
 subtitle: Tabs revisited
@@ -789,10 +815,20 @@ build_lists: true
 - Property change watchers: `barChanged: function() {...}`
 - Automatic node finding: `this.$.input.value = 5`
 - PointerEvents / PointerGestures by default
+- Support for Web Animations
 
 <div class="build centered bold topmargin blue">
 <span style="font-size:50px;">Be declarative. Write less code.</span>
 </div>
+
+<aside class="note">
+  <section>
+    <p>Registering your own element is kind of a wordy, verbose process</p>
+    <p>You want to have a super button that inherits from your base button</p>
+    <p>Two-way binding is awesome. You'll be amazed at how easy it is to build an entire application with nothing but binding</p>
+    <p><b>We want to do things that make sense for developers</b></p>
+  </section>
+</aside>
 
 ---
 

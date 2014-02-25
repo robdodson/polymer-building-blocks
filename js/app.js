@@ -413,68 +413,80 @@ function encodeHTMLEntities(str) {
 
 function enableDiagramAnimations() {
 
-  slidedeck.addEventListener('slideenter', function(e) {
-    var slide = e.target;
-
-    if (slide.classList.contains('polymer-diagram')) {
+  (function() {
+    var slide = $('#layers-of-polymer');
+    slide.addEventListener('slideenter', function(e) {
       animations.captureElements();
       animations.setupFades();
+    });
 
-      switch (slide.id) {
-        case 'using-elements':
-          setTimeout(function() {
-            animations.focusOnSeq('elements-3d');
-          }, 1500);
+    slide.addEventListener('slidebuild', function(e) {
+      var segment = slide.querySelector('.build-current');
+
+      switch (segment.id) {
+        case 'diagram-animate-in':
+          animations.animateIn();
           break;
 
-        case 'creating-elements':
-          setTimeout(function() {
-            animations.focusOnSeq('polymer-3d');
-          }, 1500);
+        case 'diagram-explode':
+          animations.explode();
           break;
 
-        case 'the-platform':
-          setTimeout(function() {
-            animations.focusOnSeq('platform-3d');
-          }, 1500);
+        case 'diagram-native':
+          animations.focusOn('native-3d');
+          break;
+
+        case 'diagram-platform':
+          animations.focusOn('platform-3d');
+          break;
+
+        case 'diagram-polymer':
+          animations.focusOn('polymer-3d');
+          break;
+
+        case 'diagram-elements':
+          animations.focusOn('elements-3d');
+          break;
+
+        case 'diagram-contract':
+          animations.contract();
           break;
       }
+    });
+  })();
 
-      slidedeck.addEventListener('slidebuild', function(e) {
-        var segment = e.detail.segment;
+  (function() {
+    var slide = $('#using-elements');
+    slide.addEventListener('slideenter', function(e) {
+      animations.captureElements();
+      animations.setupFades();
+      setTimeout(function() {
+        animations.focusOnSeq('elements-3d');
+      }, 1500);
+    });
+  })();
 
-        switch (segment.id) {
-          case 'diagram-animate-in':
-            animations.animateIn();
-            break;
+  (function() {
+    var slide = $('#creating-elements');
+    slide.addEventListener('slideenter', function(e) {
+      animations.captureElements();
+      animations.setupFades();
+      setTimeout(function() {
+        animations.focusOnSeq('polymer-3d');
+      }, 1500);
+    });
+  })();
 
-          case 'diagram-explode':
-            animations.explode();
-            break;
-
-          case 'diagram-native':
-            animations.focusOn('native-3d');
-            break;
-
-          case 'diagram-platform':
-            animations.focusOn('platform-3d');
-            break;
-
-          case 'diagram-polymer':
-            animations.focusOn('polymer-3d');
-            break;
-
-          case 'diagram-elements':
-            animations.focusOn('elements-3d');
-            break;
-
-          case 'diagram-contract':
-            animations.contract();
-            break;
-        }
-      });
-    }
-  });
+  (function() {
+    var slide = $('#the-platform');
+    slide.addEventListener('slideenter', function(e) {
+      animations.captureElements();
+      animations.setupFades();
+      setTimeout(function() {
+        animations.focusOnSeq('platform-3d');
+      }, 1500);
+    });
+  })();
 
   var animations = {
     captureElements: function() {
