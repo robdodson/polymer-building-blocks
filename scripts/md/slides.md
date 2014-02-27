@@ -802,10 +802,204 @@ keep_content: true
 
 ---
 
+hidden: true
+body_class: core-fill
+content_class: flexbox vcenter
+
+<h2 style="font-size: 55px; letter-spacing: 1.2;">Everything is an element</h3>
+
+<aside class="note">
+  <section>
+    <p><b>Stop yourself and think, can I bundle this up into an element</b></p>
+    <p><b>Polymer is going to make that really easy for you</b></p>
+  </section>
+</aside>
+
+---
+
+body_class: core-fill
+content_class: flexbox vcenter
+
+<h2 class="faded"><em>Declarative</em> element registration</h2>
+
+---
+
+id: declarative-registration
+title: Declarative registration
+#subtitle: Declarative registration
+body_class: core-bg
+
+<pre class="corner prettyprint">
+&lt;link rel="import" href="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.html</span>">
+</pre>
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;polymer-element name="my-element" <b>noscript</b>&gt;
+  &lt;template&gt;
+    &lt;style&gt;h2 { color: orange; }&lt;/style&gt;
+    &lt;h2&gt;Hello from my-element!&lt;/h2&gt;
+  &lt;/template&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;my-element&gt;&lt;/my-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px;">
+    <my-element></my-element>
+  </output>
+</div>
+
+<aside class="note">
+  <section>
+    <p><b>Registering elements without Polymer is kind of messy</b></p>
+  </section>
+</aside>
+
+---
+
+id: declarative-registration-proto
+title: Declarative registration
+#subtitle: Declarative registration with prototypes
+body_class: core-bg
+
+<pre class="corner prettyprint">
+&lt;link rel="import" href="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.html</span>">
+</pre>
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;polymer-element name="hello-element"&gt;
+  &lt;template&gt;
+    &lt;h2&gt;I can say hello&lt;/h2&gt;
+  &lt;/template&gt;
+  &lt;script&gt;
+  Polymer('my-element', {
+    ready: function() { ... }, // lifecycle callback
+    sayHello: function() { alert('Howdy folks!'); }
+  });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px;">
+    <hello-element></hello-element>
+  </output>
+</div>
+
+---
+
+body_class: core-fill
+content_class: flexbox vcenter
+
+<h2 class="faded">Two-way <em>data-binding</em></h2>
+
+---
+
+id: two-way-binding
+title: Two-way data-binding
+#subtitle: Two-way data-binding
+body_class: core-bg
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;polymer-element name="owner-element"&gt;
+  &lt;template&gt;
+    &lt;h2&gt;<b>{{owner}}</b> built me with Polymer&lt;/h2&gt;
+  &lt;/template&gt;
+  &lt;script&gt;
+  Polymer('owner-element', {
+    <b>owner: 'Rob'</b>
+  });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;owner-element&gt;&lt;/owner-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px;">
+    <owner-element></owner-element>
+  </output>
+</div>
+
+---
+
+body_class: core-fill
+content_class: flexbox vcenter
+
+<h2 class="faded">Published <em>properties</em></h2>
+
+---
+
+id: published-properties
+title: Published properties
+body_class: core-bg
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;">
+&lt;polymer-element name="owner-element" <b>attributes="owner"</b>&gt;
+  &lt;template&gt;
+    &lt;h2&gt;<b>{{owner}}</b> built me with Polymer&lt;/h2&gt;
+  &lt;/template&gt;
+  &lt;script&gt;
+  Polymer('owner-element', {
+    owner: 'Rob'
+  });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<pre class="prettyprint" style="font-size:27px; line-height: 1.2;">
+&lt;owner-element <b>owner="Alex"</b>&gt;&lt;/owner-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px;">
+    <owner-element owner="Alex"></owner-element>
+  </output>
+</div>
+
+---
+
+body_class: core-fill
+content_class: flexbox vcenter
+
+<h2 class="faded">Automatic <em>node finding</em></h2>
+
+---
+
+id: automatic-node-finding
+title: Automatic Node Finding
+body_class: core-bg
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;">
+&lt;polymer-element name="focus-element"&gt;
+  &lt;template&gt;
+    <b>&lt;button on-click="{{setFocus}}"&gt;Set Focus&lt;/button&gt;</b>
+    <b>&lt;input id="nameInput" type="text"&gt;</b>
+  &lt;/template&gt;
+  &lt;script&gt;
+  Polymer('change-element', {
+    <b>setFocus: function() { this.$.nameInput.focus(); }</b>
+  });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px; zoom: 2;">
+    <focus-element></focus-element>
+  </output>
+</div>
+
+---
+
 title: Polymer features
 subtitle: declarative web components
 body_class: core-bg
-build_lists: true
 
 - Declarative element registration: `<polymer-element>`
 - Declarative inheritance: `<polymer-element extends="...">`
@@ -832,6 +1026,7 @@ build_lists: true
 
 ---
 
+hidden: true
 id: more-complex-elements
 title: Define an API
 subtitle: complex elements require more juice...
@@ -894,6 +1089,7 @@ body_class: core-bg
 
 ---
 
+hidden: true
 id: published-properties
 title: Publishing properties & data-binding
 body_class: core-bg
@@ -968,6 +1164,7 @@ polymer_link: http://www.polymer-project.org/polymer.html#published-properties
 
 ---
 
+hidden: true
 title: Features in action
 subtitle: responsive design...using DOM
 body_class: core-bg

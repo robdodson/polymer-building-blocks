@@ -664,7 +664,7 @@ article.smaller {
 
     slide {
       overflow: visible;
-      background: white;
+      background: rgba(255, 255, 255, 0.3);
       @include transition(none); // No slide transition goodies when in presenter mode.
       pointer-events: none;
       @include transform-origin(0, 0); // For speaker note transition.

@@ -25,6 +25,7 @@ https://code.google.com/p/io-2012-slides
   <script src="bower_components/platform/platform.js"></script>
   <script src="bower_components/web-animations-js/web-animations.js"></script>
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+  <link rel="import" href="elements/elements.html">
 </head>
 <body>
 
@@ -1165,6 +1166,282 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
   
 </slide>
 
+<slide    data-body-class="core-fill" hidden>
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter"><h2 style="font-size: 55px; letter-spacing: 1.2;">Everything is an element</h3>
+
+<aside class="note">
+  <section>
+    <p><b>Stop yourself and think, can I bundle this up into an element</b></p>
+    <p><b>Polymer is going to make that really easy for you</b></p>
+  </section>
+</aside></article>
+ 
+</slide>
+
+<slide    data-body-class="core-fill" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter"><h2 class="faded"><em>Declarative</em> element registration</h2></article>
+ 
+</slide>
+
+<slide id="declarative-registration"   data-body-class="core-bg" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Declarative registration</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="corner prettyprint">
+&lt;link rel="import" href="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.html</span>">
+</pre>
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;polymer-element name="my-element" <b>noscript</b>&gt;
+  &lt;template&gt;
+    &lt;style&gt;h2 { color: orange; }&lt;/style&gt;
+    &lt;h2&gt;Hello from my-element!&lt;/h2&gt;
+  &lt;/template&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;my-element&gt;&lt;/my-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px;">
+    <my-element></my-element>
+  </output>
+</div>
+
+<aside class="note">
+  <section>
+    <p><b>Registering elements without Polymer is kind of messy</b></p>
+  </section>
+</aside></article>
+ 
+</slide>
+
+<slide id="declarative-registration-proto"   data-body-class="core-bg" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Declarative registration</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="corner prettyprint">
+&lt;link rel="import" href="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.html</span>">
+</pre>
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;polymer-element name="hello-element"&gt;
+  &lt;template&gt;
+    &lt;h2&gt;I can say hello&lt;/h2&gt;
+  &lt;/template&gt;
+  &lt;script&gt;
+  Polymer('my-element', {
+    ready: function() { ... }, // lifecycle callback
+    sayHello: function() { alert('Howdy folks!'); }
+  });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px;">
+    <hello-element></hello-element>
+  </output>
+</div></article>
+ 
+</slide>
+
+<slide    data-body-class="core-fill" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter"><h2 class="faded">Two-way <em>data-binding</em></h2></article>
+ 
+</slide>
+
+<slide id="two-way-binding"   data-body-class="core-bg" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Two-way data-binding</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;polymer-element name="owner-element"&gt;
+  &lt;template&gt;
+    &lt;h2&gt;<b>{{owner}}</b> built me with Polymer&lt;/h2&gt;
+  &lt;/template&gt;
+  &lt;script&gt;
+  Polymer('owner-element', {
+    <b>owner: 'Rob'</b>
+  });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+&lt;owner-element&gt;&lt;/owner-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px;">
+    <owner-element></owner-element>
+  </output>
+</div></article>
+ 
+</slide>
+
+<slide    data-body-class="core-fill" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter"><h2 class="faded">Published <em>properties</em></h2></article>
+ 
+</slide>
+
+<slide id="published-properties"   data-body-class="core-bg" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Published properties</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint" style="font-size:30px; line-height: 1.2;">
+&lt;polymer-element name="owner-element" <b>attributes="owner"</b>&gt;
+  &lt;template&gt;
+    &lt;h2&gt;<b>{{owner}}</b> built me with Polymer&lt;/h2&gt;
+  &lt;/template&gt;
+  &lt;script&gt;
+  Polymer('owner-element', {
+    owner: 'Rob'
+  });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<pre class="prettyprint" style="font-size:27px; line-height: 1.2;">
+&lt;owner-element <b>owner="Alex"</b>&gt;&lt;/owner-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px;">
+    <owner-element owner="Alex"></owner-element>
+  </output>
+</div></article>
+ 
+</slide>
+
+<slide    data-body-class="core-fill" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article class="flexbox vcenter"><h2 class="faded">Automatic <em>node finding</em></h2></article>
+ 
+</slide>
+
+<slide id="automatic-node-finding"   data-body-class="core-bg" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Automatic Node Finding</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint" style="font-size:30px; line-height: 1.2;">
+&lt;polymer-element name="focus-element"&gt;
+  &lt;template&gt;
+    <b>&lt;button on-click="{{setFocus}}"&gt;Set Focus&lt;/button&gt;</b>
+    <b>&lt;input id="nameInput" type="text"&gt;</b>
+  &lt;/template&gt;
+  &lt;script&gt;
+  Polymer('change-element', {
+    <b>setFocus: function() { this.$.nameInput.focus(); }</b>
+  });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px; zoom: 2;">
+    <focus-element></focus-element>
+  </output>
+</div></article>
+ 
+</slide>
+
 <slide    data-body-class="core-bg" >
   
     <hgroup>
@@ -1177,7 +1454,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2>Polymer features</h2>
       <h3>declarative web components</h3>
     </hgroup>
-    <article ><ul class="build">
+    <article ><ul>
 <li>Declarative element registration: <code>&lt;polymer-element&gt;</code></li>
 <li>Declarative inheritance: <code>&lt;polymer-element extends="..."&gt;</code></li>
 <li>Declarative two-way data-binding: <code>&lt;input id="input" value="{{foo}}"&gt;</code></li>
@@ -1203,7 +1480,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide id="more-complex-elements"   data-body-class="core-bg" >
+<slide id="more-complex-elements"   data-body-class="core-bg" hidden>
   
     <hgroup>
       <span>
@@ -1272,7 +1549,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide id="published-properties"   data-body-class="core-bg" >
+<slide id="published-properties"   data-body-class="core-bg" hidden>
   
     <hgroup>
       <span>
@@ -1355,7 +1632,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide    data-body-class="core-bg" >
+<slide    data-body-class="core-bg" hidden>
   
     <hgroup>
       <span>

@@ -82,7 +82,7 @@ $polymer-applications-color: rgb(35, 100, 215);
   .sidebar.core {
     width: 25px;
     &::after {
-      content: '\f0c3 \00a0 core';
+      content: '\f0c3 \00a0 polymer';
     }
   }
 }
@@ -893,8 +893,9 @@ slide#spoiler {
     height: auto;
 
     > * {
+      height: auto;
       font-size: 25px;
-      padding: 20px 25px;
+      padding: 30px 35px;
     }
   }
 }
