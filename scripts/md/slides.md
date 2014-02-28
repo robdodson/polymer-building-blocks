@@ -19,6 +19,7 @@ id: who
 
 <aside class="note">
   <section>
+    <p>Mention contact info first!</p>
     <p>
       Quick show of hands, who here has heard of Polymer or Web Components?
     </p>
@@ -305,12 +306,11 @@ content_class: flexbox vleft
 
 <h2 style="margin-top: 33%">So what happened?</h2>
 
----
-
-hidden: true
-title: Where we are today
-
-<img src="/images/screenshots/tabs2.jpg">
+<aside class="note">
+  <section>
+    <p><b>There just weren't enough elements. The language wasn't expressive</b></p>
+  </section>
+</aside>
 
 ---
 
@@ -325,6 +325,12 @@ title: Building a tab component today
 <img src="images/screenshots/tabs/sencha.png">
 <img src=""> <!-- intentional. holder to see all images together -->
 </div>
+
+<aside class="note">
+  <section>
+    <p><b>Now that we're seeing this JavaScript renaissance...</b></p>
+  </section>
+</aside>
 
 ---
 
@@ -349,7 +355,7 @@ content_class: flexbox vcenter
 
 content_class: flexbox vleft
 
-<h2 style="font-size: 60px; line-height: 1.25;">Web Components are a set of <strong>emerging standards</strong> that allow developers to <strong>extend the browser</strong>.</h2>
+<h2 style="font-size: 60px; line-height: 1.25;">Web Components are a set of <strong>emerging standards</strong> that allow developers to <strong>extend HTML</strong>.</h2>
 
 ---
 
@@ -424,6 +430,8 @@ content_class: flexbox vleft
 <aside class="note">
   <section>
     <p><b>It gives you the power of web components today</b></p>
+    <p><b>You can start working with them and give feedback to the browser makers</b></p>
+    <p><b>So... how do we do that?</b></p>
   </section>
 </aside>
 
@@ -470,6 +478,7 @@ title: Layers of Polymer
     <p><b>So, how do we do that?</b></p>
     <p><b>Here's our layer cake of awesome</b></p>
     <p><b>Platform: Jump everyone into the future so they can start creating their own elements</b></p>
+    <p><b>Polymer: Features and sugars. Two-way data-binding, automatic node finding and a great declarative syntax</b></p>
   </section>
 </aside>
 
@@ -714,6 +723,13 @@ content_class: columns-2
 
 `<polymer-selector>`
 
+<aside class="note">
+  <section>
+    <p>The mind naturally goes toward UI...</p>
+    <p>A lot of things we already do in markup that are non-visual</p>
+  </section>
+</aside>
+
 ---
 
 id: polymer-flex-demo
@@ -761,7 +777,8 @@ body_class: elements-bg
 
 <pre class="prettyprint" style="font-size:25px;">
 <b>&lt;polymer-ajax url="http://gdata.youtube.com/feeds/api/videos/"
-              params='{"alt":"json"}'>&lt;/polymer-ajax></b>
+              params='{"q":"chrome", "alt":"json"}'>
+&lt;/polymer-ajax></b>
 </pre>
 
 <pre class="prettyprint" data-lang="JS" data-run-demo>
@@ -776,6 +793,13 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 <link rel="import" href="bower_components/polymer-ajax/polymer-ajax.html">
 <output><div>Hit run...</div></output>
 </div>
+
+<aside class="note">
+  <section>
+    <p>We have link tags and script tags which pull in external resources...</p>
+    <p>Elements are composable</p>
+  </section>
+</aside>
 
 ---
 
@@ -799,6 +823,12 @@ keep_content: true
   <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
   <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
 </div>
+
+<aside class="note">
+  <section>
+    <p><b>Polymer is going to make this really easy for you</b></p>
+  </section>
+</aside>
 
 ---
 
@@ -854,7 +884,9 @@ body_class: core-bg
 
 <aside class="note">
   <section>
-    <p><b>Registering elements without Polymer is kind of messy</b></p>
+    <p>Registering elements without Polymer is kind of messy</p>
+    <p>Mention <b>noscript</b></p>
+    <p>Prototypes are next</p>
   </section>
 </aside>
 
@@ -875,7 +907,7 @@ body_class: core-bg
     &lt;h2&gt;I can say hello&lt;/h2&gt;
   &lt;/template&gt;
   &lt;script&gt;
-  Polymer('my-element', {
+  Polymer('hello-element', {
     ready: function() { ... }, // lifecycle callback
     sayHello: function() { alert('Howdy folks!'); }
   });
@@ -889,12 +921,25 @@ body_class: core-bg
   </output>
 </div>
 
+<aside class="note">
+  <section>
+  <p>Lifecycle callbacks for when an element is created, added to the document, removed from the document or has an attribute changed.</p>
+  <p>But what about when you want to actually visualize these properties</p>
+  </section>
+</aside>
+
 ---
 
 body_class: core-fill
 content_class: flexbox vcenter
 
 <h2 class="faded">Two-way <em>data-binding</em></h2>
+
+<aside class="note">
+  <section>
+  <p>Data binding removes glue code</p>
+  </section>
+</aside>
 
 ---
 
@@ -925,6 +970,13 @@ body_class: core-bg
     <owner-element></owner-element>
   </output>
 </div>
+
+<aside class="note">
+  <section>
+  <p><b>Highlight owner</b></p>
+  <p>Elements are configurable, so how do we let the user change the value of owner</p>
+  </section>
+</aside>
 
 ---
 
@@ -962,6 +1014,12 @@ body_class: core-bg
   </output>
 </div>
 
+<aside class="note">
+  <section>
+  <p>We're creating a link between the publicly exposed attribute and the value in our prototype</p>
+  </section>
+</aside>
+
 ---
 
 body_class: core-fill
@@ -982,7 +1040,7 @@ body_class: core-bg
     <b>&lt;input id="nameInput" type="text"&gt;</b>
   &lt;/template&gt;
   &lt;script&gt;
-  Polymer('change-element', {
+  Polymer('focus-element', {
     <b>setFocus: function() { this.$.nameInput.focus(); }</b>
   });
   &lt;/script&gt;
