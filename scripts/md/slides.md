@@ -472,6 +472,7 @@ title: Layers of Polymer
 
 ---
 
+hidden: true
 id: philosophy
 title: Three ways to work with Polymer
 build_lists: true
@@ -492,6 +493,33 @@ class: large
     <br>
   </div>
 </div>
+
+---
+
+content_class: flexbox vcenter
+
+<h2>Three ways to work with Polymer</h2>
+
+---
+
+body_class: elements-fill
+content_class: flexbox vcenter
+
+<h2 class="faded"><em>Using</em> elements</h2>
+
+---
+
+body_class: core-fill
+content_class: flexbox vcenter
+
+<h2 class="faded"><em>Creating</em> elements</h2>
+
+---
+
+body_class: platform-fill
+content_class: flexbox vcenter
+
+<h2 class="faded">Utilizing the moden web <em>platform</em></h2>
 
 ---
 
