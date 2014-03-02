@@ -9,11 +9,6 @@
 @import "mixins";
 @import "animations";
 
-$polymer-elements-color: rgb(90, 115, 190);
-$polymer-platform-color: rgb(146, 88, 155);
-$polymer-core-color: rgb(195, 67, 131);
-$polymer-applications-color: rgb(35, 100, 215);
-
 /* Architecture stack */
 .core {
   color: $polymer-core-color;
@@ -1080,6 +1075,10 @@ slide.current::after {
   h3 {
     font-size: 40px;
   }
+}
+
+.polymer-diagram hgroup {
+  width: 40%;
 }
 
 slide.thank-you-slide {

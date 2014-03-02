@@ -223,8 +223,7 @@ slides > slide {
   pre {
     left: initial;
     width: initial;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 16px;
 
     &[data-lang]:after {
       border-top-right-radius: inherit;
@@ -352,18 +351,7 @@ slides > slide {
   text-transform: uppercase;
   padding: 6px 12px 6px 12px;
   text-decoration: none;
-  background-color: #759ae9;
-  //@include background(linear-gradient(top, $brand-blue 0%, $brand-blue 50%, $brand-blue-secondary 50%, $brand-blue-secondary2 100%));
-  @include background(linear-gradient(top, $brand-blue 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%));
-  border-top: 1px solid #1f58cc;
-  border-right: 1px solid #1b4db3;
-  border-bottom: 1px solid #174299;
-  border-left: 1px solid #1b4db3;
-  @include border-radius(4px);
-  @include box-shadow(inset 0 0 2px 0 rgba(57, 140, 255, 0.8));
   color: white;
-  @include text-shadow(0 -1px 1px #1a5ad9);
-  font-weight: 600;
 
   &:hover {
     color: white !important;
@@ -523,22 +511,9 @@ slides > slide {
   position: absolute;
   right: 0;
   bottom: 10px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  box-shadow: -2px 2px 3px $gray-2;
 
   &:after {
     content: 'RUN';
-  }
-
-  &:hover {
-    color: white !important;
-  }
-
-  &:active {
-    bottom: 8px;
   }
 }
 
@@ -977,19 +952,59 @@ slide.thank-you-slide {
   }
 }
 
-// pre .str, code .str { color: #65B042; } /* string  - green */
-// pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
-// pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
-// pre .typ, code .typ { color: #89bdff; } /* type - light blue */
-// pre .lit, code .lit { color: #3387CC; } /* literal - blue */
-// pre .pun, code .pun { color: #fff; } /* punctuation - white */
-// pre .pln, code .pln { color: #fff; } /* plaintext - white */
-// pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
-// pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
-// pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
-// pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+.paper-button {
+  display: inline-block;
+  -webkit-transition: box-shadow 0.2s, background 0.2s;
+  transition: box-shadow 0.2s, background 0.2s;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  // color: rgb(102, 102, 102);
+  padding: 14px 14px 12px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  outline: none;
+  white-space: nowrap;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.06em;
+  color: inherit;
+  vertical-align: middle;
+  font-weight: normal;
 
-// pre.prettyprint, code.prettyprint {
-//   color: white;
-//   background-color: #444;
-// }
+  text-transform: uppercase;
+
+  polymer-ui-icon {
+    margin-right: 5px;
+  }
+
+  &[borderless] {
+    border: none;
+    background: none;
+  }
+
+  &:not([borderless]) {
+    background: #fafafa;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.0980392) 0px 1px 2px 0px;
+  }
+
+  &:hover, &.active {
+    text-decoration: none;
+    background: #fff;
+    box-shadow: 0px 4px 10px 0 rgba(0,0,0,0.1), 0px 2px 10px 0px rgba(0,0,0,0.1);
+  }
+
+  // Inset highlight
+  &[sink] {
+    padding: 7px 10px;
+    transition: none;
+
+    &:hover, &.active {
+      @include background(linear-gradient(top, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.08) 40%));
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset, 0 -1px 1px rgba(0, 0, 0, 0.1) inset, 0 1px 0px rgba(0, 0, 0, 0.2) inset;
+    }
+  }
+}

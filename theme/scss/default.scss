@@ -334,8 +334,9 @@ ul {
 }
 
 pre {
-  font-family: 'Source Code Pro', 'Courier New', monospace;
+  font-family: 'Source Code Pro', Monaco, Menlo, Consolas, 'Courier New', monospace;
   font-size: 20px;
+  font-weight: normal;
   line-height: 28px;
   padding: 10px 0 10px $slide-left-right-padding;
   letter-spacing: -1px;
@@ -587,18 +588,24 @@ article.smaller {
 }
 
 /* Pretty print */
-
-.prettyprint .str, /* string content */
-.prettyprint .atv { /* a markup attribute value */
-  color: $brand-green-secondary2; //rgb(0, 138, 53);
+pre.prettyprint, code.prettyprint {
+  background: #FAFAFA;
 }
-.prettyprint .kwd, /* a keyword */
+
+.prettyprint .str { /* string content */
+  color: rgb(255, 64, 129);
+}
+.prettyprint .atv { /* a markup attribute value */
+  color: rgb(121, 134, 203);
+}
+.prettyprint .kwd { /* a keyword */
+  color: rgb(214, 26, 127)
+}
 .prettyprint .tag { /* a markup tag name */
-  color: rgb(0, 102, 204);
+  color: rgb(159, 73, 155);
 }
 .prettyprint .com { /* a comment */
-  color: $gray-3; //rgb(127, 127, 127);
-  font-style: italic;
+  color: rgb(138, 138, 138);
 }
 .prettyprint .lit { /* a literal value */
   color: rgb(127, 0, 0);
@@ -606,16 +613,16 @@ article.smaller {
 .prettyprint .pun, /* punctuation, lisp open bracket, lisp close bracket */
 .prettyprint .opn,
 .prettyprint .clo {
-  color: $gray-4; //rgb(127, 127, 127);
+  color: rgb(92, 107, 192);
 }
 .prettyprint .typ, /* a type name */
 .prettyprint .atn, /* a markup attribute name */
 .prettyprint .dec,
 .prettyprint .var { /* a declaration; a variable name */
-  color: $brand-red-secondary2; //rgb(127, 0, 127);
+  color: rgb(107, 73, 159);
 }
 .prettyprint .pln {
-  color: $gray-4;
+  color: rgb(121, 134, 203);
 }
 
 .note {

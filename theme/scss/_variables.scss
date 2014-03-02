@@ -38,6 +38,13 @@ $slide-tap-area-width: 100px;
 
 $article-content-top-padding: 45px;
 
+// Add custom variables
+
+$polymer-elements-color: rgb(90, 115, 190);
+$polymer-platform-color: rgb(146, 88, 155);
+$polymer-core-color: rgb(195, 67, 131);
+$polymer-applications-color: rgb(35, 100, 215);
+
 .bodybg {
   @include background(linear-gradient(white 90%, $gray-1));
 }

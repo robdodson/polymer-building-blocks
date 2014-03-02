@@ -287,20 +287,6 @@ var foo = mySelect.selectedIndex;
 
 ---
 
-content_class: flexbox vleft explanation
-
-<h2 style="margin-top: -100px; margin-bottom: 50px;">
-  Working with elements...
-</h2>
-
-<div class="build">
-  <h3>Reduces boilerplate</h3>
-  <h3>Lowers the barrier of entry</h3>
-  <h3>Makes sharing easy</h3>
-</div>
-
----
-
 body_class: core-fill
 content_class: flexbox vleft
 
@@ -353,12 +339,14 @@ content_class: flexbox vcenter
 
 ---
 
+hidden: true
 content_class: flexbox vleft
 
 <h2 style="font-size: 60px; line-height: 1.25;">Web Components are a set of <strong>emerging standards</strong> that allow developers to <strong>extend HTML</strong>.</h2>
 
 ---
 
+hidden: true
 class: nobackdrop nobackground browser-support
 content_class: flexbox vcenter
 
@@ -458,7 +446,7 @@ title: Layers of Polymer
   </div>
 
   <div id="diagram-polymer" class="diagram-explanation" data-build-index="5">
-    <h3 class="core bold">Polymer.js</h3>
+    <h3 class="core bold">Polymer.html</h3>
     <p>An opinionated way to work with Web Components</p>
   </div>
 
@@ -492,11 +480,11 @@ class: large
 
 <div class="build topmargin">
   <div>
-    <h3>Using <b class="elements">elements</b></h3>
+    <h3><b class="elements">Using</b> elements</h3>
     <br>
   </div>
   <div>
-    <h3><b class="core">Creating elements</b></h3>
+    <h3><b class="core">Creating</b> elements</h3>
     <br>
   </div>
   <div>
@@ -507,16 +495,8 @@ class: large
 
 ---
 
-hidden: true
-class: nobackdrop nobackground
-content_class: flexbox vcenter quote
-
-<blockquote class="large">Everything is an element.</blockquote>
-
----
-
 id: using-elements
-title: Using <label class="elements">elements <i class="icon-puzzle-piece elements"></i></label>
+title: Using <label class="elements">elements</label>
 subtitle: <a href="http://www.polymer-project.org/docs/elements/" class="nounderline">polymer-project.org/docs/elements/</a>
 class: nobackdrop nobackground segue elements polymer-diagram
 keep_content: true
@@ -533,7 +513,7 @@ keep_content: true
 body_class: elements-fill
 content_class: flexbox vcenter
 
-<h2 style="font-size: 55px; letter-spacing: 1.2;">Everything is an element</h3>
+<h2 style="font-size: 55px; letter-spacing: 0;">Everything is an element</h2>
 
 <aside class="note">
   <section>
@@ -546,7 +526,6 @@ content_class: flexbox vcenter
 id: polymer-ui-elements
 title: Polymer UI elements
 subtitle: visual elements
-body_class: elements-bg
 
 <div class="pull-right flexbox vcenter" style="width: 40%;margin-top:-100px;">
   <img src="images/polymer/uielements/polymer-ui-tabs.png" style="width:100%">
@@ -573,15 +552,20 @@ body_class: elements-bg
 
 `<polymer-ui-theme-aware>`
 
+<aside class="note">
+  <section>
+    <p>Stress that elements are experimental (and visually disjointed) but let them know we're building something real.</p>
+  </section>
+</aside>
+
 ---
 
 id: polymer-ui-tabs-demo
 title: Everything is an element
 subtitle: Tabs revisited
-body_class: elements-bg
 
 <pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-tabs.html</span>">
 </pre>
 
@@ -610,10 +594,9 @@ body_class: elements-bg
 id: polymer-ui-collapsible-demo
 title: Everything is an element
 subtitle: Collapsible elements
-body_class: elements-bg
 
 <pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-collapsible.html</span>">
 </pre>
 
@@ -648,10 +631,9 @@ hidden: true
 id: polymer-ui-toggle-button-demo
 title: Everything is an element
 subtitle: Toggle Button Element
-body_class: elements-bg
 
 <pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-toggle-button.html</span>">
 </pre>
 
@@ -682,7 +664,6 @@ content_class: flexbox vcenter
 
 title: Polymer elements
 subtitle: non-visual utility elements
-body_class: elements-bg
 content_class: columns-2
 
 <span class="bold blue">Layout</span>
@@ -735,10 +716,9 @@ content_class: columns-2
 id: polymer-flex-demo
 title: Everything is an element
 subtitle: flexbox...using DOM
-body_class: elements-bg
 
 <pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-flex-layout.html</span>">
 </pre>
 
@@ -763,15 +743,21 @@ body_class: elements-bg
 
 </div>
 
+<aside class="note">
+  <section>
+    <p><b>Power to create our own things. Flexbox is too complicated so why not make it easier.</b></p>
+  </section>
+</aside>
+
 ---
 
+hidden: true
 id: polymer-ajax-demo
 title: Everything is an element
 subtitle: AJAX...using DOM
-body_class: elements-bg
 
 <pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-ajax.html</span>">
 </pre>
 
@@ -811,7 +797,7 @@ content_class: flexbox vcenter
 ---
 
 id: creating-elements
-title: Creating <label class="core">elements <i class="icon-beaker core"></i></label>
+title: Creating <label class="core">elements</label>
 subtitle: <a href="http://www.polymer-project.org/polymer.html" class="nounderline">polymer-project.org/polymer.html</a>
 class: nobackdrop nobackground segue core polymer-diagram
 #content_class: flexbox vcenter
@@ -857,7 +843,6 @@ content_class: flexbox vcenter
 id: declarative-registration
 title: Declarative registration
 #subtitle: Declarative registration
-body_class: core-bg
 
 <pre class="corner prettyprint">
 &lt;link rel="import" href="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.html</span>">
@@ -895,7 +880,6 @@ body_class: core-bg
 id: declarative-registration-proto
 title: Declarative registration
 #subtitle: Declarative registration with prototypes
-body_class: core-bg
 
 <pre class="corner prettyprint">
 &lt;link rel="import" href="<span alt="bower install polymer" data-tooltip="bower install polymer">polymer.html</span>">
@@ -908,7 +892,7 @@ body_class: core-bg
   &lt;/template&gt;
   &lt;script&gt;
   Polymer('hello-element', {
-    ready: function() { ... }, // lifecycle callback
+    attached: function() { ... }, // lifecycle callback
     sayHello: function() { alert('Howdy folks!'); }
   });
   &lt;/script&gt;
@@ -946,7 +930,6 @@ content_class: flexbox vcenter
 id: two-way-binding
 title: Two-way data-binding
 #subtitle: Two-way data-binding
-body_class: core-bg
 
 <pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
 &lt;polymer-element name="owner-element"&gt;
@@ -989,7 +972,6 @@ content_class: flexbox vcenter
 
 id: published-properties
 title: Published properties
-body_class: core-bg
 
 <pre class="prettyprint" style="font-size:30px; line-height: 1.2;">
 &lt;polymer-element name="owner-element" <b>attributes="owner"</b>&gt;
@@ -1025,13 +1007,51 @@ body_class: core-bg
 body_class: core-fill
 content_class: flexbox vcenter
 
+<h2 class="faded">Declarative <em>event handlers</em></h2>
+
+---
+
+id: declarative-event-handlers
+title: Declarative Event Handlers
+
+<pre class="prettyprint" style="font-size:27px; line-height: 1.2;">
+&lt;polymer-element name="click-element"&gt;
+  &lt;template&gt;
+    <b>&lt;button on-click="{{setMessage}}"&gt;Click me&lt;/button&gt;</b>
+    <b>&lt;span&gt;{{message}}&lt;/span&gt;</b>
+  &lt;/template&gt;
+  &lt;script&gt;
+  Polymer('click-element', {
+    <b>message: 'Waiting to be clicked...'</b>
+    <b>setMessage: function() { this.message = 'I was clicked!' }</b>
+  });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px; zoom: 2;">
+    <click-element></click-element>
+  </output>
+</div>
+
+<aside class="note">
+  <section>
+    <p>Explain why onclick is bad but on-click is awesome</p>
+  </section>
+</aside>
+
+---
+
+body_class: core-fill
+content_class: flexbox vcenter
+
 <h2 class="faded">Automatic <em>node finding</em></h2>
 
 ---
 
 id: automatic-node-finding
 title: Automatic Node Finding
-body_class: core-bg
 
 <pre class="prettyprint" style="font-size:30px; line-height: 1.2;">
 &lt;polymer-element name="focus-element"&gt;
@@ -1053,11 +1073,17 @@ body_class: core-bg
   </output>
 </div>
 
+<aside class="note">
+  <section>
+    <p>Explain why id's are bad but these are awesome</p>
+  </section>
+</aside>
+
 ---
 
+hidden: true
 title: Polymer features
 subtitle: declarative web components
-body_class: core-bg
 
 - Declarative element registration: `<polymer-element>`
 - Declarative inheritance: `<polymer-element extends="...">`
@@ -1088,7 +1114,6 @@ hidden: true
 id: more-complex-elements
 title: Define an API
 subtitle: complex elements require more juice...
-body_class: core-bg
 
 <pre data-code-cycle class="prettyprint" data-lang="HTML" style="font-size:25px;line-height: 1.4;">
 </pre>
@@ -1150,7 +1175,6 @@ body_class: core-bg
 hidden: true
 id: published-properties
 title: Publishing properties & data-binding
-body_class: core-bg
 polymer_link: http://www.polymer-project.org/polymer.html#published-properties
 
 2. **Inside** the element &rarr; use data-binding
@@ -1225,11 +1249,10 @@ polymer_link: http://www.polymer-project.org/polymer.html#published-properties
 hidden: true
 title: Features in action
 subtitle: responsive design...using DOM
-body_class: core-bg
 #content_class: smaller 
 
 <pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-media-query.html</span>">
 </pre>
 
@@ -1257,7 +1280,8 @@ body_class: core-bg
 ---
 
 id: the-platform
-title: The <label class="platform">platform <i class="icon-cogs platform"></i></label>
+title: The <label class="platform">platform</label>
+subtitle: <a href="http://www.polymer-project.org/docs/start/platform.html" class="nounderline">polymer-project.org/docs/start/platform</a>
 class: nobackdrop nobackground segue platform polymer-diagram
 #content_class: flexbox vcenter
 keep_content: true
@@ -1281,7 +1305,6 @@ content_class: flexbox vleft
 id: platform-polyfills
 title: Platform polyfills
 subtitle: supporting new web technologies today
-body_class: platform-bg
 class: nobackdrop nobackground browser-support
 
 <div class="flexbox">
@@ -1338,6 +1361,30 @@ body_class: platform-fill
 content_class: flexbox vleft
 
 <h2 class="faded" style="font-size: 52px;">Additional features include <em>Mutation Observers</em>, <em>Pointer Events</em>, <em>Web Animations</em>, and much more.</h2>
+
+---
+
+id: evaporate-platform
+class: polymer-diagram
+
+<div id="blocks-3d">
+  <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
+  <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
+  <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
+  <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
+</div>
+
+<div class="diagram-explanations" style="margin-top: 250px;">
+  <div class="diagram-explanation">
+    <h3 style="font-size: 35px; line-height: 1.5;">As browsers implement the underlying specifications supported by the platform, the need for this layer decreases.</h3>
+  </div>
+  <div class="build">
+    <div id="platform-shrink" class="diagram-explanation">
+      <h3 style="font-size: 35px; line-height: 1.5;">...till eventually it's all gone.</h3>
+    </div>
+  </div>
+</div>
+
 
 ---
 

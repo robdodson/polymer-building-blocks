@@ -492,30 +492,6 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide     >
-  
-    <hgroup>
-      <span>
-        
-        
-        
-        
-      </span>
-      <h2></h2>
-      <h3></h3>
-    </hgroup>
-    <article class="flexbox vleft explanation"><h2 style="margin-top: -100px; margin-bottom: 50px;">
-  Working with elements...
-</h2>
-
-<div class="build">
-  <h3>Reduces boilerplate</h3>
-  <h3>Lowers the barrier of entry</h3>
-  <h3>Makes sharing easy</h3>
-</div></article>
- 
-</slide>
-
 <slide    data-body-class="core-fill" >
   
     <hgroup>
@@ -595,7 +571,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide     >
+<slide     hidden>
   
     <hgroup>
       <span>
@@ -611,7 +587,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide  class="nobackdrop nobackground browser-support"   >
+<slide  class="nobackdrop nobackground browser-support"   hidden>
   
     <hgroup>
       <span>
@@ -746,7 +722,7 @@ var foo = mySelect.selectedIndex;
   </div>
 
   <div id="diagram-polymer" class="diagram-explanation" data-build-index="5">
-    <h3 class="core bold">Polymer.js</h3>
+    <h3 class="core bold">Polymer.html</h3>
     <p>An opinionated way to work with Web Components</p>
   </div>
 
@@ -786,11 +762,11 @@ var foo = mySelect.selectedIndex;
     </hgroup>
     <article ><div class="build topmargin">
   <div>
-    <h3>Using <b class="elements">elements</b></h3>
+    <h3><b class="elements">Using</b> elements</h3>
     <br>
   </div>
   <div>
-    <h3><b class="core">Creating elements</b></h3>
+    <h3><b class="core">Creating</b> elements</h3>
     <br>
   </div>
   <div>
@@ -801,27 +777,11 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide  class="nobackdrop nobackground"   hidden>
-  
-    <hgroup>
-      <span>
-        
-        
-        
-        
-      </span>
-      <h2></h2>
-      <h3></h3>
-    </hgroup>
-    <article class="flexbox vcenter quote"><blockquote class="large">Everything is an element.</blockquote></article>
- 
-</slide>
-
 <slide id="using-elements" class="nobackdrop nobackground segue elements polymer-diagram"   >
   
     <aside class="gdbar"><img src="images/logos/chrome_logo.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>Using <label class="elements">elements <i class="icon-puzzle-piece elements"></i></label></h2>
+      <h2>Using <label class="elements">elements</label></h2>
       <h3><a href="http://www.polymer-project.org/docs/elements/" class="nounderline">polymer-project.org/docs/elements/</a></h3>
     </hgroup>
     
@@ -847,7 +807,7 @@ var foo = mySelect.selectedIndex;
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 style="font-size: 55px; letter-spacing: 1.2;">Everything is an element</h3>
+    <article class="flexbox vcenter"><h2 style="font-size: 55px; letter-spacing: 0;">Everything is an element</h2>
 
 <aside class="note">
   <section>
@@ -857,7 +817,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide id="polymer-ui-elements"   data-body-class="elements-bg" >
+<slide id="polymer-ui-elements"    >
   
     <hgroup>
       <span>
@@ -885,11 +845,16 @@ var foo = mySelect.selectedIndex;
 <p><code>&lt;polymer-ui-sidebar-menu&gt;</code> <a href="http://www.polymer-project.org/components/polymer-ui-sidebar-menu/smoke.html">demo</a></p>
 <p><code>&lt;polymer-ui-tabs&gt;</code> <a href="http://www.polymer-project.org/components/polymer-ui-tabs/smoke.html">demo</a></p>
 <p><code>&lt;polymer-ui-toggle-button&gt;</code> <a href="http://www.polymer-project.org/components/polymer-ui-toggle-button/smoke.html">demo</a></p>
-<p><code>&lt;polymer-ui-theme-aware&gt;</code></p></article>
+<p><code>&lt;polymer-ui-theme-aware&gt;</code></p>
+<aside class="note">
+  <section>
+    <p>Stress that elements are experimental (and visually disjointed) but let them know we're building something real.</p>
+  </section>
+</aside></article>
  
 </slide>
 
-<slide id="polymer-ui-tabs-demo"   data-body-class="elements-bg" >
+<slide id="polymer-ui-tabs-demo"    >
   
     <hgroup>
       <span>
@@ -902,7 +867,7 @@ var foo = mySelect.selectedIndex;
       <h3>Tabs revisited</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-tabs.html</span>">
 </pre>
 
@@ -928,7 +893,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide id="polymer-ui-collapsible-demo"   data-body-class="elements-bg" >
+<slide id="polymer-ui-collapsible-demo"    >
   
     <hgroup>
       <span>
@@ -941,7 +906,7 @@ var foo = mySelect.selectedIndex;
       <h3>Collapsible elements</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-collapsible.html</span>">
 </pre>
 
@@ -972,7 +937,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide id="polymer-ui-toggle-button-demo"   data-body-class="elements-bg" hidden>
+<slide id="polymer-ui-toggle-button-demo"    hidden>
   
     <hgroup>
       <span>
@@ -985,7 +950,7 @@ var foo = mySelect.selectedIndex;
       <h3>Toggle Button Element</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-ui-elements" data-tooltip="bower install polymer-ui-elements">polymer-ui-toggle-button.html</span>">
 </pre>
 
@@ -1022,7 +987,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide    data-body-class="elements-bg" >
+<slide     >
   
     <hgroup>
       <span>
@@ -1062,7 +1027,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide id="polymer-flex-demo"   data-body-class="elements-bg" >
+<slide id="polymer-flex-demo"    >
   
     <hgroup>
       <span>
@@ -1075,7 +1040,7 @@ var foo = mySelect.selectedIndex;
       <h3>flexbox...using DOM</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-flex-layout.html</span>">
 </pre>
 
@@ -1097,11 +1062,17 @@ var foo = mySelect.selectedIndex;
   </polymer-flex-layout>
 </output>
 
-</div></article>
+</div>
+
+<aside class="note">
+  <section>
+    <p><b>Power to create our own things. Flexbox is too complicated so why not make it easier.</b></p>
+  </section>
+</aside></article>
  
 </slide>
 
-<slide id="polymer-ajax-demo"   data-body-class="elements-bg" >
+<slide id="polymer-ajax-demo"    hidden>
   
     <hgroup>
       <span>
@@ -1114,7 +1085,7 @@ var foo = mySelect.selectedIndex;
       <h3>AJAX...using DOM</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-ajax.html</span>">
 </pre>
 
@@ -1166,7 +1137,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
   
     <aside class="gdbar"><img src="images/logos/chrome_logo.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>Creating <label class="core">elements <i class="icon-beaker core"></i></label></h2>
+      <h2>Creating <label class="core">elements</label></h2>
       <h3><a href="http://www.polymer-project.org/polymer.html" class="nounderline">polymer-project.org/polymer.html</a></h3>
     </hgroup>
     
@@ -1225,7 +1196,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide id="declarative-registration"   data-body-class="core-bg" >
+<slide id="declarative-registration"    >
   
     <hgroup>
       <span>
@@ -1270,7 +1241,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide id="declarative-registration-proto"   data-body-class="core-bg" >
+<slide id="declarative-registration-proto"    >
   
     <hgroup>
       <span>
@@ -1293,7 +1264,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
   &lt;/template&gt;
   &lt;script&gt;
   Polymer('hello-element', {
-    ready: function() { ... }, // lifecycle callback
+    attached: function() { ... }, // lifecycle callback
     sayHello: function() { alert('Howdy folks!'); }
   });
   &lt;/script&gt;
@@ -1337,7 +1308,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide id="two-way-binding"   data-body-class="core-bg" >
+<slide id="two-way-binding"    >
   
     <hgroup>
       <span>
@@ -1397,7 +1368,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide id="published-properties"   data-body-class="core-bg" >
+<slide id="published-properties"    >
   
     <hgroup>
       <span>
@@ -1452,11 +1423,68 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2></h2>
       <h3></h3>
     </hgroup>
+    <article class="flexbox vcenter"><h2 class="faded">Declarative <em>event handlers</em></h2></article>
+ 
+</slide>
+
+<slide id="declarative-event-handlers"    >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2>Declarative Event Handlers</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint" style="font-size:27px; line-height: 1.2;">
+&lt;polymer-element name="click-element"&gt;
+  &lt;template&gt;
+    <b>&lt;button on-click="{{setMessage}}"&gt;Click me&lt;/button&gt;</b>
+    <b>&lt;span&gt;{{message}}&lt;/span&gt;</b>
+  &lt;/template&gt;
+  &lt;script&gt;
+  Polymer('click-element', {
+    <b>message: 'Waiting to be clicked...'</b>
+    <b>setMessage: function() { this.message = 'I was clicked!' }</b>
+  });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+</pre>
+
+<div class="component-demo">
+  <output style="display: block; padding: 10px; zoom: 2;">
+    <click-element></click-element>
+  </output>
+</div>
+
+<aside class="note">
+  <section>
+    <p>Explain why onclick is bad but on-click is awesome</p>
+  </section>
+</aside></article>
+ 
+</slide>
+
+<slide    data-body-class="core-fill" >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
     <article class="flexbox vcenter"><h2 class="faded">Automatic <em>node finding</em></h2></article>
  
 </slide>
 
-<slide id="automatic-node-finding"   data-body-class="core-bg" >
+<slide id="automatic-node-finding"    >
   
     <hgroup>
       <span>
@@ -1486,11 +1514,17 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
   <output style="display: block; padding: 10px; zoom: 2;">
     <focus-element></focus-element>
   </output>
-</div></article>
+</div>
+
+<aside class="note">
+  <section>
+    <p>Explain why id's are bad but these are awesome</p>
+  </section>
+</aside></article>
  
 </slide>
 
-<slide    data-body-class="core-bg" >
+<slide     hidden>
   
     <hgroup>
       <span>
@@ -1528,7 +1562,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide id="more-complex-elements"   data-body-class="core-bg" hidden>
+<slide id="more-complex-elements"    hidden>
   
     <hgroup>
       <span>
@@ -1597,7 +1631,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide id="published-properties"   data-body-class="core-bg" hidden>
+<slide id="published-properties"    hidden>
   
     <hgroup>
       <span>
@@ -1680,7 +1714,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide    data-body-class="core-bg" hidden>
+<slide     hidden>
   
     <hgroup>
       <span>
@@ -1693,7 +1727,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h3>responsive design...using DOM</h3>
     </hgroup>
     <article ><pre class="corner prettyprint">
-&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.min.js</span>">&lt;/script>
+&lt;script src="<span alt="bower install polymer" data-tooltip="bower install polymer">platform.js</span>">&lt;/script>
 &lt;link rel="import" href="<span alt="bower install polymer-elements" data-tooltip="bower install polymer-elements">polymer-media-query.html</span>">
 </pre>
 
@@ -1724,8 +1758,8 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
   
     <aside class="gdbar"><img src="images/logos/chrome_logo.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>The <label class="platform">platform <i class="icon-cogs platform"></i></label></h2>
-      <h3></h3>
+      <h2>The <label class="platform">platform</label></h2>
+      <h3><a href="http://www.polymer-project.org/docs/start/platform.html" class="nounderline">polymer-project.org/docs/start/platform</a></h3>
     </hgroup>
     
     <article ><div id="blocks-3d" class="in" style="top: 10%;">
@@ -1754,7 +1788,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
  
 </slide>
 
-<slide id="platform-polyfills" class="nobackdrop nobackground browser-support"  data-body-class="platform-bg" >
+<slide id="platform-polyfills" class="nobackdrop nobackground browser-support"   >
   
     <hgroup>
       <span>
@@ -1829,6 +1863,38 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h3></h3>
     </hgroup>
     <article class="flexbox vleft"><h2 class="faded" style="font-size: 52px;">Additional features include <em>Mutation Observers</em>, <em>Pointer Events</em>, <em>Web Animations</em>, and much more.</h2></article>
+ 
+</slide>
+
+<slide id="evaporate-platform" class="polymer-diagram"   >
+  
+    <hgroup>
+      <span>
+        
+        
+        
+        
+      </span>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><div id="blocks-3d">
+  <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
+  <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
+  <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
+  <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
+</div>
+
+<div class="diagram-explanations" style="margin-top: 250px;">
+  <div class="diagram-explanation">
+    <h3 style="font-size: 35px; line-height: 1.5;">As browsers implement the underlying specifications supported by the platform, the need for this layer decreases.</h3>
+  </div>
+  <div class="build">
+    <div id="platform-shrink" class="diagram-explanation">
+      <h3 style="font-size: 35px; line-height: 1.5;">...till eventually it's all gone.</h3>
+    </div>
+  </div>
+</div></article>
  
 </slide>
 

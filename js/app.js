@@ -488,6 +488,29 @@ function enableDiagramAnimations() {
     });
   })();
 
+  (function() {
+    var slide = $('#evaporate-platform');
+    slide.addEventListener('slideenter', function(e) {
+      animations.captureElements();
+      animations.setupFades();
+      animations.animateIn();
+    });
+
+    slide.addEventListener('slidebuild', function(e) {
+      var segment = slide.querySelector('.build-current');
+
+      switch (segment.id) {
+        case 'diagram-animate-in':
+          animations.animateIn();
+          break;
+
+        case 'platform-shrink':
+          animations.platformShrink();
+          break;
+      }
+    });
+  })();
+
   var animations = {
     captureElements: function() {
       this.slide = slidedeck.slides[slidedeck.curSlide_];
@@ -590,6 +613,26 @@ function enableDiagramAnimations() {
       if (fades.length) {
         document.timeline.play(new SeqGroup(fades));
       }
-    }
+    },
+    platformShrink: function() {
+      var animationShrink = new Animation(this.platform3d, [
+          { opacity: 1, transform: 'scale3d(1, 1, 1)' },
+          { opacity: 0, transform: 'scale3d(0, 0, 0)' }
+        ], { duration: 1, easing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)' });
+
+      var animations = [this.polymer3d, this.elements3d].map(function(el) {
+        return new Animation(el, [
+            { transform: 'translate3d(0, 90px, 0)' }
+          ], { duration: 1, easing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)' });
+      });
+
+      var animationBottom = new Animation(this.native3d, [
+          { transform: 'translate3d(0, -20px, 0)' }
+        ], { duration: 1, easing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)' });
+
+      animations.unshift(animationShrink);
+      animations.push(animationBottom);
+      document.timeline.play(new ParGroup(animations));
+    },
   };
 }
