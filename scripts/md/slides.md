@@ -428,10 +428,10 @@ class: polymer-diagram
 title: Layers of Polymer
 
 <div id="blocks-3d">
-  <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
-  <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
-  <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
-  <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
+  <img id="native-3d" class="block-3d" src="./images/polymer/diagram/native.svg">
+  <img id="platform-3d" class="block-3d" src="./images/polymer/diagram/platform.svg">
+  <img id="polymer-3d" class="block-3d" src="./images/polymer/diagram/polymer.svg">
+  <img id="elements-3d" class="block-3d" src="./images/polymer/diagram/elements.svg">
 </div>
 
 <div class="build diagram-explanations">
@@ -528,10 +528,10 @@ class: nobackdrop nobackground segue elements polymer-diagram
 keep_content: true
 
 <div id="blocks-3d" class="in" style="top: 10%;">
-  <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
-  <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
-  <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
-  <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
+  <img id="native-3d" class="block-3d" src="./images/polymer/diagram/native.svg">
+  <img id="platform-3d" class="block-3d" src="./images/polymer/diagram/platform.svg">
+  <img id="polymer-3d" class="block-3d" src="./images/polymer/diagram/polymer.svg">
+  <img id="elements-3d" class="block-3d" src="./images/polymer/diagram/elements.svg">
 </div>
 
 ---
@@ -830,10 +830,10 @@ class: nobackdrop nobackground segue core polymer-diagram
 keep_content: true
 
 <div id="blocks-3d" class="in" style="top: 10%;">
-  <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
-  <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
-  <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
-  <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
+  <img id="native-3d" class="block-3d" src="./images/polymer/diagram/native.svg">
+  <img id="platform-3d" class="block-3d" src="./images/polymer/diagram/platform.svg">
+  <img id="polymer-3d" class="block-3d" src="./images/polymer/diagram/polymer.svg">
+  <img id="elements-3d" class="block-3d" src="./images/polymer/diagram/elements.svg">
 </div>
 
 <aside class="note">
@@ -1311,10 +1311,10 @@ class: nobackdrop nobackground segue platform polymer-diagram
 keep_content: true
 
 <div id="blocks-3d" class="in" style="top: 10%;">
-  <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
-  <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
-  <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
-  <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
+  <img id="native-3d" class="block-3d" src="./images/polymer/diagram/native.svg">
+  <img id="platform-3d" class="block-3d" src="./images/polymer/diagram/platform.svg">
+  <img id="polymer-3d" class="block-3d" src="./images/polymer/diagram/polymer.svg">
+  <img id="elements-3d" class="block-3d" src="./images/polymer/diagram/elements.svg">
 </div>
 
 ---
@@ -1392,10 +1392,10 @@ id: evaporate-platform
 class: polymer-diagram
 
 <div id="blocks-3d">
-  <img id="native-3d" class="block-3d" src="/images/polymer/diagram/native.svg">
-  <img id="platform-3d" class="block-3d" src="/images/polymer/diagram/platform.svg">
-  <img id="polymer-3d" class="block-3d" src="/images/polymer/diagram/polymer.svg">
-  <img id="elements-3d" class="block-3d" src="/images/polymer/diagram/elements.svg">
+  <img id="native-3d" class="block-3d" src="./images/polymer/diagram/native.svg">
+  <img id="platform-3d" class="block-3d" src="./images/polymer/diagram/platform.svg">
+  <img id="polymer-3d" class="block-3d" src="./images/polymer/diagram/polymer.svg">
+  <img id="elements-3d" class="block-3d" src="./images/polymer/diagram/elements.svg">
 </div>
 
 <div class="diagram-explanations" style="margin-top: 250px;">

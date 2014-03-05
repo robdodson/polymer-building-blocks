@@ -623,8 +623,8 @@ slides > slide {
                 rgba(#1E2235, 0.8) 50%,
                 rgba(#1E2235, 0.5) 60%
               ),
-              url('/images/polymer/p-elements.svg') 9% 10%,
-              url('/images/polymer/p-elements.svg') center / 50%;
+              url('../../images/polymer/p-elements.svg') 9% 10%,
+              url('../../images/polymer/p-elements.svg') center / 50%;
   background-color: rgba(#1E2235, 0.5);
 
   padding: $slide-top-bottom-padding * 2 $slide-left-right-padding * 2;
