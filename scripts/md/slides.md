@@ -180,7 +180,7 @@ content_class: flexbox vcenter
 class: large
 content_class: flexbox vcenter
 
-<pre class="nohighlight">
+<pre class="nohighlight" style="margin-left: -100px;">
 &lt;select <b>size="4"</b> <b>multiple</b>>
   &lt;option>Do&lt;/option>
   &lt;option>Re&lt;/option>
@@ -324,11 +324,11 @@ class: large
 content_class: flexbox vcenter
 
 <pre class="nohighlight" style="margin-top: -50px;">
-&lt;tabs&gt;
-  &lt;tab&gt;Tab 1&lt;/tab&gt;
-  &lt;tab&gt;Tab 2&lt;/tab&gt;
-  &lt;tab&gt;Tab 3&lt;/tab&gt;
-&lt;/tabs&gt;
+&lt;x-tabs&gt;
+  &lt;x-tab&gt;Tab 1&lt;/x-tab&gt;
+  &lt;x-tab&gt;Tab 2&lt;/x-tab&gt;
+  &lt;x-tab&gt;Tab 3&lt;/x-tab&gt;
+&lt;/x-tabs&gt;
 </pre>
 
 <aside class="note">
@@ -339,14 +339,12 @@ content_class: flexbox vcenter
 
 ---
 
-hidden: true
 content_class: flexbox vleft
 
 <h2 style="font-size: 60px; line-height: 1.25;">Web Components are a set of <strong>emerging standards</strong> that allow developers to <strong>extend HTML</strong>.</h2>
 
 ---
 
-hidden: true
 class: nobackdrop nobackground browser-support
 content_class: flexbox vcenter
 
@@ -357,17 +355,6 @@ content_class: flexbox vcenter
     <div class="supported"><img src="images/logos/browsers/ff_logo.png"></div>
     <div class="supported"><img src="images/logos/chrome_logo.png"></div>
     <div class="supported"><img src="images/logos/browsers/opera_logo.png"></div>
-    <div><img src="images/logos/browsers/ie10_logo.png"></div>
-  </div>
-</div>
-
-<div class="flexbox">
-  <h2>HTML Imports</h2>
-  <div class="browser-support-row">
-    <div><img src="images/logos/browsers/safari_logo.png"></div>
-    <div><img src="images/logos/browsers/ff_logo.png"></div>
-    <div class="supported partial"><img src="images/logos/chrome_logo.png"></div>
-    <div><img src="images/logos/browsers/opera_logo.png"></div>
     <div><img src="images/logos/browsers/ie10_logo.png"></div>
   </div>
 </div>
@@ -390,6 +377,17 @@ content_class: flexbox vcenter
     <div class="supported partial"><img src="images/logos/browsers/ff_logo.png"></div>
     <div class="supported"><img src="images/logos/chrome_logo.png"></div>
     <div class="supported"><img src="images/logos/browsers/opera_logo.png"></div>
+    <div><img src="images/logos/browsers/ie10_logo.png"></div>
+  </div>
+</div>
+
+<div class="flexbox">
+  <h2>HTML Imports</h2>
+  <div class="browser-support-row">
+    <div><img src="images/logos/browsers/safari_logo.png"></div>
+    <div><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported partial"><img src="images/logos/chrome_logo.png"></div>
+    <div><img src="images/logos/browsers/opera_logo.png"></div>
     <div><img src="images/logos/browsers/ie10_logo.png"></div>
   </div>
 </div>
@@ -446,12 +444,12 @@ title: Layers of Polymer
   </div>
 
   <div id="diagram-polymer" class="diagram-explanation" data-build-index="5">
-    <h3 class="core bold">Polymer.html</h3>
+    <h3 class="core bold">Polymer</h3>
     <p>An opinionated way to work with Web Components</p>
   </div>
 
   <div id="diagram-platform" class="diagram-explanation" data-build-index="4">
-    <h3 class="platform bold">Platform.js</h3>
+    <h3 class="platform bold">Platform</h3>
     <p>Web Components polyfills for all <br>modern browsers</p>
   </div>
 
@@ -466,7 +464,7 @@ title: Layers of Polymer
     <p><b>So, how do we do that?</b></p>
     <p><b>Here's our layer cake of awesome</b></p>
     <p><b>Platform: Jump everyone into the future so they can start creating their own elements</b></p>
-    <p><b>Polymer: Features and sugars. Two-way data-binding, automatic node finding and a great declarative syntax</b></p>
+    <p><b>Polymer: Features and sugars. Two-way data binding, automatic node finding and a great declarative syntax</b></p>
   </section>
 </aside>
 
@@ -519,7 +517,7 @@ content_class: flexbox vcenter
 body_class: platform-fill
 content_class: flexbox vcenter
 
-<h2 class="faded">Utilizing the moden web <em>platform</em></h2>
+<h2 class="faded">Utilizing the modern web <em>platform</em></h2>
 
 ---
 
@@ -920,7 +918,6 @@ title: Declarative registration
   &lt;/template&gt;
   &lt;script&gt;
   Polymer('hello-element', {
-    attached: function() { ... }, // lifecycle callback
     sayHello: function() { alert('Howdy folks!'); }
   });
   &lt;/script&gt;
@@ -945,7 +942,7 @@ title: Declarative registration
 body_class: core-fill
 content_class: flexbox vcenter
 
-<h2 class="faded">Two-way <em>data-binding</em></h2>
+<h2 class="faded"><em>Binding</em> expressions</h2>
 
 <aside class="note">
   <section>
@@ -956,10 +953,9 @@ content_class: flexbox vcenter
 ---
 
 id: two-way-binding
-title: Two-way data-binding
-#subtitle: Two-way data-binding
+title: Binding Expressions
 
-<pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+<pre class="prettyprint" style="font-size:27px; line-height: 1.2;" data-lang="HTML">
 &lt;polymer-element name="owner-element"&gt;
   &lt;template&gt;
     &lt;h2&gt;<b>{{owner}}</b> built me with Polymer&lt;/h2&gt;
@@ -994,21 +990,21 @@ title: Two-way data-binding
 body_class: core-fill
 content_class: flexbox vcenter
 
-<h2 class="faded">Published <em>properties</em></h2>
+<h2 class="faded"><em>Published</em> properties</h2>
 
 ---
 
 id: published-properties
 title: Published properties
 
-<pre class="prettyprint" style="font-size:30px; line-height: 1.2;">
+<pre class="prettyprint" style="font-size:27px; line-height: 1.2;">
 &lt;polymer-element name="owner-element" <b>attributes="owner"</b>&gt;
   &lt;template&gt;
     &lt;h2&gt;<b>{{owner}}</b> built me with Polymer&lt;/h2&gt;
   &lt;/template&gt;
   &lt;script&gt;
   Polymer('owner-element', {
-    owner: 'Rob'
+    <b>owner: 'Rob'</b>
   });
   &lt;/script&gt;
 &lt;/polymer-element&gt;

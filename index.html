@@ -333,7 +333,7 @@ https://code.google.com/p/io-2012-slides
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><pre class="nohighlight">
+    <article class="flexbox vcenter"><pre class="nohighlight" style="margin-left: -100px;">
 &lt;select <b>size="4"</b> <b>multiple</b>>
   &lt;option>Do&lt;/option>
   &lt;option>Re&lt;/option>
@@ -556,11 +556,11 @@ var foo = mySelect.selectedIndex;
       <h3></h3>
     </hgroup>
     <article class="flexbox vcenter"><pre class="nohighlight" style="margin-top: -50px;">
-&lt;tabs&gt;
-  &lt;tab&gt;Tab 1&lt;/tab&gt;
-  &lt;tab&gt;Tab 2&lt;/tab&gt;
-  &lt;tab&gt;Tab 3&lt;/tab&gt;
-&lt;/tabs&gt;
+&lt;x-tabs&gt;
+  &lt;x-tab&gt;Tab 1&lt;/x-tab&gt;
+  &lt;x-tab&gt;Tab 2&lt;/x-tab&gt;
+  &lt;x-tab&gt;Tab 3&lt;/x-tab&gt;
+&lt;/x-tabs&gt;
 </pre>
 
 <aside class="note">
@@ -571,7 +571,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide     hidden>
+<slide     >
   
     <hgroup>
       <span>
@@ -587,7 +587,7 @@ var foo = mySelect.selectedIndex;
  
 </slide>
 
-<slide  class="nobackdrop nobackground browser-support"   hidden>
+<slide  class="nobackdrop nobackground browser-support"   >
   
     <hgroup>
       <span>
@@ -611,17 +611,6 @@ var foo = mySelect.selectedIndex;
 </div>
 
 <div class="flexbox">
-  <h2>HTML Imports</h2>
-  <div class="browser-support-row">
-    <div><img src="images/logos/browsers/safari_logo.png"></div>
-    <div><img src="images/logos/browsers/ff_logo.png"></div>
-    <div class="supported partial"><img src="images/logos/chrome_logo.png"></div>
-    <div><img src="images/logos/browsers/opera_logo.png"></div>
-    <div><img src="images/logos/browsers/ie10_logo.png"></div>
-  </div>
-</div>
-
-<div class="flexbox">
   <h2>Custom Elements</h2>
   <div class="browser-support-row">
     <div><img src="images/logos/browsers/safari_logo.png"></div>
@@ -639,6 +628,17 @@ var foo = mySelect.selectedIndex;
     <div class="supported partial"><img src="images/logos/browsers/ff_logo.png"></div>
     <div class="supported"><img src="images/logos/chrome_logo.png"></div>
     <div class="supported"><img src="images/logos/browsers/opera_logo.png"></div>
+    <div><img src="images/logos/browsers/ie10_logo.png"></div>
+  </div>
+</div>
+
+<div class="flexbox">
+  <h2>HTML Imports</h2>
+  <div class="browser-support-row">
+    <div><img src="images/logos/browsers/safari_logo.png"></div>
+    <div><img src="images/logos/browsers/ff_logo.png"></div>
+    <div class="supported partial"><img src="images/logos/chrome_logo.png"></div>
+    <div><img src="images/logos/browsers/opera_logo.png"></div>
     <div><img src="images/logos/browsers/ie10_logo.png"></div>
   </div>
 </div>
@@ -722,12 +722,12 @@ var foo = mySelect.selectedIndex;
   </div>
 
   <div id="diagram-polymer" class="diagram-explanation" data-build-index="5">
-    <h3 class="core bold">Polymer.html</h3>
+    <h3 class="core bold">Polymer</h3>
     <p>An opinionated way to work with Web Components</p>
   </div>
 
   <div id="diagram-platform" class="diagram-explanation" data-build-index="4">
-    <h3 class="platform bold">Platform.js</h3>
+    <h3 class="platform bold">Platform</h3>
     <p>Web Components polyfills for all <br>modern browsers</p>
   </div>
 
@@ -742,7 +742,7 @@ var foo = mySelect.selectedIndex;
     <p><b>So, how do we do that?</b></p>
     <p><b>Here's our layer cake of awesome</b></p>
     <p><b>Platform: Jump everyone into the future so they can start creating their own elements</b></p>
-    <p><b>Polymer: Features and sugars. Two-way data-binding, automatic node finding and a great declarative syntax</b></p>
+    <p><b>Polymer: Features and sugars. Two-way data binding, automatic node finding and a great declarative syntax</b></p>
   </section>
 </aside></article>
  
@@ -837,7 +837,7 @@ var foo = mySelect.selectedIndex;
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 class="faded">Utilizing the moden web <em>platform</em></h2></article>
+    <article class="flexbox vcenter"><h2 class="faded">Utilizing the modern web <em>platform</em></h2></article>
  
 </slide>
 
@@ -1328,7 +1328,6 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
   &lt;/template&gt;
   &lt;script&gt;
   Polymer('hello-element', {
-    attached: function() { ... }, // lifecycle callback
     sayHello: function() { alert('Howdy folks!'); }
   });
   &lt;/script&gt;
@@ -1362,7 +1361,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 class="faded">Two-way <em>data-binding</em></h2>
+    <article class="flexbox vcenter"><h2 class="faded"><em>Binding</em> expressions</h2>
 
 <aside class="note">
   <section>
@@ -1381,10 +1380,10 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
         
         
       </span>
-      <h2>Two-way data-binding</h2>
+      <h2>Binding Expressions</h2>
       <h3></h3>
     </hgroup>
-    <article ><pre class="prettyprint" style="font-size:30px; line-height: 1.2;" data-lang="HTML">
+    <article ><pre class="prettyprint" style="font-size:27px; line-height: 1.2;" data-lang="HTML">
 &lt;polymer-element name="owner-element"&gt;
   &lt;template&gt;
     &lt;h2&gt;<b>{{owner}}</b> built me with Polymer&lt;/h2&gt;
@@ -1428,7 +1427,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 class="faded">Published <em>properties</em></h2></article>
+    <article class="flexbox vcenter"><h2 class="faded"><em>Published</em> properties</h2></article>
  
 </slide>
 
@@ -1444,14 +1443,14 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2>Published properties</h2>
       <h3></h3>
     </hgroup>
-    <article ><pre class="prettyprint" style="font-size:30px; line-height: 1.2;">
+    <article ><pre class="prettyprint" style="font-size:27px; line-height: 1.2;">
 &lt;polymer-element name="owner-element" <b>attributes="owner"</b>&gt;
   &lt;template&gt;
     &lt;h2&gt;<b>{{owner}}</b> built me with Polymer&lt;/h2&gt;
   &lt;/template&gt;
   &lt;script&gt;
   Polymer('owner-element', {
-    owner: 'Rob'
+    <b>owner: 'Rob'</b>
   });
   &lt;/script&gt;
 &lt;/polymer-element&gt;
