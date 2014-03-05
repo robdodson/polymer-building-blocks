@@ -119,7 +119,7 @@ body_class: netscape
 content_class: flexbox vcenter
 
 <h2>Elements are the building blocks of the web</h2>
-<img src="/images/screenshots/legos.png" style="position: absolute; bottom: -460px; right: -350px;">
+<img src="/images/screenshots/legos.png" style="position: absolute; bottom: -500px; right: -350px;">
 
 ---
 
