@@ -178,8 +178,11 @@ SlideDeck.prototype.onBodyKeyDown_ = function(e) {
   }
 
   // Forward keydowns to the main slides if we're the popup.
-  if (this.controller && this.controller.isPopup) {
-    this.controller.sendMsg({keyCode: e.keyCode});
+  // if (this.controller && this.controller.isPopup) {
+  if (this.controller) {
+    if (!e.wasPostMessage) {
+      this.controller.sendMsg({keyCode: e.keyCode});
+    }
   }
 
   switch (e.keyCode) {

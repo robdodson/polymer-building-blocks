@@ -261,7 +261,7 @@ https://code.google.com/p/io-2012-slides
 
 <aside class="note">
   <section>
-    <p>And encapsulation is really hard to come by on the Web</p>
+    <p>Elements are encapsulated, and encapsulation is really hard to come by on the Web</p>
   </section>
 </aside></article>
  
@@ -582,7 +582,7 @@ var foo = mySelect.selectedIndex;
 <aside class="note">
   <section>
     <p>It seems like a great model, right? So why don't we primarily work with elements anymore?</p>
-    <p>The main reason is because there just aren't enough elements to capture the breadth of what we want to do on the web. And because the platform has never given us the ability to create our own elements as first class citizens, we're forced to invent solutions.</p>
+    <p>The main reason is because there just aren't enough elements to capture the breadth of what we want to do on the web. And because the platform has never given us the ability to extend HTML, we've been forced to invent solutions.</p>
   </section>
 </aside></article>
  
@@ -729,7 +729,14 @@ var foo = mySelect.selectedIndex;
 
 <aside class="note">
   <section>
-    <p></p>
+    <p>There's no one Web Components technology, it's actually 4 different technologies which collectively form the Web Components umbrella</p>
+    <ul>
+      <li>Templates give you the ability to create reusable bits of DOM markup. If you've used a library like handlebars or mustache before then it should feel familiar. The difference now is that there is an actual &lt;template&gt; tag in the browser</li>
+      <li>Custom elements give you the ability to create your own custom HTML elements. The x-tabs example from before is an instance of a custom element.</li>
+      <li>Shadow DOM is the ability to create scoped styles and encapsulated markup. So you can put some HTML and CSS inside of the Shadow DOM and you're guaranteed your element will render as intended.</li>
+      <li>Finally HTML Imports give you the ability to load external HTML files into your document. These files can contain resources like CSS, JavaScript and (most likely) custom element defintions.</li>
+    </ul>
+    <p>Talk about support chart. It's good, but developers won't use Web Components until they're supported in *all* browsers. But we want developer feedback before we ship these things. For that reason we created Polymer.</p>
   </section>
 </aside></article>
  
@@ -769,9 +776,9 @@ var foo = mySelect.selectedIndex;
 
 <aside class="note">
   <section>
-    <p><b>It gives you the power of web components today</b></p>
-    <p><b>You can start working with them and give feedback to the browser makers</b></p>
-    <p><b>So... how do we do that?</b></p>
+    <p>It gives you the power of web components today</p>
+    <p>You can start working with them and give feedback to the browser makers</p>
+    <p>So... how do we do that?</p>
   </section>
 </aside></article>
  
@@ -823,10 +830,14 @@ var foo = mySelect.selectedIndex;
 
 <aside class="note">
   <section>
-    <p><b>So, how do we do that?</b></p>
-    <p><b>Here's our layer cake of awesome</b></p>
-    <p><b>Platform: Jump everyone into the future so they can start creating their own elements</b></p>
-    <p><b>Polymer: Features and sugars. Two-way data binding, automatic node finding and a great declarative syntax</b></p>
+    <p>Here's a breakdown of how we add support for Web Components into all browsers</p>
+
+    <ul>
+      <li>Native: We start off with whatever level of support your current browser has. If that's something like mobile safari it might mean there's no support for web components at all!</li>
+      <li>Platform: Polyfills web component support and jumps everyone into the future so they can start creating their own elements</li>
+      <li>Polymer: Features and sugars. Things not on the standards track but we think are awesome so we include them. Two-way data binding, automatic node finding and a great declarative syntax</li>
+      <li>Elements: Lastly, we include a set of pre-built elements which are ready to be dropped into any project</li>
+    </ul>
   </section>
 </aside></article>
  
@@ -873,7 +884,13 @@ var foo = mySelect.selectedIndex;
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2>Three ways to work with Polymer</h2></article>
+    <article class="flexbox vcenter"><h2>Three ways to work with Polymer</h2>
+
+<aside class="note">
+  <section>
+    <p>So there's really 3 ways to work with Polymer</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -889,7 +906,13 @@ var foo = mySelect.selectedIndex;
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 class="faded"><em>Using</em> elements</h2></article>
+    <article class="flexbox vcenter"><h2 class="faded"><em>Using</em> elements</h2>
+
+<aside class="note">
+  <section>
+    <p>You can use the elements that Polymer and the open source community provide</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -905,7 +928,13 @@ var foo = mySelect.selectedIndex;
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 class="faded"><em>Creating</em> elements</h2></article>
+    <article class="flexbox vcenter"><h2 class="faded"><em>Creating</em> elements</h2>
+
+<aside class="note">
+  <section>
+    <p>You can create your own elements</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -921,7 +950,13 @@ var foo = mySelect.selectedIndex;
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 class="faded">Utilizing the modern web <em>platform</em></h2></article>
+    <article class="flexbox vcenter"><h2 class="faded">Utilizing the modern web <em>platform</em></h2>
+
+<aside class="note">
+  <section>
+    <p>Or you can work directly with that shimmed web platform level. If you're not ready to use Web Components but maybe you want to play around with imports or one of the other technologies then you can actually break off the indivudal polyfills and use them stand alone</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -938,7 +973,14 @@ var foo = mySelect.selectedIndex;
   <img id="platform-3d" class="block-3d" src="./images/polymer/diagram/platform.svg">
   <img id="polymer-3d" class="block-3d" src="./images/polymer/diagram/polymer.svg">
   <img id="elements-3d" class="block-3d" src="./images/polymer/diagram/elements.svg">
-</div></article>
+</div>
+
+<aside class="note">
+  <section>
+    <p>(wait for animation)</p>
+    <p>Let's start by talking about how you can use elements</p>
+  </section>
+</aside></article>
     
   
 </slide>
@@ -960,6 +1002,12 @@ var foo = mySelect.selectedIndex;
 <aside class="note">
   <section>
     <p><b>We want you to reach for the element</b></p>
+  </section>
+</aside>
+
+<aside class="note">
+  <section>
+    <p>When you get started using elements we really want to get you into the mindset of thinking about "everything as an element." When you feel yourself reaching for the JavaScript, stop yourself, and ask "Could I solve this problem with an element instead."</p>
   </section>
 </aside></article>
  
@@ -997,6 +1045,14 @@ var foo = mySelect.selectedIndex;
 <aside class="note">
   <section>
     <p>Stress that elements are experimental (and visually disjointed) but let them know we're building something real.</p>
+  </section>
+</aside>
+
+<aside class="note">
+  <section>
+    <p>To help you out we've created some reusable UI elements. So we have things like polymer-ui-card (click on link and show demo), which is a nice swipeable Google Now style card</p>
+    <p>We've also got polymer-ui-sidebar, (click on link and show demo) which is your classic expanding/collapsing sidebar</p>
+    <p>And yes, we even include our own version of tabs!</p>
   </section>
 </aside></article>
  
@@ -1037,7 +1093,13 @@ var foo = mySelect.selectedIndex;
   </polymer-ui-tabs>
 </output>
 
-</div></article>
+</div>
+
+<aside class="note">
+  <section>
+    <p>So this is the polymer-tabs element. To load it into your application you just import the polymer-ui-tabs.html file using an html import (point out we're doing that in the top right corner) and then the element is ready to use. No setup necessary!</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -1081,7 +1143,13 @@ var foo = mySelect.selectedIndex;
   </polymer-ui-collapsible>
 </output>
 
-</div></article>
+</div>
+
+<aside class="note">
+  <section>
+    <p>Here's another example. This is polymer-ui-collapsible, which we can use to show and hide a bit of content. This is something I see people using jQuery for all the time. But with polymer-ui-collapsible there's no need to delve into JavaScript just to toggle a bit of content. Doing it in markup saves serious time!</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -1168,8 +1236,9 @@ var foo = mySelect.selectedIndex;
 <p><code>&lt;polymer-selector&gt;</code></p>
 <aside class="note">
   <section>
-    <p>The mind naturally goes toward UI...</p>
-    <p>A lot of things we already do in markup that are non-visual</p>
+    <p>When you start working with Web Components the mind naturally goes toward UI...</p>
+    <p>But there are a lot of things we already do in markup that are non-visual</p>
+    <p>So we've created elements for doing things like layout, ajax, localstorage and even working with the file system. It might sound weird to think of using an HTML tag to do AJAX, but when you actually start using it you'll realize it's an *awesome* way to work.</p>
   </section>
 </aside></article>
  
@@ -1214,7 +1283,8 @@ var foo = mySelect.selectedIndex;
 
 <aside class="note">
   <section>
-    <p><b>Power to create our own things. Flexbox is too complicated so why not make it easier.</b></p>
+    <p>Here's an example: This is polymer-flex-layout, which contains all the functionality of CSS flexbox in an easy to use tag. Toggle the vertical attribute to lay children out horizontally. Toggle the flex attribute to make your child fill as much space as it can.</p>
+    <p>This demonstrates an important point about Web Components and what you can do when you're able to extend the platform. It gives you the power to create your own things if you're not satisfied with the current implementation in the browser. Flexbox is too complicated so why not make it easier.</p>
   </section>
 </aside></article>
  
@@ -1298,34 +1368,11 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 <aside class="note">
   <section>
-    <p><b>Polymer is going to make this really easy for you</b></p>
+    <p>We've talked a bit about using elements, now let's look at how you can create your own elements. Polymer is going to make this really easy for you!</p>
   </section>
 </aside></article>
     
   
-</slide>
-
-<slide    data-body-class="core-fill" hidden>
-  
-    <hgroup>
-      <span>
-        
-        
-        
-        
-      </span>
-      <h2></h2>
-      <h3></h3>
-    </hgroup>
-    <article class="flexbox vcenter"><h2 style="font-size: 55px; letter-spacing: 1.2;">Everything is an element</h3>
-
-<aside class="note">
-  <section>
-    <p><b>Stop yourself and think, can I bundle this up into an element</b></p>
-    <p><b>Polymer is going to make that really easy for you</b></p>
-  </section>
-</aside></article>
- 
 </slide>
 
 <slide    data-body-class="core-fill" >
@@ -1340,7 +1387,13 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 class="faded"><em>Declarative</em> element registration</h2></article>
+    <article class="flexbox vcenter"><h2 class="faded"><em>Declarative</em> element registration</h2>
+
+<aside class="note">
+  <section>
+    <p>The declarative syntax that Polymer enables makes it super simple to start defining your own tags.</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -1381,9 +1434,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 <aside class="note">
   <section>
-    <p>Registering elements without Polymer is kind of messy</p>
     <p>Mention <b>noscript</b></p>
-    <p>Prototypes are next</p>
   </section>
 </aside></article>
  
