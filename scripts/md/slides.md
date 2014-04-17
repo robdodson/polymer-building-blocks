@@ -19,7 +19,7 @@ id: who
 
 <aside class="note">
   <section>
-    <p>Mention contact info first!</p>
+    <p>Introduce yourself, mention contact info</p>
     <p>
       Quick show of hands, who here has heard of Polymer or Web Components?
     </p>
@@ -52,7 +52,7 @@ class: large
     <ul>
       <li>What is Polymer? What are Web Components?</li>
       <li>Start working with Polymer so you can use Web Components in modern browsers</li>
-      <li>We're just gonna write some code and mess around</li>
+      <li>We'll save some time and show some cool demos</li>
     </ul>
   </section>
 </aside>
@@ -63,6 +63,12 @@ body_class: core-fill
 content_class: flexbox vleft
 
 <h2 style="margin-top: 33%">Let's go back in time...</h2>
+
+<aside class="note">
+  <section>
+    <p>To understand Web Components we have to go back in time to the early days of the web design...</p>
+  </section>
+</aside>
 
 ---
 
@@ -105,11 +111,12 @@ body_class: netscape
 
 <aside class="note">
   <section>
+    <br>
     <p>
-      Not the fanciest thing ever, but it set the stage for what was to come
+      For many developers this is what their first site looked like. This is just HTML elements bolted together like Legos. It may seem dated, but it *is* a functioning web app.
     </p>
     <p>
-      Working with elements might seem old hat, but stop and think about it
+      As we've been going through this JavaScript renaissance we've lost sight of the power of HTML elements. But when you stop to think about it...
     </p>
   </section>
 </aside>
@@ -121,12 +128,26 @@ content_class: flexbox vcenter
 <h2>Elements are the building blocks of the web</h2>
 <img src="./images/screenshots/legos.png" style="position: absolute; bottom: -500px; right: -350px;">
 
+<aside class="note">
+  <section>
+    <p>
+      Elements have some really cool properties and I want to explore those for a second...
+    </p>
+  </section>
+</aside>
+
 ---
 
 body_class: elements-fill
 content_class: flexbox vcenter
 
 <h2 class="faded">Elements are <em>encapsulated</em></h2>
+
+<aside class="note">
+  <section>
+    <p>And encapsulation is really hard to come by on the Web</p>
+  </section>
+</aside>
 
 ---
 
@@ -147,12 +168,25 @@ content_class: flexbox vcenter
   <option>Large</option>
 </select>
 
+<aside class="note">
+  <section>
+    <p>This is the code to make a select element show up. Notice how I didn't have to include any CSS to make this element look the way it looks. That's because those styles are baked into the element and scoped to the tag. They don't leak out onto the page.</p>
+    <p>And when I click on it, it has behavior but I didn't need to write any JavaScript to make that happen and my JavaScript isn't going to accidentally break that behavior. That's because select is a well encapsulated object.</p>
+  </section>
+</aside>
+
 ---
 
 body_class: elements-fill
 content_class: flexbox vcenter
 
 <h2 class="faded">Elements are <em>configurable</em></h2>
+
+<aside class="note">
+  <section>
+    <p>Another cool feature of elements is that they're configurable</p>
+  </section>
+</aside>
 
 ---
 
@@ -174,6 +208,12 @@ content_class: flexbox vcenter
   <option disabled>Large</option>
   <option selected>XX-large</option>
 </select>
+
+<aside class="note">
+  <section>
+    <p>Notice how easy it is to change the behavior of select by adding a few attributes. No JS required!</p>
+  </section>
+</aside>
 
 ---
 
@@ -199,6 +239,12 @@ content_class: flexbox vcenter
   <option>Ti</option>
   <option>Do</option>
 </select>
+
+<aside class="note">
+  <section>
+    <p>And if you add a multiple attribute then you get a completely different presentation and behavior! Now we can select multiple items at once just by holding down the cmd/ctrl key.</p>
+  </section>
+</aside>
 
 ---
 
@@ -228,6 +274,12 @@ content_class: flexbox vcenter
 
 <h2 class="faded">Elements are <em>composable</em></h2>
 
+<aside class="note">
+  <section>
+    <p>Meaning you can treat elements like Legos and bolt them together</p>
+  </section>
+</aside>
+
 ---
 
 class: large
@@ -254,6 +306,12 @@ content_class: flexbox vcenter
   </optgroup>
 </select>
 
+<aside class="note">
+  <section>
+    <p>For example, if you wrap your option elements in optgroups, then the select element is smart enough to know that it should render differently. Now you get subheadings inside your dropdown.</p>
+  </section>
+</aside>
+
 ---
 
 class: large
@@ -269,12 +327,25 @@ content_class: flexbox vcenter
 <b>&lt;/form></b>
 </pre>
 
+<aside class="note">
+  <section>
+    <p>And if you put a select element inside of a form element then you've created a much more complex component. Now whenever the form is submitted it will take the value from the select and pass that along to our server.</p>
+    <p>This is one of the main goals of good composability: building complex things out of simple building blocks</p>
+  </section>
+</aside>
+
 ---
 
 body_class: elements-fill
 content_class: flexbox vcenter
 
 <h2 class="faded">Elements are <em>programmable</em></h2>
+
+<aside class="note">
+  <section>
+    <p>Lastly, elements are programmable. I've shown you a lot of the declarative side of things, but don't forget that elements also have a nice *imperative* API for things that don't make sense to show in markup.</p>
+  </section>
+</aside>
 
 ---
 
@@ -285,6 +356,13 @@ content_class: flexbox vcenter
 var foo = mySelect.selectedIndex;
 </pre>
 
+<aside class="note">
+  <section>
+    <p>selectedIndex, for example, wouldn't be very useful in HTML, but it makes total sense to have it in JavaScript.</p>
+    <p>So when you're working with elements you get the best of both worlds: a nice declarative syntax for bolting things together, and a programmable API for when you need to delve into script.</p>
+  </section>
+</aside>
+
 ---
 
 body_class: core-fill
@@ -294,7 +372,8 @@ content_class: flexbox vleft
 
 <aside class="note">
   <section>
-    <p><b>There just weren't enough elements. The language wasn't expressive</b></p>
+    <p>It seems like a great model, right? So why don't we primarily work with elements anymore?</p>
+    <p>The main reason is because there just aren't enough elements to capture the breadth of what we want to do on the web. And because the platform has never given us the ability to create our own elements as first class citizens, we're forced to invent solutions.</p>
   </section>
 </aside>
 
@@ -314,7 +393,10 @@ title: Building a tab component today
 
 <aside class="note">
   <section>
-    <p><b>Now that we're seeing this JavaScript renaissance...</b></p>
+    <p>Let's look at how we build UI today. This is an example of building a tabs widget.</p>
+    <p>This first example is really typical of something like Bootstrap. Lots of boilerplate markup which you'll have to copy and paste over and over again in your app. Cover it with CSS and maybe use some jQuery to kick off the behavior.</p>
+    <p>Now that we're going through a JavaScript renaissance, we're starting to move more of the responsiblity for rendering our UI out of our markup and into or JS. So here's an example from kendo UI. Less markup, but more JS</p>
+    <p>And here's YUI... Angular... EXT.js... The problem here is that if we build a great component using one framework, we can't share it with people using a different framework. We're silo'd.</p>
   </section>
 </aside>
 
@@ -333,7 +415,8 @@ content_class: flexbox vcenter
 
 <aside class="note">
   <section>
-    <p><b>Not possible, until Web Components!</b></p>
+    <p>And it's a shame because really all we want is something like this. If this existed I would just use it, the same way I use `select`.</p>
+    <p>Thankfully, today it is possible to start creating elements like this, thanks to a new set of technologies called Web Components</p>
   </section>
 </aside>
 
@@ -342,6 +425,12 @@ content_class: flexbox vcenter
 content_class: flexbox vleft
 
 <h2 style="font-size: 60px; line-height: 1.25;">Web Components are a set of <strong>emerging standards</strong> that allow developers to <strong>extend HTML</strong>.</h2>
+
+<aside class="note">
+  <section>
+    <p>In a nutshell this means "giving developers the ability to create their own tags that have scoped CSS styles and encapsualted markup and behavior."</p>
+  </section>
+</aside>
 
 ---
 
@@ -394,7 +483,7 @@ content_class: flexbox vcenter
 
 <aside class="note">
   <section>
-    <p><b>Not enough cross-browser support</b></p>
+    <p></p>
   </section>
 </aside>
 
