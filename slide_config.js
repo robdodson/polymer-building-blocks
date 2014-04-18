@@ -23,12 +23,12 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Rob Dodson',
+    name: 'Polymer',
     //company: 'Chrome Team',
-    gplus: 'http://google.com/+RobDodson',
-    twitter: '@rob_dodson',
-    www: 'http://robdodson.me',
-    github: 'http://github.com/robdodson'
+    gplus: 'http://google.com/+PolymerProject',
+    twitter: '@polymer',
+    www: 'http://polymer-project.org',
+    github: 'http://github.com/Polymer'
   }]
 };
 
