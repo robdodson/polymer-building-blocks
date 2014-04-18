@@ -527,38 +527,38 @@ function enableDiagramAnimations() {
       this.blocks.forEach(function(block, index) {
         block.fadeOut = new Animation(block, [
           { opacity: 0.3 }
-        ], { duration: 0.3, ease: 'ease-in-out' });
+        ], { duration: 0.3, ease: 'ease-in-out', fill: 'both' });
         
         block.fadeIn = new Animation(block, [
           { opacity: 1 }
-        ], { duration: 0.3, ease: 'ease-in-out' });
+        ], { duration: 0.3, ease: 'ease-in-out', fill: 'both' });
       });
     },
     animateIn: function() {
-      var group = new ParGroup();
+      var group = new AnimationGroup();
       this.blocks.forEach(function(block, index) {
         group.append(new Animation(block, [
           { opacity: 0, transform: 'translate3d(0, -600px, 0)' },
           { opacity: 1, transform: 'translate3d(0, 0, 0)' }
-        ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out' }));
+        ], { duration: 1, delay: 0.3 * index, easing: 'ease-in-out', fill: 'both' }));
       });
       document.timeline.play(group);
     },
     explode: function() {
-      var group = new ParGroup();
+      var group = new AnimationGroup();
       this.blocks.forEach(function(block, index) {
         var posY1 = 5 + (index * 10);
         var posY2 = 70 - (index * 70);
         group.append(new Animation(block, [
           { offset: 0.4, transform: 'translate3d(0, ' + posY1 + 'px' + ', 0)' },
           { offset: 1, transform: 'translate3d(0, ' + posY2 + 'px' + ', 0)' }
-        ], { duration: 0.5, easing: 'ease-in-out' }));
+        ], { duration: 0.5, easing: 'ease-in-out', fill: 'both' }));
       });
       document.timeline.play(group);
-      setTimeout(this.idle.bind(this), 400);
+      // setTimeout(this.idle.bind(this), 400);
     },
     idle: function() {
-      var group = new ParGroup();
+      var group = new AnimationGroup();
       this.blocks.forEach(function(block, index) {
         var posY = (70 - (index * 70)) - 20;
         group.append(new Animation(block, [
@@ -566,17 +566,18 @@ function enableDiagramAnimations() {
         ], {
             direction: 'alternate', duration: 1,
             delay: index == 3 ? 0 : 0.3 * index,
-            iterations: Infinity, easing: 'ease-in-out'
+            iterations: Infinity, easing: 'ease-in-out',
+            fill: 'both'
         }));
       });
       document.timeline.play(group);
     },
     contract: function() {
-      var group = new ParGroup();
+      var group = new AnimationGroup();
       this.blocks.forEach(function(block, index) {
         group.append(new Animation(block, [
           { opacity: 1, transform: 'translate3d(0, 0, 0)' }
-        ], { duration: 0.5, easing: 'ease-in-out' }));
+        ], { duration: 0.5, easing: 'ease-in-out', fill: 'both' }));
       });
       document.timeline.play(group);
     },
@@ -611,28 +612,28 @@ function enableDiagramAnimations() {
       });
 
       if (fades.length) {
-        document.timeline.play(new SeqGroup(fades));
+        document.timeline.play(new AnimationSequence(fades));
       }
     },
     platformShrink: function() {
       var animationShrink = new Animation(this.platform3d, [
           { opacity: 1, transform: 'scale3d(1, 1, 1)' },
           { opacity: 0, transform: 'scale3d(0, 0, 0)' }
-        ], { duration: 1, easing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)' });
+        ], { duration: 1, easing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)', fill: 'both' });
 
       var animations = [this.polymer3d, this.elements3d].map(function(el) {
         return new Animation(el, [
             { transform: 'translate3d(0, 90px, 0)' }
-          ], { duration: 1, easing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)' });
+          ], { duration: 1, easing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)', fill: 'both' });
       });
 
       var animationBottom = new Animation(this.native3d, [
           { transform: 'translate3d(0, -20px, 0)' }
-        ], { duration: 1, easing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)' });
+        ], { duration: 1, easing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)', fill: 'both' });
 
       animations.unshift(animationShrink);
       animations.push(animationBottom);
-      document.timeline.play(new ParGroup(animations));
+      document.timeline.play(new AnimationGroup(animations));
     },
   };
 }

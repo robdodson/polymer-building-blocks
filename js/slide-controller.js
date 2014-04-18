@@ -67,7 +67,6 @@ SlideController.prototype.setupDone = function() {
 }
 
 SlideController.prototype.onMessage_ = function(e) {
-  console.log('onMessage');
   var data = e.data;
 
   // Restrict messages to being from this origin. Allow local developmet
@@ -93,7 +92,6 @@ SlideController.prototype.onMessage_ = function(e) {
 };
 
 SlideController.prototype.sendMsg = function(msg) {
-  console.log('sendMsg');
   // // Send message to popup window.
   if (this.popup) {
     this.popup.postMessage(msg, ORIGIN_);

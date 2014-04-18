@@ -72,7 +72,6 @@ content_class: flexbox vleft
 
 ---
 
-hidden: true
 id: netscape
 #title: Understand where we came from
 class: nobackdrop nobackground
@@ -80,35 +79,7 @@ class: nobackdrop nobackground
 content_class: flexbox vcenter
 body_class: netscape
 
-
-<template id="formexample" style="display: none">
-  <style>body{margin:0;padding:0;}</style>
-  <form>
-    <table class="build" border="10" cellpadding="5" cellspacing="5">
-    <tr><td><label>First name:</td><td><input type="name"></td></tr>
-    <tr><td><label>Last name</td><td><input type="name"></label></td></tr>
-    <tr><td>T-shirt size</td><td>
-      <select>
-        <option>Small</option>
-        <option selected>Medium</option>
-        <option>Large</option>
-        <option>X-large</option>
-      </select>
-    </td></tr>
-    <tr><td><label>Gender</label></td><td>Male: <input type="radio"  name="gender"> Female: <input type="radio" name="gender"></td></tr>
-    <tr><td colspan="2"><input type="submit"></td></tr>
-    </table>
-  </form>
-</template>
-
-<iframe id="formframe" style="width:300px;border:none;height:240px;"></iframe>
-
-<script>
-  var clone = document.querySelector('#formexample').content.cloneNode(true);
-  var div = document.createElement('div');
-  div.appendChild(clone);
- document.querySelector('#formframe').srcdoc = div.innerHTML;
-</script>
+<img src="images/screenshots/old-site.png" alt="ye olde timey website">
 
 <aside class="note">
   <section>
