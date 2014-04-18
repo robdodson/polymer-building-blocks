@@ -2,7 +2,7 @@
 
 ## Live Preview
 
-[Live slides](http://robdodson.me/polymer-building-blocks)
+[Live slides](http://robdodson.me/polymer-building-blocks) | 
 [Video presentation](https://www.youtube.com/watch?v=3pYGVB2lG9w)
 
 ## Getting Started
