@@ -166,7 +166,7 @@ https://code.google.com/p/io-2012-slides
  
 </slide>
 
-<slide id="netscape" class="nobackdrop nobackground"  data-body-class="netscape" >
+<slide id="netscape" class="nobackdrop nobackground"  data-body-class="netscape" hidden>
   
     <hgroup>
       <span>
@@ -1434,7 +1434,10 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 <aside class="note">
   <section>
-    <p>Mention <b>noscript</b></p>
+    <p>This is a Polymer element definition. It's important to indicate that the name attribute must have a dash in it. That's to prevent future versions of HTML from stepping on your tag.</p>
+    <p>Anything inside of the template will be stamped out when the parser sees your new tag</p>
+    <p>Note that the style tag is *not* affecting the h2 at the top of the slide that says "Declarative Registration". That's because the styles are scoped by the Shadow DOM</p>
+    <p>Mention noscript. That attribute tells Polymer that you're not including any JavaScript with your element.</p>
   </section>
 </aside></article>
  
@@ -1477,8 +1480,10 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 <aside class="note">
   <section>
-  <p>Lifecycle callbacks for when an element is created, added to the document, removed from the document or has an attribute changed.</p>
-  <p>But what about when you want to actually visualize these properties</p>
+    <p>If you do want to include JavaScript with your element you can omit the noscript attribute and include a script tag that calls the Polymer constructor.</p>
+    <p>The Polymer constructor requires that you pass in your element's name, and a protoyper object. Properties and methods that you add to this prototype object are available on every instance of your new tag.</p>
+    <p>In this example I've added some code to the page that listens for click events and calls target.sayHello().  (click on the elements)</p>
+    <p>So easy to create an API for your element... but I want to add some data to this thing!</p>
   </section>
 </aside></article>
  
@@ -1500,7 +1505,7 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 <aside class="note">
   <section>
-  <p>Data binding removes glue code</p>
+    <p>To work with data in an element we use binding expressions</p>
   </section>
 </aside></article>
  
@@ -1543,8 +1548,10 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 <aside class="note">
   <section>
-  <p><b>Highlight owner</b></p>
-  <p>Elements are configurable, so how do we let the user change the value of owner</p>
+    <p>In this example we're using mustache syntax to bind the value owner in our template, to a property on our prototype.</p>
+    <p>Press the 'h' key to focus the slide</p>
+    <p>When this element renders, you'll see 'Rob built me with Polymer'.</p>
+    <p>But elements are supposed to be configurable, so how do we let the user set the value of owner?</p>
   </section>
 </aside></article>
  
@@ -1562,7 +1569,13 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 class="faded"><em>Published</em> properties</h2></article>
+    <article class="flexbox vcenter"><h2 class="faded"><em>Published</em> properties</h2>
+
+<aside class="note">
+  <section>
+    <p>To do that we've created published properties</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -1603,7 +1616,10 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 <aside class="note">
   <section>
-  <p>We're creating a link between the publicly exposed attribute and the value in our prototype</p>
+  <p>Notice the attributes attribute I've created at the end of my polymer-element. That allows me to expose the owner property from my prototype to the outside world.</p>
+  <p>This property is now 2-way data bound</p>
+  <p>Now when someone uses our tag they can configure owner and set it to 'Alex', which renders: 'Alex built me with Polymer'</p>
+  <p>So we've got a bit of data in here, how about interactivity?</p>
   </section>
 </aside></article>
  
@@ -1621,7 +1637,13 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 class="faded">Declarative <em>event handlers</em></h2></article>
+    <article class="flexbox vcenter"><h2 class="faded">Declarative <em>event handlers</em></h2>
+
+<aside class="note">
+  <section>
+    <p>To quickly add interactivity we can use declarative event handlers</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -1660,7 +1682,11 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 <aside class="note">
   <section>
+    <p>You can press h to focus the slide</p>
+    <p>To add a bit of interactivity we can use a declarative event handler. Here we're using on-click (note, not onclick) to fire an action called setMessage any time our button is clicked.</p>
+    <p>setMessage will change a property on our prototype called message, which will then update inside the binding in our template</p>
     <p>Explain why onclick is bad but on-click is awesome</p>
+    <p>onclick is bad because it works in the global scope and uses eval. on-click is awesome because it only has access to your element, it automatically removes the event listener when your element leaves the DOM, and it uses polymer-gestures, a library which unifies mouse, touch and pointer events.</p>
   </section>
 </aside></article>
  
@@ -1678,7 +1704,13 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vcenter"><h2 class="faded">Automatic <em>node finding</em></h2></article>
+    <article class="flexbox vcenter"><h2 class="faded">Automatic <em>node finding</em></h2>
+
+<aside class="note">
+  <section>
+    <p>Last feature I want to show is automatic node finding</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -1716,7 +1748,10 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 <aside class="note">
   <section>
-    <p>Explain why id's are bad but these are awesome</p>
+    <p>This example is very similar to our last one...</p>
+    <p>This time I've given my input an id of 'nameInput'. And in my code I can ask for this.$.nameInput to select it.</p>
+    <p>It's not jquery. We just take anything with an id and stick it in a hash which is stored in a $</p>
+    <p>You might think ids are bad, but custom elements scope the ids to the element definition, so it's ok to have ids in your element because they won't pollute the page</p>
   </section>
 </aside></article>
  
@@ -1965,7 +2000,13 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
   <img id="platform-3d" class="block-3d" src="./images/polymer/diagram/platform.svg">
   <img id="polymer-3d" class="block-3d" src="./images/polymer/diagram/polymer.svg">
   <img id="elements-3d" class="block-3d" src="./images/polymer/diagram/elements.svg">
-</div></article>
+</div>
+
+<aside class="note">
+  <section>
+    <p>The last thing we want to talk about is that platform layer at the very bottom</p>
+  </section>
+</aside></article>
     
   
 </slide>
@@ -1982,7 +2023,13 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vleft"><h2 class="faded" style="font-size: 54px;">The platform is a <em>layer of polyfills</em> that adds support for emerging standards, like <em>Web Components</em>, to all <em>modern browsers</em>.</h2></article>
+    <article class="flexbox vleft"><h2 class="faded" style="font-size: 54px;">The platform is a <em>layer of polyfills</em> that adds support for emerging standards, like <em>Web Components</em>, to all <em>modern browsers</em>.</h2>
+
+<aside class="note">
+  <section>
+    <p>I often just read this slide verbatim</p>
+  </section>
+</aside></article>
  
 </slide>
 
@@ -2044,11 +2091,17 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
 
 <div class="build">
   <span id="polyfill-support-all"></span>
-</div></article>
+</div>
+
+<aside class="note">
+  <section>
+    <p>The platform basically takes our current support picture (press right arrow to fade in animation) and makes it look like this.</p>
+  </section>
+</aside></article>
  
 </slide>
 
-<slide    data-body-class="platform-fill" >
+<slide    data-body-class="platform-fill" hidden>
   
     <hgroup>
       <span>
@@ -2060,7 +2113,13 @@ ajax.addEventListener(<b>'polymer-response'</b>, function(e) {
       <h2></h2>
       <h3></h3>
     </hgroup>
-    <article class="flexbox vleft"><h2 class="faded" style="font-size: 52px;">Additional features include <em>Mutation Observers</em>, <em>Pointer Events</em>, <em>Web Animations</em>, and much more.</h2></article>
+    <article class="flexbox vleft"><h2 class="faded" style="font-size: 52px;">Additional features include <em>Mutation Observers</em>, <em>Pointer Events</em>, <em>Web Animations</em>, and much more.</h2>
+
+<aside class="note">
+  <section>
+
+  </section>
+</aside></article>
  
 </slide>
 

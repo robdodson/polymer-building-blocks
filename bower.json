@@ -14,8 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "polymer-elements": "Polymer/polymer-elements#~0.2.0",
-    "polymer-ui-elements": "Polymer/polymer-ui-elements#~0.2.0",
+    "polymer-elements": "Polymer/polymer-elements#~0.2.2",
+    "polymer-ui-elements": "Polymer/polymer-ui-elements#~0.2.2",
     "web-animations-js": "web-animations/web-animations-js#724d80fa05365fbda7e9d3ec77d2b5ed9f669c11"
   },
   "resolutions": {
