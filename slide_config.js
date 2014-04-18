@@ -4,8 +4,8 @@ var SLIDE_CONFIG = {
     title: 'Polymer',
     subtitle: 'Building blocks for the Web',
     eventInfo: {
-      title: 'Yahoo',
-      date: 'Mar 05, 2014'
+      title: 'Google Developers',
+      date: 'Apr 18, 2014'
     },
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: false, // Controlled in app.js 
